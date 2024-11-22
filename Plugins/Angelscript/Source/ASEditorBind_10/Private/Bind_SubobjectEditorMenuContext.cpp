@@ -1,0 +1,7 @@
+#include "ASEditorBind_10Module.h"
+#include "AngelscriptBinds.h"
+#include "SubobjectEditorMenuContext.h"
+void FASEditorBind_10Module::Bind_SubobjectEditorMenuContext()
+{
+			FAngelscriptBinds::AddFunctionEntry(USubobjectEditorMenuContext::StaticClass(), "GetSelectedObjects", { ERASE_METHOD_PTR(USubobjectEditorMenuContext, GetSelectedObjects, () const, ERASE_ARGUMENT_PACK(TArray<UObject*> )) } );
+}
