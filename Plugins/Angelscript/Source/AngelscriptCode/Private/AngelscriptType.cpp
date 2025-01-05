@@ -63,15 +63,15 @@ void FAngelscriptType::Register(TSharedRef<FAngelscriptType> Type)
 	Database.RegisteredTypes.Add(Type);
 
 	FString AngelscriptName = Type->GetAngelscriptTypeName();
-	
-	if (AngelscriptName == TEXT("UObject") || AngelscriptName == TEXT("Object"))
-		UE_LOG(Angelscript, Log, TEXT("Object Confirmed"), *AngelscriptName);
-
-	if (AngelscriptName == TEXT("AActor") || AngelscriptName == TEXT("Actor"))
-		UE_LOG(Angelscript, Log, TEXT("Actor Confirmed"), *AngelscriptName);
-
-	if (AngelscriptName == TEXT("UActorComponent") || AngelscriptName == TEXT("ActorComponent"))
-		UE_LOG(Angelscript, Log, TEXT("Actor Comp Confirmed"), *AngelscriptName);	
+	//WILL-EDIT
+	//if (AngelscriptName == TEXT("UObject") || AngelscriptName == TEXT("Object"))
+	//	UE_LOG(Angelscript, Log, TEXT("Object Confirmed"), *AngelscriptName);
+	//
+	//if (AngelscriptName == TEXT("AActor") || AngelscriptName == TEXT("Actor"))
+	//	UE_LOG(Angelscript, Log, TEXT("Actor Confirmed"), *AngelscriptName);
+	//
+	//if (AngelscriptName == TEXT("UActorComponent") || AngelscriptName == TEXT("ActorComponent"))
+	//	UE_LOG(Angelscript, Log, TEXT("Actor Comp Confirmed"), *AngelscriptName);	
 
 	if (!Database.TypesByAngelscriptName.Contains(AngelscriptName))
 	{
