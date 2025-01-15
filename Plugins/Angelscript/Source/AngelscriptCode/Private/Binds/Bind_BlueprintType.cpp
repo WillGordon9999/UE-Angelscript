@@ -654,16 +654,7 @@ ANGELSCRIPTCODE_API bool ShouldDisallowInstantiation(UClass* Class);
 #endif
 
 static void BindUClass(UClass* Class, const FString& TypeName)
-{
-	//if (TypeName == TEXT("UObject") || TypeName == TEXT("Object"))
-	//	UE_LOG(Angelscript, Log, TEXT("Object Confirmed"), *TypeName);
-	//
-	//if (TypeName == TEXT("AActor") || TypeName == TEXT("Actor"))
-	//	UE_LOG(Angelscript, Log, TEXT("Actor Confirmed"), *TypeName);
-	//
-	//if (TypeName == TEXT("UActorComponent") || TypeName == TEXT("ActorComponent"))
-	//	UE_LOG(Angelscript, Log, TEXT("Actor Comp Confirmed"), *TypeName);
-
+{	
 	// Bind into angelscript engine
 	auto Class_ = FAngelscriptBinds::ReferenceClass(TypeName, Class);
 	// Register angelscript type
@@ -994,9 +985,7 @@ bool ShouldBindEngineType(UClass* Class)
 	//WILL-EDIT
 	UASClass* asClass = Cast<UASClass>(Class);
 	if (asClass != nullptr && asClass->bIsScriptClass)
-		return false;
-	//if (Class->bIsScriptClass)
-	//	return false;
+		return false;	
 
 	// BlueprintType always gets bound
 	if (Class->HasMetaData(NAME_NotInAngelscript))
@@ -1010,19 +999,18 @@ bool ShouldBindEngineType(UClass* Class)
 	UClass* CheckClass = Class;
 	bool bHasBlueprintCallable = false;
 
-	//Can Probably use TFieldIterator for Functions probably
+	//WILL-EDIT
 	TArray<FName> NameArray;
 
 	while (CheckClass != nullptr && !bHasBlueprintCallable)
 	{
-		//auto& FuncMap = CheckClass->GetFunctionMap();
-		//auto& FuncMap = asClass->GenericFuncPtrMap;
+		//WILL-EDIT		
 		CheckClass->GenerateFunctionList(NameArray);
-		//for (auto& Elem : FuncMap)
+		
 		for (auto& Elem : NameArray)
 		{
-			UFunction* Function = CheckClass->FindFunctionByName(Elem);
-			//if (Elem.Value->HasAnyFunctionFlags(FUNC_BlueprintCallable | FUNC_BlueprintEvent))						
+			//WILL-EDIT
+			UFunction* Function = CheckClass->FindFunctionByName(Elem);			
 			if (Function->HasAnyFunctionFlags(FUNC_BlueprintCallable | FUNC_BlueprintEvent))
 			{
 				bHasBlueprintCallable = true;
@@ -1040,39 +1028,20 @@ bool ShouldBindEngineType(UClass* Class)
 
 AS_FORCE_LINK const FAngelscriptBinds::FBind Bind_BlueprintType_Declarations(FAngelscriptBinds::EOrder::Early, []
 {
-	// Bind any clasess that are BlueprintType
-	//WILL-EDIT: Construct our function maps here
-	//TArray<FName> NameArray;
-	//FGenericFuncMap LocalMap = FGenericFuncMap();
+	// Bind any clasess that are BlueprintType	
 
+	//WILL-EDIT?
 	for (UClass* Class : TObjectRange<UClass>()) //Could this be parallel for? Have to create all maps first
-	{
-		//Class->GenerateFunctionList(NameArray);		
-
-		//WILL-EDIT
-		//for (FName& Name : NameArray)
-		//{
-		//	UFunction* Function = Class->FindFunctionByName(Name);
-		//	FNativeFuncPtr Ptr = Function->GetNativeFunc();			
-		//	//TO-DO: Figure out these 3
-		//	//ASAutoCaller::FunctionCaller caller = ASAutoCaller::MakeFunctionCaller<void*>(Ptr, nullptr, nullptr);
-		//	//FGenericFuncPtr func = FGenericFuncPtr::Make((FTypeErasedMethodPtr)Ptr);
-		//	//LocalMap.Add(Name, TPair<FGenericFuncPtr, ASAutoCaller::FunctionCaller>{func, caller});
-		//}
-
+	{					
 		if (!ShouldBindEngineType(Class))
-		{
-			//ClassMaps.Add(Class->GetFName(), LocalMap);
-			//LocalMap.Empty();
+		{			
 			continue;
 		}
 
 		// Bind into angelscript engine
 		FString ClassName = FAngelscriptType::GetBoundClassName(Class);
 		BindUClass(Class, ClassName);
-
-		//ClassMaps.Add(FName(ClassName), LocalMap);
-		//LocalMap.Empty();
+		
 	}
 
 	BindUClassLookup();
@@ -1396,12 +1365,12 @@ AS_FORCE_LINK const FAngelscriptBinds::FBind Bind_Defaults((int32)FAngelscriptBi
 		auto* SuperClass = BindOrder.Class->GetSuperClass();
 
 		// Bind blueprint accessible functions
+		//WILL-EDIT
 		TArray<FName> NameArray;
-		BindOrder.Class->GenerateFunctionList(NameArray);
-		//for (auto& Elem : BindOrder.Class->GetFunctionMap())
+		BindOrder.Class->GenerateFunctionList(NameArray);		
 		for (auto& Elem : NameArray)
 		{
-			//UFunction* Function = Elem.Value;
+			//WILL-EDIT
 			UFunction* Function = BindOrder.Class->FindFunctionByName(Elem);
 
 			// Don't bind inherited functions, we already bound these
@@ -1882,6 +1851,7 @@ struct FObjectPtrType : TAngelscriptCppType<TObjectPtr<UObject>>
 		const FObjectProperty* ObjectPtrProp = CastField<FObjectProperty>(Property);
 		if (ObjectPtrProp == nullptr)
 			return false;
+		//WILL-EDIT
 		//if ((ObjectPtrProp->PropertyFlags & CPF_TObjectPtr) == 0)
 		//	return false;
 

@@ -49,7 +49,7 @@ class ATestActor : AAngelscriptActor
     UFUNCTION(BlueprintOverride)
     void ActorOnClicked(FKey ButtonPressed)
     {
-        
+        Print("Actor Clicked");
     }
 
     UFUNCTION(BlueprintOverride)
@@ -79,38 +79,38 @@ class ATestActor : AAngelscriptActor
     UFUNCTION(BlueprintOverride)
     void ActorBeginCursorOver()
     {
-        
+        Print("Begin Cursor Over");
     }
 
     UFUNCTION(BlueprintOverride)
     void ActorEndCursorOver()
     {
-        
+        Print("End Cursor Over");
     }
   
     UFUNCTION(BlueprintOverride)
     void ActorOnReleased(FKey ButtonReleased)
     {
-        
+        Print("Actor Released");
     }
 
     
     UFUNCTION(BlueprintOverride)
     void Destroyed()
     {
-        
+        Print("Actor Destroyed");
     }
 
     UFUNCTION(BlueprintOverride)
     void EndPlay(EEndPlayReason EndPlayReason)
     {
-        
+        Print("End Play");
     }
 
     UFUNCTION(BlueprintOverride)
     void OnReset()
     {
-        
+        Print("On Reset");
     }
 
      UFUNCTION(BlueprintOverride)
@@ -118,7 +118,7 @@ class ATestActor : AAngelscriptActor
              TObjectPtr<UPrimitiveComponent> OtherComp, bool bSelfMoved, FVector HitLocation,
              FVector HitNormal, FVector NormalImpulse, FHitResult Hit)
     {
-        
+        Print("Actor Hit");
     }
 
     UFUNCTION(BlueprintOverride)
@@ -148,13 +148,13 @@ class ATestActor : AAngelscriptActor
     UFUNCTION(BlueprintOverride)
     void ActorBeginOverlap(TObjectPtr<AActor> OtherActor)
     {
-        
+        Print("Begin Overlap");
     }
 
     UFUNCTION(BlueprintOverride)
     void ActorEndOverlap(TObjectPtr<AActor> OtherActor)
     {
-        
+        Print("End Overlap");
     }
 
     UFUNCTION(BlueprintOverride)

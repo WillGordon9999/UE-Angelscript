@@ -28,13 +28,13 @@ class UTestComponent : UAngelscriptComponent
     UFUNCTION(BlueprintOverride)
     void AsyncPhysicsTick(float DeltaSeconds, float SimSeconds)
     {
-        
+        Print("In Async Physics");
     }
 
     UFUNCTION(BlueprintOverride)
     void EndPlay(EEndPlayReason EndPlayReason)
     {
-        
+        Print("End Play");
     }
     
 };

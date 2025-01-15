@@ -364,7 +364,7 @@ void FAngelscriptManager::Initialize_AnyThread()
 		FAngelscriptBindDatabase::Get().Load(GetScriptRootDirectory() / TEXT("Binds.Cache"), bGeneratePrecompiledData);
 	}
 #endif
-
+	//WILL-EDIT
 	FAngelscriptBinds::LoadBindModules(FString(GetScriptRootDirectory() / "BindModules.Cache"));
 
 	//WILL-EDIT: Load our auto-generated Bind Modules here

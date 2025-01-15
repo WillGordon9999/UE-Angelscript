@@ -88,16 +88,16 @@ public:
 	virtual int32 GetContainerSize() const { return ContainerSize; }
 
 	virtual bool IsSafeForRootSet() const override { return true; }
-
-	//UFUNCTION(ScriptCallable, Category = "Angelscript")
+	
+	//WILL-EDIT
 	UFUNCTION(BlueprintCallable, Category = "Angelscript")
 	FString GetSourceFilePath() const;
 
-	//UFUNCTION(ScriptCallable, Category = "Angelscript")
+	//WILL-EDIT
 	UFUNCTION(BlueprintCallable, Category = "Angelscript")
 	FString GetRelativeSourceFilePath() const;
 
-	//UFUNCTION(ScriptCallable, Category = "Angelscript")
+	//WILL-EDIT	
 	UFUNCTION(BlueprintCallable, Category = "Angelscript")
 	bool IsDeveloperOnly() const;
 
@@ -200,10 +200,11 @@ public:
 	void OptimizedCall_RefArg(UObject* Object, void* Argument);
 	uint8 OptimizedCall_RefArg_ByteReturn(UObject* Object, void* Argument);
 
-	//WILL-FIX
+	//WILL-EDIT
 	virtual void RuntimeCallFunction(UObject* Object, FFrame& Stack, RESULT_DECL);
 	virtual void RuntimeCallEvent(UObject* Object, void* Parms);
 	virtual UFunction* GetRuntimeValidateFunction();
+	//END-WILL
 
 	static UASFunction* AllocateFunctionFor(UClass* InClass, FName ObjectName, TSharedPtr<FAngelscriptFunctionDesc> FunctionDesc);
 };

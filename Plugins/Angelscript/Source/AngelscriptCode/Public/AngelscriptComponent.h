@@ -7,10 +7,6 @@
 #include "Components/ActorComponent.h"
 #include "AngelscriptComponent.generated.h"
 
-DECLARE_MULTICAST_DELEGATE(FBeginPlayComp);
-DECLARE_MULTICAST_DELEGATE_OneParam(FTickComp, float);
-DECLARE_MULTICAST_DELEGATE_TwoParams(FAsyncTickComp, float, float);
-DECLARE_MULTICAST_DELEGATE_OneParam(FEndPlayComp, EEndPlayReason::Type);
 
 UCLASS()
 class ANGELSCRIPTCODE_API UAngelscriptComponent : public UActorComponent

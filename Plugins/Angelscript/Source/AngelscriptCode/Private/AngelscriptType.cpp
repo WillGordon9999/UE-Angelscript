@@ -63,23 +63,15 @@ void FAngelscriptType::Register(TSharedRef<FAngelscriptType> Type)
 	Database.RegisteredTypes.Add(Type);
 
 	FString AngelscriptName = Type->GetAngelscriptTypeName();
-	//WILL-EDIT
-	//if (AngelscriptName == TEXT("UObject") || AngelscriptName == TEXT("Object"))
-	//	UE_LOG(Angelscript, Log, TEXT("Object Confirmed"), *AngelscriptName);
-	//
-	//if (AngelscriptName == TEXT("AActor") || AngelscriptName == TEXT("Actor"))
-	//	UE_LOG(Angelscript, Log, TEXT("Actor Confirmed"), *AngelscriptName);
-	//
-	//if (AngelscriptName == TEXT("UActorComponent") || AngelscriptName == TEXT("ActorComponent"))
-	//	UE_LOG(Angelscript, Log, TEXT("Actor Comp Confirmed"), *AngelscriptName);	
-
+	
 	if (!Database.TypesByAngelscriptName.Contains(AngelscriptName))
 	{
 		Database.TypesByAngelscriptName.Add(AngelscriptName, Type);
 	}
 	else
 	{
-		UE_LOG(Angelscript, Log, TEXT("Duplicate"), *AngelscriptName);
+		//WILL-EDIT
+		UE_LOG(Angelscript, Log, TEXT("Duplicate"), *AngelscriptName);		
 		//UE_LOG(Angelscript, Error, TEXT("Angelscript type %s already exists!"), *AngelscriptName);
 		//ensure(false);
 		//return;
@@ -264,11 +256,11 @@ FAngelscriptTypeUsage FAngelscriptTypeUsage::FromProperty(FProperty* Property)
 		Usage.Type = FAngelscriptType::GetByProperty(Property, false);
 	}
 
-	//if (Property->HasAnyPropertyFlags(CPF_ConstParm | CPF_ImplementationConstRef))
+	//WILL-EDIT	
 	if (Property->HasAnyPropertyFlags(CPF_ConstParm))
 		Usage.bIsConst = true;
 
-	//if (Property->HasAnyPropertyFlags(CPF_ReferenceParm | CPF_ImplementationNonConstRef))
+	//WILL-EDIT	
 	if (Property->HasAnyPropertyFlags(CPF_ReferenceParm))
 		Usage.bIsReference = true;
 

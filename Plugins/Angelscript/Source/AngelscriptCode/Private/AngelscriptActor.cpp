@@ -16,8 +16,8 @@ void AAngelscriptActor::BeginPlay()
 {
 	Super::BeginPlay();
 
-	if (OnBeginPlayFunc.IsBound())
-		OnBeginPlayFunc.Broadcast();
+	//if (OnBeginPlayFunc.IsBound())
+	//	OnBeginPlayFunc.Broadcast();
 
 }
 
@@ -26,26 +26,26 @@ void AAngelscriptActor::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	if (OnTickFunc.IsBound())
-		OnTickFunc.Broadcast(DeltaTime);
+	//if (OnTickFunc.IsBound())
+	//	OnTickFunc.Broadcast(DeltaTime);
 }
 
 void AAngelscriptActor::AsyncPhysicsTickActor(float DeltaTime, float SimTime)
 {
-	if (OnAsyncTickFunc.IsBound())
-		OnAsyncTickFunc.Broadcast(DeltaTime, SimTime);
+	//if (OnAsyncTickFunc.IsBound())
+	//	OnAsyncTickFunc.Broadcast(DeltaTime, SimTime);
 }
 
 void AAngelscriptActor::OnActorBeginOverlap(TObjectPtr<AActor> OtherActor)
 {
-	if (OnActorBeginOverlapFunc.IsBound())
-		OnActorBeginOverlapFunc.Broadcast(OtherActor);
+	//if (OnActorBeginOverlapFunc.IsBound())
+	//	OnActorBeginOverlapFunc.Broadcast(OtherActor);
 }
 
 void AAngelscriptActor::OnActorEndOverlap(TObjectPtr<AActor> OtherActor)
 {
-	if (OnActorEndOverlapFunc.IsBound())
-		OnActorEndOverlapFunc.Broadcast(OtherActor);
+	//if (OnActorEndOverlapFunc.IsBound())
+	//	OnActorEndOverlapFunc.Broadcast(OtherActor);
 }
 
 //void AAngelscriptActor::OnActorHit(TObjectPtr<UPrimitiveComponent> MyComp, TObjectPtr<AActor> Other, TObjectPtr<UPrimitiveComponent> OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, FHitResult Hit)
