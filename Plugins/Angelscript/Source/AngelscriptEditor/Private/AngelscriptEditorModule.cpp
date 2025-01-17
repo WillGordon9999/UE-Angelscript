@@ -1129,11 +1129,18 @@ void FAngelscriptEditorModule::GenerateSourceFilesV2(FString NewModuleName, TArr
 
 	for (FString Module : ModuleList)
 	{
+		Classes.Empty(); //Ensure that the list is cleared to avoid repeats if lookups fail
+
 		if (!bIsEditor)
 		{
 			if (TArray<TObjectPtr<UClass>>* list = FAngelscriptBinds::RuntimeClassDB.Find(Module))
 			{
 				Classes = *list;
+			}
+
+			else
+			{
+				UE_LOG(Angelscript, Log, TEXT("No new list"));
 			}
 		}
 		else
@@ -1141,6 +1148,11 @@ void FAngelscriptEditorModule::GenerateSourceFilesV2(FString NewModuleName, TArr
 			if (TArray<TObjectPtr<UClass>>* list = FAngelscriptBinds::EditorClassDB.Find(Module))
 			{
 				Classes = *list;
+			}
+
+			else
+			{
+				UE_LOG(Angelscript, Log, TEXT("No new list"));
 			}
 		}
 
@@ -1198,7 +1210,7 @@ void FAngelscriptEditorModule::GenerateSourceFilesV2(FString NewModuleName, TArr
 				FFileHelper::SaveStringArrayToFile(CPPFile, *NewCPPDir);
 				BindFunctionNames.Add(BindFunction);
 			}
-		}
+		}		
 	}
 
 	for (FString str : BindFunctionNames)
