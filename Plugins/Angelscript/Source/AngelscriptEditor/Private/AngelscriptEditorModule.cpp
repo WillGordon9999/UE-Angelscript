@@ -861,7 +861,8 @@ void FAngelscriptEditorModule::GenerateBindDatabases()
 		if (ClassName.Contains("UDEPRECATED", ESearchCase::CaseSensitive))
 			continue;
 
-		if (Name.Contains("Angelscript"))
+		//if (Name.Contains("Angelscript"))
+		if (ClassName.Contains("Angelscript"))
 			continue;
 		
 		//Should be able to remove the Minimal restriction soon
