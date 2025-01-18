@@ -1163,14 +1163,17 @@ void FAngelscriptEditorModule::GenerateSourceFilesV2(FString NewModuleName, TArr
 
 		for (auto Class : Classes)
 		{
-			TArray<FString> CPPFile;
+			TArray<FString> NewCPPFile;
+			TArray<FString> CPPFuncs;
 
 			FString HeaderPath = FString();
 			bool headerFound = FSourceCodeNavigation::FindClassHeaderPath(Class, HeaderPath);
 			if (!headerFound) continue;
 
-			CPPFile.Add("#include \"" + NewModuleName + "Module.h\"");
-			CPPFile.Add("#include \"AngelscriptBinds.h\"");			
+			//CPPFile.Add("#include \"" + NewModuleName + "Module.h\"");
+			//CPPFile.Add("#include \"AngelscriptBinds.h\"");
+			NewCPPFile.Add("#include \"" + NewModuleName + "Module.h\"");
+			NewCPPFile.Add("#include \"AngelscriptBinds.h\"");
 			FString ModuleName;
 			FString HeaderInclude = HeaderPath;
 			FSourceCodeNavigation::FindClassModuleName(Class, ModuleName);
@@ -1192,22 +1195,24 @@ void FAngelscriptEditorModule::GenerateSourceFilesV2(FString NewModuleName, TArr
 			//Include += HeaderPath;
 			Include += '"';
 
-			CPPFile.Add(Include);
+			//CPPFile.Add(Include);
+			NewCPPFile.Add(Include);
 			
 			FString BindFunction = "Bind_" + Class->GetName();
 			
-			CPPFile.Add("void " + ModuleClass + "::" + BindFunction + "()");
-			CPPFile.Add("{");
+			CPPFuncs.Add("void " + ModuleClass + "::" + BindFunction + "()");
+			CPPFuncs.Add("{");
 
-			int32 emptyCheck = CPPFile.Num();
+			int32 emptyCheck = CPPFuncs.Num();
 
-			GenerateFunctionEntries(Class, CPPFile, HeaderPath, Module);			
+			GenerateFunctionEntries(Class, CPPFuncs, NewCPPFile, HeaderPath, Module);			
 
-			if (CPPFile.Num() > emptyCheck) //Don't save the file if no functions were added
+			if (CPPFuncs.Num() > emptyCheck) //Don't save the file if no functions were added
 			{
-				CPPFile.Add("}");
+				CPPFuncs.Add("}");
 				FString NewCPPDir = CPPDir + BindFunction + ".cpp";
-				FFileHelper::SaveStringArrayToFile(CPPFile, *NewCPPDir);
+				NewCPPFile.Append(CPPFuncs.GetData(), CPPFuncs.Num());
+				FFileHelper::SaveStringArrayToFile(NewCPPFile, *NewCPPDir);
 				BindFunctionNames.Add(BindFunction);
 			}
 		}		
@@ -1340,7 +1345,7 @@ void FAngelscriptEditorModule::GenerateSourceFiles(FString NewModuleName, TArray
 
 	for (int i = 0; i < Classes.Num(); i++)
 	{		
-		GenerateFunctionEntries(Classes[i], CPPFile, Headers[i], ModuleNames[i]);
+		//GenerateFunctionEntries(Classes[i], CPPFile, Headers[i], ModuleNames[i]); //Old signature
 		//CPPFile.Add("\n");
 	}
 
@@ -1353,7 +1358,7 @@ void FAngelscriptEditorModule::GenerateSourceFiles(FString NewModuleName, TArray
 	CPPFile.Add(FString("void ") + ModuleClass + "::ShutdownModule()\n{\n}\n");
 }
 
-void FAngelscriptEditorModule::GenerateFunctionEntries(UClass* Class, TArray<FString>& File, FString HeaderPath, FString ModuleName)
+void FAngelscriptEditorModule::GenerateFunctionEntries(UClass* Class, TArray<FString>& File, TArray<FString>& CurrentIncludes, FString HeaderPath, FString ModuleName)
 {
 	FString ClassName = Class->GetPrefixCPP();
 	ClassName += Class->GetName();
@@ -1684,7 +1689,19 @@ void FAngelscriptEditorModule::GenerateFunctionEntries(UClass* Class, TArray<FSt
 			if (retProp->HasAnyPropertyFlags(CPF_ReferenceParm))
 				ret += "&";
 
-			def += ret + " ";	
+			def += ret + " ";
+
+			//Insert Include add check here
+			
+			if (Cast<FObjectProperty>(retProp) || Cast<FEnumProperty>(retProp))
+			{
+				FString NewHeaderPath;								
+				if (FSourceCodeNavigation::FindClassHeaderPath(retProp->GetOwnerUField(), NewHeaderPath))
+				{
+					FString NewInclude = "#include " + NewHeaderPath;
+					CurrentIncludes.Add(NewInclude);
+				}
+			}
 		}
 
 		else
@@ -1723,12 +1740,23 @@ void FAngelscriptEditorModule::GenerateFunctionEntries(UClass* Class, TArray<FSt
 			FString type = prop->GetCPPType(&ExtendedType) + ExtendedType;// +" " + prop->GetName();
 			argStrs.Add(type);
 			args += type;
-
+			
 			if (prop->HasAnyPropertyFlags(CPF_ReferenceParm | CPF_OutParm))
 				args += "&";
 
 			args += " " + prop->GetName();
 			argNames.Add(prop->GetName());
+
+			if (Cast<FObjectProperty>(prop) || Cast<FEnumProperty>(prop))
+			{
+				FString NewHeaderPath;
+				if (FSourceCodeNavigation::FindClassHeaderPath(prop->GetOwnerUField(), NewHeaderPath))
+				{
+					FString NewInclude = "#include " + NewHeaderPath;
+					CurrentIncludes.Add(NewInclude);
+				}
+			}
+
 		}
 
 		args += ")";

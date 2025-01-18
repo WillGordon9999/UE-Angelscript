@@ -19,7 +19,7 @@ public:
 	static void GenerateBuildFile(FString ModuleName, TArray<FString> PublicDependencies, TArray<FString> PrivateDependencies, TArray<FString>& OutBuildFile, bool removeFirst = true);	
 	static void GenerateSourceFiles(FString NewModuleName, TArray<FString> IncludeList, bool bIsEditor, TArray<FString>& Header, TArray<FString>& CPPFile);
 	static void GenerateSourceFilesV2(FString NewModuleName, TArray<FString> ModuleList, bool bIsEditor, TArray<FString>& Header, FString BaseCPPDir);
-	static void GenerateFunctionEntries(UClass* Class, TArray<FString>& File, FString HeaderPath, FString ModuleName);
+	static void GenerateFunctionEntries(UClass* Class, TArray<FString>& File, TArray<FString>& CurrentIncludes, FString HeaderPath, FString ModuleName);
 	static void GenerateFunctionEntriesOld2(UClass* Class, TArray<FString>& File, FString HeaderPath, FString ModuleName);
 	static void GenerateFunctionEntriesOld(UClass* Class, TArray<FString>& File, FString HeaderPath, FString ModuleName);
 	static bool FindFunctionDefinitionLine(const FString& FunctionSymbolName, const FString& FunctionModuleName, uint32& OutLineNumber, FString& OutSourceFile);
