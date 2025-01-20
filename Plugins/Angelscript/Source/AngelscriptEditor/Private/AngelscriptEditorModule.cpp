@@ -1165,6 +1165,7 @@ void FAngelscriptEditorModule::GenerateSourceFilesV2(FString NewModuleName, TArr
 		{
 			TArray<FString> NewCPPFile;
 			TArray<FString> CPPFuncs;
+			TSet<FString> CurrentIncludes;
 
 			FString HeaderPath = FString();
 			bool headerFound = FSourceCodeNavigation::FindClassHeaderPath(Class, HeaderPath);
@@ -1177,7 +1178,7 @@ void FAngelscriptEditorModule::GenerateSourceFilesV2(FString NewModuleName, TArr
 			FString ModuleName;
 			FString HeaderInclude = HeaderPath;
 			FSourceCodeNavigation::FindClassModuleName(Class, ModuleName);
-			
+						
 			int32 pubIndex = HeaderPath.Find("Public/", ESearchCase::IgnoreCase, ESearchDir::Type::FromEnd);
 			int32 privIndex = HeaderPath.Find("Private/", ESearchCase::IgnoreCase, ESearchDir::Type::FromEnd);
 			int32 classesIndex = HeaderPath.Find("Classes/", ESearchCase::IgnoreCase, ESearchDir::Type::FromEnd);
@@ -1195,9 +1196,13 @@ void FAngelscriptEditorModule::GenerateSourceFilesV2(FString NewModuleName, TArr
 			//Include += HeaderPath;
 			Include += '"';
 
-			//CPPFile.Add(Include);
-			NewCPPFile.Add(Include);
-			
+			if (!CurrentIncludes.Contains(HeaderPath))
+			{
+				CurrentIncludes.Add(HeaderPath);
+				//CPPFile.Add(Include);
+				NewCPPFile.Add(Include);
+			}
+
 			FString BindFunction = "Bind_" + Class->GetName();
 			
 			CPPFuncs.Add("void " + ModuleClass + "::" + BindFunction + "()");
@@ -1205,7 +1210,7 @@ void FAngelscriptEditorModule::GenerateSourceFilesV2(FString NewModuleName, TArr
 
 			int32 emptyCheck = CPPFuncs.Num();
 
-			GenerateFunctionEntries(Class, CPPFuncs, NewCPPFile, HeaderPath, Module);			
+			GenerateFunctionEntries(Class, CPPFuncs, NewCPPFile, CurrentIncludes, HeaderPath, Module);			
 
 			if (CPPFuncs.Num() > emptyCheck) //Don't save the file if no functions were added
 			{
@@ -1358,7 +1363,7 @@ void FAngelscriptEditorModule::GenerateSourceFiles(FString NewModuleName, TArray
 	CPPFile.Add(FString("void ") + ModuleClass + "::ShutdownModule()\n{\n}\n");
 }
 
-void FAngelscriptEditorModule::GenerateFunctionEntries(UClass* Class, TArray<FString>& File, TArray<FString>& CurrentIncludes, FString HeaderPath, FString ModuleName)
+void FAngelscriptEditorModule::GenerateFunctionEntries(UClass* Class, TArray<FString>& File, TArray<FString>& CurrentIncludes, TSet<FString>& IncludeSet, FString HeaderPath, FString ModuleName)
 {
 	FString ClassName = Class->GetPrefixCPP();
 	ClassName += Class->GetName();
@@ -1647,10 +1652,6 @@ void FAngelscriptEditorModule::GenerateFunctionEntries(UClass* Class, TArray<FSt
 				TTuple<FString, FString> entry = TTuple<FString, FString>(str, str2);
 				funcDefs.Add(entry);
 				break;
-
-			
-
-				
 			}
 		}
 	}
@@ -1691,15 +1692,45 @@ void FAngelscriptEditorModule::GenerateFunctionEntries(UClass* Class, TArray<FSt
 
 			def += ret + " ";
 
-			//Insert Include add check here
-			
-			if (Cast<FObjectProperty>(retProp) || Cast<FEnumProperty>(retProp))
+			//Insert Include add check here			
+			//FObjectProperty* obj = Cast<FObjectProperty>(retProp);
+			//FStructProperty* str = Cast<FStructProperty>(retProp);
+			//FEnumProperty* en = Cast<FEnumProperty>(retProp);
+			bool obj = retProp->IsA(FObjectProperty::StaticClass());
+			bool str = retProp->IsA(FStructProperty::StaticClass());
+			bool enu = retProp->IsA(FEnumProperty::StaticClass());
+			if (obj || str || enu)			
 			{
-				FString NewHeaderPath;								
-				if (FSourceCodeNavigation::FindClassHeaderPath(retProp->GetOwnerUField(), NewHeaderPath))
+				FString NewHeaderPath;
+				UClass* parType = nullptr;
+
+				TObjectPtr<UField> Current = Function->Children;
+				//for (TFieldIterator<TObjectPtr<UProperty>> It(Function); It; ++It)
+				while (Current != nullptr)
 				{
-					FString NewInclude = "#include " + NewHeaderPath;
-					CurrentIncludes.Add(NewInclude);
+					//TObjectPtr<UProperty> Current = **It;					
+					if (Current.GetName() == retProp->GetName())
+					{
+						parType = Current.GetClass();
+						break;
+					}
+
+					Current = Current->Next;
+				}
+
+				//UClass* parType = retProp->GetOwnerUField()->GetClass();
+				if (parType != nullptr)
+				{
+					if (FSourceCodeNavigation::FindClassHeaderPath(parType, NewHeaderPath))
+					{
+						FString NewInclude = "#include " + '"' + NewHeaderPath + '"';
+
+						if (!IncludeSet.Contains(NewHeaderPath))
+						{
+							CurrentIncludes.Add(NewInclude);
+							IncludeSet.Add(NewHeaderPath);
+						}
+					}
 				}
 			}
 		}
@@ -1747,13 +1778,25 @@ void FAngelscriptEditorModule::GenerateFunctionEntries(UClass* Class, TArray<FSt
 			args += " " + prop->GetName();
 			argNames.Add(prop->GetName());
 
-			if (Cast<FObjectProperty>(prop) || Cast<FEnumProperty>(prop))
+			//FObjectProperty* obj = Cast<FObjectProperty>(prop);
+			//FStructProperty* str = Cast<FStructProperty>(prop);
+			//FEnumProperty* en = Cast<FEnumProperty>(prop);
+			bool obj = prop->IsA(FObjectProperty::StaticClass());
+			bool str = prop->IsA(FStructProperty::StaticClass());
+			bool enu = prop->IsA(FEnumProperty::StaticClass());
+			if (obj || str || enu)			
 			{
 				FString NewHeaderPath;
-				if (FSourceCodeNavigation::FindClassHeaderPath(prop->GetOwnerUField(), NewHeaderPath))
-				{
-					FString NewInclude = "#include " + NewHeaderPath;
-					CurrentIncludes.Add(NewInclude);
+				UClass* parType = prop->GetOwnerUField()->GetClass();
+				//prop->GetClass()->GetDefaultObject()->
+				if (FSourceCodeNavigation::FindClassHeaderPath(parType, NewHeaderPath))
+				{					
+					if (!IncludeSet.Contains(NewHeaderPath))
+					{
+						FString NewInclude = "#include " + '"' + NewHeaderPath + '"';
+						CurrentIncludes.Add(NewInclude);
+						IncludeSet.Add(NewHeaderPath);
+					}
 				}
 			}
 
