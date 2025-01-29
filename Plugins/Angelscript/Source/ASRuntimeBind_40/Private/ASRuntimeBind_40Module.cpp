@@ -10,9 +10,9 @@ void FASRuntimeBind_40Module::StartupModule()
 		(int32)FAngelscriptBinds::EOrder::Late,
 		[]()
 		{
-			Bind_DatasmithImportedSequencesActor();
 			Bind_GLTFExportOptions();
 			Bind_GLTFProxyOptions();
+			Bind_DatasmithImportedSequencesActor();
 			Bind_VoipListenerSynthComponent();
 			Bind_MockDataMeshTrackerComponent();
 			Bind_MRMeshComponent();
@@ -28,8 +28,6 @@ void FASRuntimeBind_40Module::StartupModule()
 			Bind_EnhancedInputComponent();
 			Bind_EnhancedInputWorldSubsystem();
 			Bind_InputMappingContext();
-			Bind_TakeMetaData();
-			Bind_TakeRecorderSources();
 		}
 	);
 

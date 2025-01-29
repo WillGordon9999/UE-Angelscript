@@ -24,8 +24,8 @@ namespace UnrealBuildTool.Rules
 			(
 				new string[]
 				{
-					"DatasmithContent",
 					"GLTFExporter",
+					"DatasmithContent",
 					"OnlineSubsystemUtils",
 					"MRMesh",
 					"FunctionalTesting",
@@ -33,7 +33,7 @@ namespace UnrealBuildTool.Rules
 					"AndroidFileServer",
 					"BPTestPlugin",
 					"EnhancedInput",
-					"TakesCore",
+					"StructUtilsEngine",
 				}
 			);
 		}
