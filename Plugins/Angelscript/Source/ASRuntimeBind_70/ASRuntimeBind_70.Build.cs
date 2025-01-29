@@ -25,15 +25,15 @@ namespace UnrealBuildTool.Rules
 				new string[]
 				{
 					"CableComponent",
+					"ModularGameplay",
+					"GameFeatures",
 					"CustomMeshComponent",
+					"GameplayAbilities",
+					"GameplayStateTreeModule",
 					"LocationServicesBPLibrary",
 					"MetasoundFrontend",
 					"MetasoundEngine",
 					"AdvancedWidgets",
-					"AudioWidgets",
-					"ProceduralMeshComponent",
-					"ResonanceAudio",
-					"Synthesis",
 				}
 			);
 		}
