@@ -18,12 +18,12 @@ void FASEditorBind_20Module::StartupModule()
 			Bind_UpgradeNiagaraScriptResults();
 			Bind_NiagaraPythonModule();
 			Bind_NiagaraPythonEmitter();
+			Bind_MetaSoundEditorSubsystem();
 			Bind_EditorUtilityLibrary();
 			Bind_EditorUtilitySubsystem();
 			Bind_EditorValidatorSubsystem();
-			Bind_MetaSoundEditorSubsystem();
+			Bind_SequencerCurveEditorObject();
 			Bind_SkeletalMeshEditorSubsystem();
-			Bind_StaticMeshEditorSubsystem();
 		}
 	);
 

@@ -16,10 +16,10 @@ public:
 	static void Bind_UpgradeNiagaraScriptResults();
 	static void Bind_NiagaraPythonModule();
 	static void Bind_NiagaraPythonEmitter();
+	static void Bind_MetaSoundEditorSubsystem();
 	static void Bind_EditorUtilityLibrary();
 	static void Bind_EditorUtilitySubsystem();
 	static void Bind_EditorValidatorSubsystem();
-	static void Bind_MetaSoundEditorSubsystem();
+	static void Bind_SequencerCurveEditorObject();
 	static void Bind_SkeletalMeshEditorSubsystem();
-	static void Bind_StaticMeshEditorSubsystem();
 };

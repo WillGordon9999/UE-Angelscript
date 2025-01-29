@@ -30,11 +30,11 @@ namespace UnrealBuildTool.Rules
 					"InputEditor",
 					"RigVMEditor",
 					"NiagaraEditor",
+					"MetasoundEditor",
 					"Blutility",
 					"DataValidation",
-					"MetasoundEditor",
+					"SequencerScriptingEditor",
 					"SkeletalMeshEditor",
-					"StaticMeshEditor",
 				}
 			);
 		}
