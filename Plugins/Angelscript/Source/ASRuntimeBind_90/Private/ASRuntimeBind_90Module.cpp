@@ -10,11 +10,14 @@ void FASRuntimeBind_90Module::StartupModule()
 		(int32)FAngelscriptBinds::EOrder::Late,
 		[]()
 		{
+			Bind_DynamicMeshComponent();
+			Bind_DynamicMeshActor();
+			Bind_DynamicMesh();
+			Bind_DynamicMeshPool();
 			Bind_GeometryCacheActor();
 			Bind_GeometryCacheComponent();
-			Bind_InterchangeImportTestPlan();
+			Bind_MotionWarpingComponent();
 			Bind_AssetTagsSubsystem();
-			Bind_AudioCapture();
 		}
 	);
 
