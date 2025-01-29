@@ -10,12 +10,11 @@ void FASRuntimeBind_60Module::StartupModule()
 		(int32)FAngelscriptBinds::EOrder::Late,
 		[]()
 		{
+			Bind_CacheTrackRecorder();
+			Bind_AnimNotifyState_TimedNiagaraEffect();
+			Bind_AnimNotifyState_TimedNiagaraEffectAdvanced();
+			Bind_AnimNotify_PlayNiagaraEffect();
 			Bind_AnimationSharingManager();
-			Bind_TemplateSequenceActor();
-			Bind_CameraAnimationCameraModifier();
-			Bind_GameplayCameraComponent();
-			Bind_GameplayCameraSystemActor();
-			Bind_GameplayCamerasSubsystem();
 			Bind_InterchangeAnimationTrackSetNode();
 			Bind_InterchangeAnimationTrackSetInstanceNode();
 			Bind_InterchangeAnimationTrackNode();
@@ -68,12 +67,6 @@ void FASRuntimeBind_60Module::StartupModule()
 			Bind_InterchangeStaticMeshFactoryNode();
 			Bind_InterchangeStaticMeshLodDataNode();
 			Bind_InterchangePipelineMeshesUtilities();
-			Bind_PaperFlipbook();
-			Bind_PaperFlipbookComponent();
-			Bind_PaperGroupedSpriteComponent();
-			Bind_PaperSpriteComponent();
-			Bind_PaperTileMapComponent();
-			Bind_PaperTerrainComponent();
 			Bind_ActorSequenceComponent();
 			Bind_ConstantQAnalyzer();
 			Bind_ConstantQNRT();

@@ -24,16 +24,16 @@ namespace UnrealBuildTool.Rules
 			(
 				new string[]
 				{
+					"CacheTrackRecorder",
+					"NiagaraAnimNotifies",
 					"AnimationSharing",
-					"TemplateSequence",
-					"GameplayCameras",
 					"InterchangeNodes",
 					"InterchangeFactoryNodes",
 					"VariantManager",
 					"InterchangePipelines",
-					"Paper2D",
 					"ActorSequence",
 					"AudioSynesthesia",
+					"DataRegistry",
 				}
 			);
 		}

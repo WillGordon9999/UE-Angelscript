@@ -8,12 +8,11 @@ class FASRuntimeBind_60Module : public FDefaultModuleImpl
 public:
 	virtual void StartupModule() override;
 	virtual void ShutdownModule() override;
+	static void Bind_CacheTrackRecorder();
+	static void Bind_AnimNotifyState_TimedNiagaraEffect();
+	static void Bind_AnimNotifyState_TimedNiagaraEffectAdvanced();
+	static void Bind_AnimNotify_PlayNiagaraEffect();
 	static void Bind_AnimationSharingManager();
-	static void Bind_TemplateSequenceActor();
-	static void Bind_CameraAnimationCameraModifier();
-	static void Bind_GameplayCameraComponent();
-	static void Bind_GameplayCameraSystemActor();
-	static void Bind_GameplayCamerasSubsystem();
 	static void Bind_InterchangeAnimationTrackSetNode();
 	static void Bind_InterchangeAnimationTrackSetInstanceNode();
 	static void Bind_InterchangeAnimationTrackNode();
@@ -66,12 +65,6 @@ public:
 	static void Bind_InterchangeStaticMeshFactoryNode();
 	static void Bind_InterchangeStaticMeshLodDataNode();
 	static void Bind_InterchangePipelineMeshesUtilities();
-	static void Bind_PaperFlipbook();
-	static void Bind_PaperFlipbookComponent();
-	static void Bind_PaperGroupedSpriteComponent();
-	static void Bind_PaperSpriteComponent();
-	static void Bind_PaperTileMapComponent();
-	static void Bind_PaperTerrainComponent();
 	static void Bind_ActorSequenceComponent();
 	static void Bind_ConstantQAnalyzer();
 	static void Bind_ConstantQNRT();
