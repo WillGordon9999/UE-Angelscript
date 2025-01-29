@@ -24,16 +24,16 @@ namespace UnrealBuildTool.Rules
 			(
 				new string[]
 				{
+					"AudioWidgets",
+					"ProceduralMeshComponent",
+					"ResonanceAudio",
+					"Synthesis",
+					"TemplateSequence",
+					"GameplayCameras",
+					"Paper2D",
+					"AnimNext",
+					"GameplayBehaviorsModule",
 					"AngelPortV2",
-					"GeometryFramework",
-					"TraceUtilities",
-					"AutomationUtils",
-					"ModelingComponents",
-					"LocalizableMessageBlueprint",
-					"SkeletalMeshModifiers",
-					"AnimationModifierLibrary",
-					"ImgMedia",
-					"MediaPlate",
 				}
 			);
 		}
