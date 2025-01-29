@@ -31,7 +31,8 @@ class UTestComponent : UAngelscriptComponent
         //if (Character == nullptr) Print("Character null", 5.0f);
         AController control = Character.GetController().Get();
         Controller = Cast<APlayerController>(control);
-        KeyCode = FString("F");
+        KeyCode = FString("F");  
+                      
         
         OrigScale = Character.GetActorScale3D();
         TargetScale = OrigScale;        
@@ -61,8 +62,7 @@ class UTestComponent : UAngelscriptComponent
         FVector CurrentScale = Character.GetActorScale3D();                    
         float CurrentArmLength = ArmComp.TargetArmLength;
         float CurrentWalkSpeed = MoveComp.MaxWalkSpeed;
-        
-
+                
         if (Controller.IsInputKeyDown(FKey(FName(KeyCode))))
         {
             if (!isPressed)
