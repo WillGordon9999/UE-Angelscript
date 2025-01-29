@@ -25,10 +25,11 @@ namespace UnrealBuildTool.Rules
 			(
 				new string[]
 				{
+					"StaticMeshEditor",
 					"EditorScriptingUtilities",
-					"SequencerScriptingEditor",
 					"LevelSequenceEditor",
 					"ControlRigEditor",
+					"AngelscriptEditor",
 					"IKRigEditor",
 				}
 			);
