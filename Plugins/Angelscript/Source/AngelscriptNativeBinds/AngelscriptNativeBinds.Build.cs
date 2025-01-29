@@ -29,11 +29,11 @@ namespace UnrealBuildTool.Rules
 					"ASRuntimeBind_20",
 					"ASRuntimeBind_30",
 					"ASRuntimeBind_40",
-					//"ASRuntimeBind_50",
-                    ////"ASRuntimeBind_60",
-                    ////"ASRuntimeBind_70",
+					"ASRuntimeBind_50",
+                    "ASRuntimeBind_60",
+                    "ASRuntimeBind_70",
                     "ASRuntimeBind_80",
-                    //"ASRuntimeBind_90",
+                    "ASRuntimeBind_90",
                 }
 			);
 		}
