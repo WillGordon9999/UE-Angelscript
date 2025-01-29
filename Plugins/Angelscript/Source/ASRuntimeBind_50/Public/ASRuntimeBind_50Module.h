@@ -8,8 +8,6 @@ class FASRuntimeBind_50Module : public FDefaultModuleImpl
 public:
 	virtual void StartupModule() override;
 	virtual void ShutdownModule() override;
-	static void Bind_TakeRecorder();
-	static void Bind_TakeRecorderPanel();
 	static void Bind_RigVMUserWorkflowOptions();
 	static void Bind_RigVMBlueprint();
 	static void Bind_RigVMCompiler();
@@ -38,9 +36,9 @@ public:
 	static void Bind_RigHierarchyController();
 	static void Bind_ControlRigPoseAsset();
 	static void Bind_ControlRigWorkflowOptions();
-	static void Bind_ControlRigBlueprint();
 	static void Bind_IKRigComponent();
 	static void Bind_IKRetargeter();
+	static void Bind_ControlRigBlueprint();
 	static void Bind_NiagaraDataChannelReader();
 	static void Bind_NiagaraDataChannelWriter();
 	static void Bind_NiagaraActor();
@@ -50,8 +48,8 @@ public:
 	static void Bind_NiagaraParameterCollectionInstance();
 	static void Bind_NiagaraPreviewGrid();
 	static void Bind_NiagaraSimCache();
-	static void Bind_AnimNotifyState_TimedNiagaraEffect();
-	static void Bind_AnimNotifyState_TimedNiagaraEffectAdvanced();
-	static void Bind_AnimNotify_PlayNiagaraEffect();
-	static void Bind_CacheTrackRecorder();
+	static void Bind_TakeMetaData();
+	static void Bind_TakeRecorderSources();
+	static void Bind_TakeRecorder();
+	static void Bind_TakeRecorderPanel();
 };

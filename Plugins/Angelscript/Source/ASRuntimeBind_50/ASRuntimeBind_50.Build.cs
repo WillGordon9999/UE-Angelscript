@@ -24,16 +24,16 @@ namespace UnrealBuildTool.Rules
 			(
 				new string[]
 				{
-					"TakeRecorder",
-					"StructUtilsEngine",
 					"RigVM",
 					"RigVMDeveloper",
 					"ControlRig",
-					"ControlRigDeveloper",
+					"AnimationLocomotionLibraryRuntime",
+					"AnimationWarpingRuntime",
 					"IKRig",
+					"ControlRigDeveloper",
 					"Niagara",
-					"NiagaraAnimNotifies",
-					"CacheTrackRecorder",
+					"TakesCore",
+					"TakeRecorder",
 				}
 			);
 		}

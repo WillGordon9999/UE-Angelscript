@@ -1,6 +1,6 @@
 #include "ASRuntimeBind_50Module.h"
 #include "AngelscriptBinds.h"
-#include "../../../Engine/Plugins/VirtualProduction/Takes/Source/TakesCore/Public/TakeMetaData.h"
+#include "TakeMetaData.h"
 void FASRuntimeBind_50Module::Bind_TakeMetaData()
 {
 			FAngelscriptBinds::AddFunctionEntry(UTakeMetaData::StaticClass(), "GenerateAssetPath", { ERASE_METHOD_PTR(UTakeMetaData, GenerateAssetPath, (const FString&) const, ERASE_ARGUMENT_PACK(FString )) } );

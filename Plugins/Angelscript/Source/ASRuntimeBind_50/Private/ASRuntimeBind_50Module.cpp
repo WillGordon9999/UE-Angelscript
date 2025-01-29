@@ -10,8 +10,6 @@ void FASRuntimeBind_50Module::StartupModule()
 		(int32)FAngelscriptBinds::EOrder::Late,
 		[]()
 		{
-			Bind_TakeRecorder();
-			Bind_TakeRecorderPanel();
 			Bind_RigVMUserWorkflowOptions();
 			Bind_RigVMBlueprint();
 			Bind_RigVMCompiler();
@@ -40,9 +38,9 @@ void FASRuntimeBind_50Module::StartupModule()
 			Bind_RigHierarchyController();
 			Bind_ControlRigPoseAsset();
 			Bind_ControlRigWorkflowOptions();
-			Bind_ControlRigBlueprint();
 			Bind_IKRigComponent();
 			Bind_IKRetargeter();
+			Bind_ControlRigBlueprint();
 			Bind_NiagaraDataChannelReader();
 			Bind_NiagaraDataChannelWriter();
 			Bind_NiagaraActor();
@@ -52,10 +50,10 @@ void FASRuntimeBind_50Module::StartupModule()
 			Bind_NiagaraParameterCollectionInstance();
 			Bind_NiagaraPreviewGrid();
 			Bind_NiagaraSimCache();
-			Bind_AnimNotifyState_TimedNiagaraEffect();
-			Bind_AnimNotifyState_TimedNiagaraEffectAdvanced();
-			Bind_AnimNotify_PlayNiagaraEffect();
-			Bind_CacheTrackRecorder();
+			Bind_TakeMetaData();
+			Bind_TakeRecorderSources();
+			Bind_TakeRecorder();
+			Bind_TakeRecorderPanel();
 		}
 	);
 

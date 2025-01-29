@@ -73,7 +73,7 @@ void FASRuntimeBind_50Module::Bind_RigHierarchyController()
 		bool, 
 		bool, 
 		bool), ERASE_ARGUMENT_PACK(TArray<FRigElementKey> )) } );
-			FAngelscriptBinds::AddFunctionEntry(URigHierarchyController::StaticClass(), "MirrorElements", { ERASE_METHOD_PTR(URigHierarchyController, MirrorElements, (TArray<FRigElementKey>,  FRigVMMirrorSettings,  bool,  bool,  bool), ERASE_ARGUMENT_PACK(TArray<FRigElementKey> )) } );
+			//FAngelscriptBinds::AddFunctionEntry(URigHierarchyController::StaticClass(), "MirrorElements", { ERASE_METHOD_PTR(URigHierarchyController, MirrorElements, (TArray<FRigElementKey>,  FRigVMMirrorSettings,  bool,  bool,  bool), ERASE_ARGUMENT_PACK(TArray<FRigElementKey> )) } );
 			FAngelscriptBinds::AddFunctionEntry(URigHierarchyController::StaticClass(), "RemoveAllParents", { ERASE_METHOD_PTR(URigHierarchyController, RemoveAllParents, (FRigElementKey,  bool,  bool,  bool), ERASE_ARGUMENT_PACK(bool )) } );
 			FAngelscriptBinds::AddFunctionEntry(URigHierarchyController::StaticClass(), "RemoveElement", { ERASE_METHOD_PTR(URigHierarchyController, RemoveElement, (FRigElementKey,  bool,  bool), ERASE_ARGUMENT_PACK(bool )) } );
 			FAngelscriptBinds::AddFunctionEntry(URigHierarchyController::StaticClass(), "RemoveParent", { ERASE_METHOD_PTR(URigHierarchyController, RemoveParent, (FRigElementKey,  FRigElementKey,  bool,  bool,  bool), ERASE_ARGUMENT_PACK(bool )) } );
