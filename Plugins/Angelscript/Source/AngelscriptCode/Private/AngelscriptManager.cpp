@@ -363,9 +363,14 @@ void FAngelscriptManager::Initialize_AnyThread()
 		FAngelscriptScopeTimer Timer(TEXT("load bind database"));
 		FAngelscriptBindDatabase::Get().Load(GetScriptRootDirectory() / TEXT("Binds.Cache"), bGeneratePrecompiledData);
 	}
-#endif
+#endif	
 	//WILL-EDIT
-	FAngelscriptBinds::LoadBindModules(FString(GetScriptRootDirectory() / "BindModules.Cache"));
+	TSharedPtr<IPlugin> plugin = IPluginManager::Get().FindPlugin("Angelscript");		
+
+	if (plugin)
+	{
+		FAngelscriptBinds::LoadBindModules(plugin->GetBaseDir() / "BindModules.Cache");
+	}
 
 	//WILL-EDIT: Load our auto-generated Bind Modules here
 	if (!FAngelscriptBinds::BindModuleNames.IsEmpty())
