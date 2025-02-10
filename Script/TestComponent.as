@@ -1,14 +1,18 @@
 class UTestComponent : UAngelscriptComponent
-{   
+{
+    UPROPERTY()
+    FVector SmallScale = FVector(0.3, 0.3, 0.3);
+    UPROPERTY()
+    float ScaleRate = 0.2;
+    UPROPERTY()
+    float CameraRate = 0.2;
+
     ACharacter Character;
     APlayerController Controller;
     //AController Controller;
     FString KeyCode;
     FVector TargetScale;
     FVector OrigScale;
-    FVector SmallScale = FVector(0.3, 0.3, 0.3);
-    float ScaleRate = 0.2;
-    float CameraRate = 0.2;
     bool isPressed = false;
     
     USpringArmComponent ArmComp;
