@@ -30,8 +30,7 @@ namespace UnrealBuildTool.Rules
 					"MRMesh",
 					"FunctionalTesting",
 					"ClothingSystemRuntimeNv",
-					"AndroidFileServer",
-					"BPTestPlugin",
+					"AndroidFileServer",					
 					"EnhancedInput",
 					"StructUtilsEngine",
 				}

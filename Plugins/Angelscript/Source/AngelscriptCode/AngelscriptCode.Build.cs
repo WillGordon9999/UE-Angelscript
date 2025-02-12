@@ -42,7 +42,8 @@ namespace UnrealBuildTool.Rules
 				"AssetRegistry",
 				"Projects",
 				"PhysicsCore",
-				"CoreOnline",				
+				"CoreOnline",
+				"EnhancedInput",
             });
 
 			if (Target.bBuildEditor)
