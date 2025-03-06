@@ -23,6 +23,7 @@
 TMap<UClass*, TMap<FString, FFuncEntry>> FAngelscriptBinds::ClassFuncMaps = TMap<UClass*, TMap<FString, FFuncEntry>>();
 TMap<FString, TArray<TObjectPtr<UClass>>> FAngelscriptBinds::RuntimeClassDB = TMap<FString, TArray<TObjectPtr<UClass>>>();
 TArray<FString> FAngelscriptBinds::BindModuleNames = TArray<FString>();
+TMap<UClass*, TSet<FString>> FAngelscriptBinds::SkipBinds = TMap<UClass*, TSet<FString>>();
 #if WITH_EDITOR
 TMap<FString, TArray<TObjectPtr<UClass>>> FAngelscriptBinds::EditorClassDB = TMap<FString, TArray<TObjectPtr<UClass>>>();
 #endif

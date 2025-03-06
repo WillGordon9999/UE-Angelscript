@@ -449,6 +449,9 @@ struct ANGELSCRIPTCODE_API FAngelscriptBinds
 #endif
 
 	static TMap<UClass*, TMap<FString, FFuncEntry>> ClassFuncMaps;
+	//It's really tempting to make this just a TSet with "ClassName FuncName"
+	//Only need to make sure it gets setup before Generate Binds can be called haha
+	static TMap<UClass*, TSet<FString>> SkipBinds; 
 	static TArray<FString> BindModuleNames;
 
 	static void AddFunctionEntry(UClass* Class, FString Name, FFuncEntry Entry)
@@ -466,6 +469,34 @@ struct ANGELSCRIPTCODE_API FAngelscriptBinds
 			ClassFuncMaps.Add(Class, TMap<FString, FFuncEntry>()).Add(Name, Entry);
 		}
 	}
+
+	static void SkipFunctionEntry(UClass* Class, FString Name)
+	{
+		if (SkipBinds.Contains(Class))
+		{
+			if (!SkipBinds[Class].Contains(Name))
+			{
+				SkipBinds[Class].Add(Name);
+			}
+		}
+
+		else
+		{
+			SkipBinds.Add(Class, TSet<FString>()).Add(Name);
+		}
+	}
+
+	static bool CheckForSkip(UClass* Class, UFunction* Function)
+	{		
+		if (SkipBinds.Contains(Class))
+		{
+			if (SkipBinds[Class].Contains(Function->GetName()))
+				return true;
+		}
+
+		return false;
+	}
+
 	//TO-DO make sure the binds are written to base directory not inside another module
 	static void SaveBindModules(FString Path)
 	{

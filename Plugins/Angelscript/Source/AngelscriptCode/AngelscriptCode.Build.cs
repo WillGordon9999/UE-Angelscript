@@ -44,6 +44,8 @@ namespace UnrealBuildTool.Rules
 				"PhysicsCore",
 				"CoreOnline",
 				"EnhancedInput",
+				"GameplayAbilities",				
+				"GameplayTasks",
             });
 
 			if (Target.bBuildEditor)
