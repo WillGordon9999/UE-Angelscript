@@ -1396,6 +1396,16 @@ void FAngelscriptEditorModule::GenerateSourceFilesV2(FString NewModuleName, TArr
 				FFileHelper::SaveStringArrayToFile(NewCPPFile, *NewCPPDir);
 				BindFunctionNames.Add(BindFunction);
 			}
+
+			else
+			{
+				FString DeleteDir = CPPDir + BindFunction + ".cpp";
+				if (FPaths::FileExists(DeleteDir))
+				{
+					IFileManager& FileManager = IFileManager::Get();
+					FileManager.Delete(*DeleteDir);
+				}
+			}
 		}		
 	}
 
