@@ -956,7 +956,7 @@ FString FAngelscriptEditorModule::GetIncludeForModule(UField* Class, FString& He
 	if (classesIndex > 0)
 		HeaderPath = HeaderPath.RightChop(classesIndex + 8);
 
-	FString Include = "#include " + HeaderPath + '"';
+	FString Include = "#include " + '"' + HeaderPath + '"';
 	return Include;
 }
 
