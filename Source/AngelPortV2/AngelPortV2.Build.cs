@@ -8,9 +8,30 @@ public class AngelPortV2 : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "AngelscriptCode" });
+		PublicDependencyModuleNames.AddRange
+		(
+			new string[] 
+			{ 
+				"Core", 
+				"CoreUObject", 
+				"Engine", 
+				"InputCore", 
+				"AngelscriptCode",
+				"GeometryScriptingCore",
+				"GeometryFramework",
+				"GeometryCore",
+				"DynamicMesh",
+				"ModelingComponents",
+				"ModelingOperators",
+			}
+		);
 
-		PrivateDependencyModuleNames.AddRange(new string[] {  });
+		PrivateDependencyModuleNames.AddRange
+		(
+			new string[] 
+			{ 				 
+			}
+		);
 
 		// Uncomment if you are using Slate UI
 		// PrivateDependencyModuleNames.AddRange(new string[] { "Slate", "SlateCore" });

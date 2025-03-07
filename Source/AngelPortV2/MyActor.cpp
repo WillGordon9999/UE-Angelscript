@@ -3,7 +3,7 @@
 
 #include "MyActor.h"
 //#include "ClassGenerator/AngelscriptClassGenerator.h"
-#include "ClassGenerator/ASClass.h"
+//#include "ClassGenerator/ASClass.h"
 //#include "Plugins/Angelscript/Source/AngelscriptCode/Source/Public/ClassGenerator/ASClass.h"
 
 // Sets default values
