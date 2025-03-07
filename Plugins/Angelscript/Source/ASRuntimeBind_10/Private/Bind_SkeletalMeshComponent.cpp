@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/SkeletalMeshComponent.h"
+#include "PhysicsEngine/ConstraintInstance.h"
 void FASRuntimeBind_10Module::Bind_SkeletalMeshComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(USkeletalMeshComponent::StaticClass(), "AccumulateAllBodiesBelowPhysicsBlendWeight", { ERASE_METHOD_PTR(USkeletalMeshComponent, AccumulateAllBodiesBelowPhysicsBlendWeight, (const FName&,  float,  bool), ERASE_ARGUMENT_PACK( void )) } );
@@ -21,9 +22,9 @@ void FASRuntimeBind_10Module::Bind_SkeletalMeshComponent()
 			FAngelscriptBinds::AddFunctionEntry(USkeletalMeshComponent::StaticClass(), "GetBoneMass", { ERASE_METHOD_PTR(USkeletalMeshComponent, GetBoneMass, (FName,  bool) const, ERASE_ARGUMENT_PACK( float )) } );
 			FAngelscriptBinds::AddFunctionEntry(USkeletalMeshComponent::StaticClass(), "GetClothingSimulationInteractor", { ERASE_METHOD_PTR(USkeletalMeshComponent, GetClothingSimulationInteractor, () const, ERASE_ARGUMENT_PACK( UClothingSimulationInteractor* )) } );
 			FAngelscriptBinds::AddFunctionEntry(USkeletalMeshComponent::StaticClass(), "GetClothMaxDistanceScale", { ERASE_METHOD_PTR(USkeletalMeshComponent, GetClothMaxDistanceScale, () const, ERASE_ARGUMENT_PACK( float )) } );
-			//FAngelscriptBinds::AddFunctionEntry(USkeletalMeshComponent::StaticClass(), "GetConstraintByName", { ERASE_METHOD_PTR(USkeletalMeshComponent, GetConstraintByName, (FName,  bool), ERASE_ARGUMENT_PACK( FConstraintInstanceAccessor )) } );
-			//FAngelscriptBinds::AddFunctionEntry(USkeletalMeshComponent::StaticClass(), "GetConstraints", { ERASE_METHOD_PTR(USkeletalMeshComponent, GetConstraints, (bool,  TArray<FConstraintInstanceAccessor>&), ERASE_ARGUMENT_PACK( void )) } );
-			//FAngelscriptBinds::AddFunctionEntry(USkeletalMeshComponent::StaticClass(), "GetConstraintsFromBody", { ERASE_METHOD_PTR(USkeletalMeshComponent, GetConstraintsFromBody, (FName,  bool,  bool,  bool,  TArray<FConstraintInstanceAccessor>&), ERASE_ARGUMENT_PACK( void )) } );
+			FAngelscriptBinds::AddFunctionEntry(USkeletalMeshComponent::StaticClass(), "GetConstraintByName", { ERASE_METHOD_PTR(USkeletalMeshComponent, GetConstraintByName, (FName,  bool), ERASE_ARGUMENT_PACK( FConstraintInstanceAccessor )) } );
+			FAngelscriptBinds::AddFunctionEntry(USkeletalMeshComponent::StaticClass(), "GetConstraints", { ERASE_METHOD_PTR(USkeletalMeshComponent, GetConstraints, (bool,  TArray<FConstraintInstanceAccessor>&), ERASE_ARGUMENT_PACK( void )) } );
+			FAngelscriptBinds::AddFunctionEntry(USkeletalMeshComponent::StaticClass(), "GetConstraintsFromBody", { ERASE_METHOD_PTR(USkeletalMeshComponent, GetConstraintsFromBody, (FName,  bool,  bool,  bool,  TArray<FConstraintInstanceAccessor>&), ERASE_ARGUMENT_PACK( void )) } );
 			FAngelscriptBinds::AddFunctionEntry(USkeletalMeshComponent::StaticClass(), "GetCurrentJointAngles", { ERASE_METHOD_PTR(USkeletalMeshComponent, GetCurrentJointAngles, (FName, float&,  float&,  float&), ERASE_ARGUMENT_PACK( void )) } );
 			FAngelscriptBinds::AddFunctionEntry(USkeletalMeshComponent::StaticClass(), "GetDefaultAnimatingRig", { ERASE_METHOD_PTR(USkeletalMeshComponent, GetDefaultAnimatingRig, () const, ERASE_ARGUMENT_PACK( TSoftObjectPtr<UObject> )) } );
 			FAngelscriptBinds::AddFunctionEntry(USkeletalMeshComponent::StaticClass(), "GetFloatAttribute", { ERASE_METHOD_PTR(USkeletalMeshComponent, GetFloatAttribute, (const FName&,  const FName&,  float,  float&,  ECustomBoneAttributeLookup), ERASE_ARGUMENT_PACK( bool )) } );
@@ -98,4 +99,6 @@ void FASRuntimeBind_10Module::Bind_SkeletalMeshComponent()
 			FAngelscriptBinds::AddFunctionEntry(USkeletalMeshComponent::StaticClass(), "ToggleDisablePostProcessBlueprint", { ERASE_METHOD_PTR(USkeletalMeshComponent, ToggleDisablePostProcessBlueprint, (), ERASE_ARGUMENT_PACK( void )) } );
 			FAngelscriptBinds::AddFunctionEntry(USkeletalMeshComponent::StaticClass(), "UnbindClothFromLeaderPoseComponent", { ERASE_METHOD_PTR(USkeletalMeshComponent, UnbindClothFromLeaderPoseComponent, (bool), ERASE_ARGUMENT_PACK( void )) } );
 			FAngelscriptBinds::AddFunctionEntry(USkeletalMeshComponent::StaticClass(), "UnlinkAnimClassLayers", { ERASE_METHOD_PTR(USkeletalMeshComponent, UnlinkAnimClassLayers, (TSubclassOf<UAnimInstance>), ERASE_ARGUMENT_PACK( void )) } );
+			FConstraintInstanceAccessor access;
+
 }
