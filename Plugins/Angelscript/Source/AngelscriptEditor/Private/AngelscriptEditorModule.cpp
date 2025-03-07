@@ -1841,7 +1841,7 @@ void FAngelscriptEditorModule::GenerateFunctionEntries(UClass* Class, TArray<FSt
 		if (FAngelscriptBinds::CheckForSkip(Class, Function))
 			continue;
 		
-		if (Function->HasAnyFunctionFlags(FUNC_Private | FUNC_Protected))
+		if (Function->HasAnyFunctionFlags(FUNC_Private | FUNC_Protected | FUNC_Static)) //Will do later
 			continue;
 		
 		//if (Class->HasAnyClassFlags(CLASS_MinimalAPI) && Function->HasAnyFunctionFlags(FUNC_RequiredAPI))
@@ -2062,7 +2062,7 @@ void FAngelscriptEditorModule::GenerateFunctionEntries(UClass* Class, TArray<FSt
 		
 		origRet = origRet.Replace(L"virtual", L"", ESearchCase::CaseSensitive);		
 		origRet = origRet.Replace(L"FORCEINLINE", L"", ESearchCase::CaseSensitive);
-		origRet = origRet.Replace(L"FORCENOINLINE", L"", ESearchCase::CaseSensitive);				
+		origRet = origRet.Replace(L"FORCENOINLINE", L"", ESearchCase::CaseSensitive);
 
 		FString line;
 
@@ -2076,10 +2076,13 @@ void FAngelscriptEditorModule::GenerateFunctionEntries(UClass* Class, TArray<FSt
 		
 		else
 		{
-			line = "\t\t\tFAngelscriptBinds::AddFunctionEntry(" + ClassName + "::StaticClass(), \"" +  ClassName + "::" + name + "\"";
+			origRet = origRet.Replace(L"static", L"", ESearchCase::CaseSensitive);
+
+			line = "\t\t\tFAngelscriptBinds::AddFunctionEntry(" + ClassName + "::StaticClass(), \"" + name + "\"";
 			line += ", { ERASE_FUNCTION_PTR(";
 			//line += ClassName + ", ";
-			line += name + ", (";
+			//line += name + ", (";
+			line += ClassName + "::" + name + ", (";
 		}
 		
 		bool firstArg2 = true;
@@ -2192,6 +2195,8 @@ void AddParameterInclude(FProperty* prop, TArray<FString>& IncludeList, TSet<FSt
 		field = (UField*)real;
 		FSourceCodeNavigation::FindClassHeaderPath(real, NewHeader);
 	}
+
+	
 		
 	if (!NewHeader.IsEmpty())
 	{
