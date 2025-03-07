@@ -958,7 +958,10 @@ FString FAngelscriptEditorModule::GetIncludeForModule(UField* Class, FString& He
 	if (classesIndex > 0)
 		ModulePath = HeaderPath.RightChop(classesIndex + 8);
 
-	FString Include = "#include " + '"' + ModulePath + '"';
+	FString Include = "#include ";
+	Include += '"';
+	Include += ModulePath;
+	Include += '"';
 	return Include;
 }
 
@@ -1364,10 +1367,11 @@ void FAngelscriptEditorModule::GenerateSourceFilesV2(FString NewModuleName, TArr
 			//if (!CurrentIncludes.Contains(HeaderPath))
 			if (!CurrentIncludes.Contains(HeaderInclude))
 			{
+				//CurrentIncludes.Add(HeaderInclude);
+				CurrentIncludes.Add(Include);
+				NewCPPFile.Add(Include);
 				//CurrentIncludes.Add(HeaderPath);
-				CurrentIncludes.Add(HeaderInclude);
 				//CPPFile.Add(Include);
-				//NewCPPFile.Add(Include);
 			}
 
 			FString BindFunction = "Bind_" + Class->GetName();
@@ -2072,7 +2076,7 @@ void FAngelscriptEditorModule::GenerateFunctionEntries(UClass* Class, TArray<FSt
 		
 		else
 		{
-			line = "\t\t\tFAngelscriptBinds::AddFunctionEntry(" + ClassName + "::StaticClass(), \"" + name + "\"";
+			line = "\t\t\tFAngelscriptBinds::AddFunctionEntry(" + ClassName + "::StaticClass(), \"" +  ClassName + "::" + name + "\"";
 			line += ", { ERASE_FUNCTION_PTR(";
 			//line += ClassName + ", ";
 			line += name + ", (";
