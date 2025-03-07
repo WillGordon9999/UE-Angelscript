@@ -945,18 +945,20 @@ FString FAngelscriptEditorModule::GetIncludeForModule(UField* Class, FString& He
 	if (HeaderPath.IsEmpty())
 		FSourceCodeNavigation::FindClassHeaderPath(Class, HeaderPath);
 
+	FString ModulePath = HeaderPath;
+
 	int32 pubIndex = HeaderPath.Find("Public/", ESearchCase::IgnoreCase, ESearchDir::Type::FromEnd);
 	int32 privIndex = HeaderPath.Find("Private/", ESearchCase::IgnoreCase, ESearchDir::Type::FromEnd);
 	int32 classesIndex = HeaderPath.Find("Classes/", ESearchCase::IgnoreCase, ESearchDir::Type::FromEnd);
 
 	if (pubIndex > 0)
-		HeaderPath = HeaderPath.RightChop(pubIndex + 7);
+		ModulePath = HeaderPath.RightChop(pubIndex + 7);
 	if (privIndex > 0)
-		HeaderPath = HeaderPath.RightChop(privIndex + 8);
+		ModulePath = HeaderPath.RightChop(privIndex + 8);
 	if (classesIndex > 0)
-		HeaderPath = HeaderPath.RightChop(classesIndex + 8);
+		ModulePath = HeaderPath.RightChop(classesIndex + 8);
 
-	FString Include = "#include " + '"' + HeaderPath + '"';
+	FString Include = "#include " + '"' + ModulePath + '"';
 	return Include;
 }
 
@@ -1359,9 +1361,11 @@ void FAngelscriptEditorModule::GenerateSourceFilesV2(FString NewModuleName, TArr
 			//Include += HeaderPath;
 			Include += '"';
 
-			if (!CurrentIncludes.Contains(HeaderPath))
+			//if (!CurrentIncludes.Contains(HeaderPath))
+			if (!CurrentIncludes.Contains(HeaderInclude))
 			{
-				CurrentIncludes.Add(HeaderPath);
+				//CurrentIncludes.Add(HeaderPath);
+				CurrentIncludes.Add(HeaderInclude);
 				//CPPFile.Add(Include);
 				//NewCPPFile.Add(Include);
 			}
