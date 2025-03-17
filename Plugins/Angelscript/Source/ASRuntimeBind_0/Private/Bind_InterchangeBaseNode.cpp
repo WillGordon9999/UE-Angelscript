@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_0Module.h"
 #include "AngelscriptBinds.h"
 #include "Nodes/InterchangeBaseNode.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_0Module::Bind_InterchangeBaseNode()
 {
 			FAngelscriptBinds::AddFunctionEntry(UInterchangeBaseNode::StaticClass(), "AddBooleanAttribute", { ERASE_METHOD_PTR(UInterchangeBaseNode, AddBooleanAttribute, (const FString&,  const bool&), ERASE_ARGUMENT_PACK( bool )) } );

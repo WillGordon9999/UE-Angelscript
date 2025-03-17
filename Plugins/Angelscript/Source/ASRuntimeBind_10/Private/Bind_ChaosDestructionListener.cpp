@@ -1,6 +1,12 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "ChaosBlueprint.h"
+#include "Chaos/ChaosSolverActor.h"
+#include "GeometryCollection/GeometryCollectionActor.h"
+#include "ChaosBreakingEventFilter.h"
+#include "ChaosCollisionEventFilter.h"
+#include "ChaosRemovalEventFilter.h"
+#include "ChaosTrailingEventFilter.h"
 void FASRuntimeBind_10Module::Bind_ChaosDestructionListener()
 {
 			FAngelscriptBinds::AddFunctionEntry(UChaosDestructionListener::StaticClass(), "AddChaosSolverActor", { ERASE_METHOD_PTR(UChaosDestructionListener, AddChaosSolverActor, (AChaosSolverActor*), ERASE_ARGUMENT_PACK( void )) } );

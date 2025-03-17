@@ -1,6 +1,9 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/Viewport.h"
+#include "UObject/NoExportTypes.h"
+#include "Engine/World.h"
+#include "GameFramework/Actor.h"
 void FASRuntimeBind_10Module::Bind_Viewport()
 {
 			FAngelscriptBinds::AddFunctionEntry(UViewport::StaticClass(), "GetViewLocation", { ERASE_METHOD_PTR(UViewport, GetViewLocation, () const, ERASE_ARGUMENT_PACK( FVector )) } );

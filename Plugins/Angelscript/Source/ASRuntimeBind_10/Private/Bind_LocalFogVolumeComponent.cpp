@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/LocalFogVolumeComponent.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_10Module::Bind_LocalFogVolumeComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(ULocalFogVolumeComponent::StaticClass(), "SetFogAlbedo", { ERASE_METHOD_PTR(ULocalFogVolumeComponent, SetFogAlbedo, (FLinearColor), ERASE_ARGUMENT_PACK( void )) } );

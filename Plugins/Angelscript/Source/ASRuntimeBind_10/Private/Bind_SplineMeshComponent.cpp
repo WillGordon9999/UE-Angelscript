@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/SplineMeshComponent.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_10Module::Bind_SplineMeshComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(USplineMeshComponent::StaticClass(), "GetBoundaryMax", { ERASE_METHOD_PTR(USplineMeshComponent, GetBoundaryMax, () const, ERASE_ARGUMENT_PACK( float )) } );

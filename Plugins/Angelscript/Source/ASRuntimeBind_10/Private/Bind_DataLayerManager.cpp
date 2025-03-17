@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "WorldPartition/DataLayer/DataLayerManager.h"
+#include "WorldPartition/DataLayer/DataLayerInstance.h"
+#include "WorldPartition/DataLayer/DataLayerAsset.h"
 void FASRuntimeBind_10Module::Bind_DataLayerManager()
 {
 			FAngelscriptBinds::AddFunctionEntry(UDataLayerManager::StaticClass(), "GetDataLayerInstanceEffectiveRuntimeState", { ERASE_METHOD_PTR(UDataLayerManager, GetDataLayerInstanceEffectiveRuntimeState, (const UDataLayerInstance*) const, ERASE_ARGUMENT_PACK( EDataLayerRuntimeState )) } );

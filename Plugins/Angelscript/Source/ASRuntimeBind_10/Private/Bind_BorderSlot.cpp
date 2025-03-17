@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/BorderSlot.h"
+#include "Layout/Margin.h"
 void FASRuntimeBind_10Module::Bind_BorderSlot()
 {
 			FAngelscriptBinds::AddFunctionEntry(UBorderSlot::StaticClass(), "SetHorizontalAlignment", { ERASE_METHOD_PTR(UBorderSlot, SetHorizontalAlignment, (EHorizontalAlignment), ERASE_ARGUMENT_PACK( void )) } );

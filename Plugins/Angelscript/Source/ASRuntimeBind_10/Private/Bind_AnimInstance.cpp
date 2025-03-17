@@ -1,6 +1,21 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Animation/AnimInstance.h"
+#include "UObject/NoExportTypes.h"
+#include "Animation/AnimSequenceBase.h"
+#include "Animation/AnimCurveTypes.h"
+#include "Animation/AnimMontage.h"
+#include "GameFramework/Actor.h"
+#include "Components/SkeletalMeshComponent.h"
+#include "Animation/AnimationAsset.h"
+#include "AlphaBlend.h"
+#include "Animation/BlendProfile.h"
+#include "Animation/AnimStateMachineTypes.h"
+#include "Engine/EngineTypes.h"
+#include "Animation/PoseSnapshot.h"
+#include "GameFramework/Pawn.h"
+#include "Animation/AnimNotifies/AnimNotifyState.h"
+#include "Animation/AnimNotifies/AnimNotify.h"
 void FASRuntimeBind_10Module::Bind_AnimInstance()
 {
 			FAngelscriptBinds::AddFunctionEntry(UAnimInstance::StaticClass(), "Blueprint_GetMainAnimInstance", { ERASE_METHOD_PTR(UAnimInstance, Blueprint_GetMainAnimInstance, () const, ERASE_ARGUMENT_PACK( UAnimInstance* )) } );

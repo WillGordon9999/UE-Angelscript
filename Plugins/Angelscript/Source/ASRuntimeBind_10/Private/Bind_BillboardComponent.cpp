@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/BillboardComponent.h"
+#include "Engine/Texture2D.h"
 void FASRuntimeBind_10Module::Bind_BillboardComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(UBillboardComponent::StaticClass(), "SetOpacityMaskRefVal", { ERASE_METHOD_PTR(UBillboardComponent, SetOpacityMaskRefVal, (float), ERASE_ARGUMENT_PACK( void )) } );

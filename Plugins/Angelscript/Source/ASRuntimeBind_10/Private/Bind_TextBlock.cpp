@@ -1,6 +1,13 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/TextBlock.h"
+#include "Materials/MaterialInstanceDynamic.h"
+#include "Styling/SlateColor.h"
+#include "Fonts/SlateFontInfo.h"
+#include "Materials/MaterialInterface.h"
+#include "UObject/NoExportTypes.h"
+#include "Styling/SlateBrush.h"
+#include "Styling/SlateTypes.h"
 void FASRuntimeBind_10Module::Bind_TextBlock()
 {
 			FAngelscriptBinds::AddFunctionEntry(UTextBlock::StaticClass(), "GetDynamicFontMaterial", { ERASE_METHOD_PTR(UTextBlock, GetDynamicFontMaterial, (), ERASE_ARGUMENT_PACK( UMaterialInstanceDynamic* )) } );

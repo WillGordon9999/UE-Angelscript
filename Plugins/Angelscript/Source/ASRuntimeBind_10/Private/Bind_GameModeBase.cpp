@@ -1,6 +1,10 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "GameFramework/GameModeBase.h"
+#include "GameFramework/Controller.h"
+#include "UObject/NoExportTypes.h"
+#include "GameFramework/Actor.h"
+#include "GameFramework/PlayerController.h"
 void FASRuntimeBind_10Module::Bind_GameModeBase()
 {
 			FAngelscriptBinds::AddFunctionEntry(AGameModeBase::StaticClass(), "ChangeName", { ERASE_METHOD_PTR(AGameModeBase, ChangeName, (AController*,  const FString&,  bool), ERASE_ARGUMENT_PACK(  void )) } );

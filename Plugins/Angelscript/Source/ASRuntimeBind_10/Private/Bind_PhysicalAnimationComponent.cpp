@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "PhysicsEngine/PhysicalAnimationComponent.h"
+#include "UObject/NoExportTypes.h"
+#include "Components/SkeletalMeshComponent.h"
 void FASRuntimeBind_10Module::Bind_PhysicalAnimationComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(UPhysicalAnimationComponent::StaticClass(), "ApplyPhysicalAnimationProfileBelow", { ERASE_METHOD_PTR(UPhysicalAnimationComponent, ApplyPhysicalAnimationProfileBelow, (FName,  FName,  bool,  bool), ERASE_ARGUMENT_PACK( void )) } );

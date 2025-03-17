@@ -1,6 +1,11 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "GeometryCollection/GeometryCollectionComponent.h"
+#include "UObject/NoExportTypes.h"
+#include "GeometryCollection/GeometryCollectionSimulationTypes.h"
+#include "Field/FieldSystemObjects.h"
+#include "GeometryCollection/GeometryCollectionDamagePropagationData.h"
+#include "GeometryCollection/GeometryCollectionObject.h"
 void FASRuntimeBind_10Module::Bind_GeometryCollectionComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(UGeometryCollectionComponent::StaticClass(), "ApplyAngularVelocity", { ERASE_METHOD_PTR(UGeometryCollectionComponent, ApplyAngularVelocity, (int32,  const FVector&), ERASE_ARGUMENT_PACK( void )) } );

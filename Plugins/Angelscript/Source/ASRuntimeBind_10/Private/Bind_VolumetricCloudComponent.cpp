@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/VolumetricCloudComponent.h"
+#include "UObject/NoExportTypes.h"
+#include "Materials/MaterialInterface.h"
 void FASRuntimeBind_10Module::Bind_VolumetricCloudComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(UVolumetricCloudComponent::StaticClass(), "SetbUsePerSampleAtmosphericLightTransmittance", { ERASE_METHOD_PTR(UVolumetricCloudComponent, SetbUsePerSampleAtmosphericLightTransmittance, (bool), ERASE_ARGUMENT_PACK( void )) } );

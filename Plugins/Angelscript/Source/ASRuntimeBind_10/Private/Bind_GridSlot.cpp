@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/GridSlot.h"
+#include "UObject/NoExportTypes.h"
+#include "Layout/Margin.h"
 void FASRuntimeBind_10Module::Bind_GridSlot()
 {
 			FAngelscriptBinds::AddFunctionEntry(UGridSlot::StaticClass(), "SetColumn", { ERASE_METHOD_PTR(UGridSlot, SetColumn, (int32), ERASE_ARGUMENT_PACK( void )) } );

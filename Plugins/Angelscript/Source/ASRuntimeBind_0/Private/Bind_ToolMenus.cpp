@@ -1,6 +1,9 @@
 #include "ASRuntimeBind_0Module.h"
 #include "AngelscriptBinds.h"
 #include "ToolMenus.h"
+#include "ToolMenu.h"
+#include "Framework/MultiBox/MultiBoxDefs.h"
+#include "ToolMenuMisc.h"
 void FASRuntimeBind_0Module::Bind_ToolMenus()
 {
 			FAngelscriptBinds::AddFunctionEntry(UToolMenus::StaticClass(), "ExtendMenu", { ERASE_METHOD_PTR(UToolMenus, ExtendMenu, (const FName), ERASE_ARGUMENT_PACK(UToolMenu* )) } );

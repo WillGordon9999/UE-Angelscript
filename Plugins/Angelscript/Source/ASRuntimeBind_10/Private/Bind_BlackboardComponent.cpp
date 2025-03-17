@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "BehaviorTree/BlackboardComponent.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_10Module::Bind_BlackboardComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(UBlackboardComponent::StaticClass(), "ClearValue", { ERASE_METHOD_PTR(UBlackboardComponent, ClearValue, (const FName&), ERASE_ARGUMENT_PACK( void )) } );

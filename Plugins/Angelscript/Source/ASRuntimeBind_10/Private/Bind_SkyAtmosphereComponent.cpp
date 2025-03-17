@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/SkyAtmosphereComponent.h"
+#include "UObject/NoExportTypes.h"
+#include "Components/DirectionalLightComponent.h"
 void FASRuntimeBind_10Module::Bind_SkyAtmosphereComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(USkyAtmosphereComponent::StaticClass(), "GetAtmosphereTransmitanceOnGroundAtPlanetTop", { ERASE_METHOD_PTR(USkyAtmosphereComponent, GetAtmosphereTransmitanceOnGroundAtPlanetTop, (UDirectionalLightComponent*), ERASE_ARGUMENT_PACK( FLinearColor )) } );

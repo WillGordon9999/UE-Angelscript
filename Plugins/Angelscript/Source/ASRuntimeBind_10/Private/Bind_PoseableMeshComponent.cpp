@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/PoseableMeshComponent.h"
+#include "Components/SkeletalMeshComponent.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_10Module::Bind_PoseableMeshComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(UPoseableMeshComponent::StaticClass(), "CopyPoseFromSkeletalComponent", { ERASE_METHOD_PTR(UPoseableMeshComponent, CopyPoseFromSkeletalComponent, (USkeletalMeshComponent*), ERASE_ARGUMENT_PACK( void )) } );

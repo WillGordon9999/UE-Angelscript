@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Blueprint/GameViewportSubsystem.h"
+#include "Components/Widget.h"
+#include "Engine/LocalPlayer.h"
 void FASRuntimeBind_10Module::Bind_GameViewportSubsystem()
 {
 			FAngelscriptBinds::AddFunctionEntry(UGameViewportSubsystem::StaticClass(), "AddWidget", { ERASE_METHOD_PTR(UGameViewportSubsystem, AddWidget, (UWidget*,  FGameViewportWidgetSlot), ERASE_ARGUMENT_PACK( bool )) } );

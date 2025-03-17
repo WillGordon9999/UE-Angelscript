@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "PhysicsEngine/ClusterUnionComponent.h"
+#include "Components/PrimitiveComponent.h"
+#include "GameFramework/Actor.h"
 void FASRuntimeBind_10Module::Bind_ClusterUnionComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(UClusterUnionComponent::StaticClass(), "AddComponentToCluster", { ERASE_METHOD_PTR(UClusterUnionComponent, AddComponentToCluster, (UPrimitiveComponent*,  const TArray<int32>&,  bool), ERASE_ARGUMENT_PACK( void )) } );

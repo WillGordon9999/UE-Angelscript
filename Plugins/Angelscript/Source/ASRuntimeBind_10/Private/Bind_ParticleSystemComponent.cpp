@@ -1,6 +1,11 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Particles/ParticleSystemComponent.h"
+#include "Materials/MaterialInstanceDynamic.h"
+#include "Materials/MaterialInterface.h"
+#include "UObject/NoExportTypes.h"
+#include "Components/SceneComponent.h"
+#include "Particles/ParticleSystem.h"
 void FASRuntimeBind_10Module::Bind_ParticleSystemComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(UParticleSystemComponent::StaticClass(), "BeginTrails", { ERASE_METHOD_PTR(UParticleSystemComponent, BeginTrails, (FName,  FName,  ETrailWidthMode,  float), ERASE_ARGUMENT_PACK( void )) } );

@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_0Module.h"
 #include "AngelscriptBinds.h"
 #include "MovieSceneCapture.h"
+#include "MovieSceneCaptureProtocolBase.h"
 void FASRuntimeBind_0Module::Bind_MovieSceneCapture()
 {
 			FAngelscriptBinds::AddFunctionEntry(UMovieSceneCapture::StaticClass(), "GetAudioCaptureProtocol", { ERASE_METHOD_PTR(UMovieSceneCapture, GetAudioCaptureProtocol, (), ERASE_ARGUMENT_PACK(UMovieSceneCaptureProtocolBase* )) } );

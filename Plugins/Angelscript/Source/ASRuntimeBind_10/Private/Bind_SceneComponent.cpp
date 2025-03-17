@@ -1,6 +1,10 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/SceneComponent.h"
+#include "UObject/NoExportTypes.h"
+#include "GameFramework/PhysicsVolume.h"
+#include "Engine/HitResult.h"
+#include "Engine/EngineTypes.h"
 void FASRuntimeBind_10Module::Bind_SceneComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(USceneComponent::StaticClass(), "DoesSocketExist", { ERASE_METHOD_PTR(USceneComponent, DoesSocketExist, (FName) const, ERASE_ARGUMENT_PACK(  bool )) } );

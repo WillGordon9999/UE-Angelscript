@@ -26,19 +26,14 @@ void FASRuntimeBind_10Module::StartupModule()
 			Bind_SoundWave();
 			Bind_InstancedStaticMeshComponent();
 			Bind_StaticMeshActor();
-			Bind_MaterialInstanceConstant();
 			Bind_DataLayerManager();
 			Bind_ExponentialHeightFogComponent();
 			Bind_DataLayerAsset();
 			Bind_DataLayerInstance();
-			Bind_Texture2D();
 			Bind_MaterialExpressionMaterialFunctionCall();
-			Bind_ParticleSystem();
 			Bind_ParticleSystemComponent();
 			Bind_PhysicsSpringComponent();
-			Bind_PlanarReflection();
 			Bind_PlayerCameraManager();
-			Bind_SceneCapture2D();
 			Bind_SceneCaptureComponent2D();
 			Bind_SceneCaptureComponentCube();
 			Bind_SceneCaptureCube();
@@ -51,7 +46,6 @@ void FASRuntimeBind_10Module::StartupModule()
 			Bind_StereoLayerComponent();
 			Bind_TextRenderComponent();
 			Bind_TimelineComponent();
-			Bind_VectorFieldComponent();
 			Bind_WindDirectionalSourceComponent();
 			Bind_AvoidanceManager();
 			Bind_AnimationSettings();
@@ -114,11 +108,9 @@ void FASRuntimeBind_10Module::StartupModule()
 			Bind_LevelScriptActor();
 			Bind_LocationVolume();
 			Bind_MaterialInstanceDynamic();
-			Bind_MaterialParameterCollection();
 			Bind_AsyncPhysicsInputComponent();
 			Bind_ClusterUnionComponent();
 			Bind_PhysicalAnimationComponent();
-			Bind_PhysicsAsset();
 			Bind_PhysicsConstraintComponent();
 			Bind_PhysicsHandleComponent();
 			Bind_PhysicsSettings();
@@ -200,7 +192,6 @@ void FASRuntimeBind_10Module::StartupModule()
 			Bind_WrapBox();
 			Bind_WrapBoxSlot();
 			Bind_MotionControllerComponent();
-			Bind_GameplayTask_SpawnActor();
 			Bind_AIController();
 			Bind_BrainComponent();
 			Bind_BehaviorTreeComponent();

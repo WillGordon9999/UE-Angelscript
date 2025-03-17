@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/StaticMeshComponent.h"
+#include "UObject/NoExportTypes.h"
+#include "Engine/StaticMesh.h"
 void FASRuntimeBind_10Module::Bind_StaticMeshComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(UStaticMeshComponent::StaticClass(), "GetInitialEvaluateWorldPositionOffset", { ERASE_METHOD_PTR(UStaticMeshComponent, GetInitialEvaluateWorldPositionOffset, (), ERASE_ARGUMENT_PACK(bool )) } );

@@ -1,6 +1,16 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "AIController.h"
+#include "GameplayTaskResource.h"
+#include "Perception/AIPerceptionComponent.h"
+#include "Actions/PawnActionsComponent.h"
+#include "UObject/NoExportTypes.h"
+#include "GameFramework/Actor.h"
+#include "Navigation/PathFollowingComponent.h"
+#include "NavFilters/NavigationQueryFilter.h"
+#include "BehaviorTree/BehaviorTree.h"
+#include "BehaviorTree/BlackboardData.h"
+#include "BehaviorTree/BlackboardComponent.h"
 void FASRuntimeBind_10Module::Bind_AIController()
 {
 			FAngelscriptBinds::AddFunctionEntry(AAIController::StaticClass(), "ClaimTaskResource", { ERASE_METHOD_PTR(AAIController, ClaimTaskResource, (TSubclassOf<UGameplayTaskResource>), ERASE_ARGUMENT_PACK( void )) } );

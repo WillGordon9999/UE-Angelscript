@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/SkyLightComponent.h"
+#include "Engine/TextureCube.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_10Module::Bind_SkyLightComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(USkyLightComponent::StaticClass(), "RecaptureSky", { ERASE_METHOD_PTR(USkyLightComponent, RecaptureSky, (), ERASE_ARGUMENT_PACK( void )) } );

@@ -1,6 +1,13 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "GameFramework/HUD.h"
+#include "UObject/NoExportTypes.h"
+#include "Materials/MaterialInterface.h"
+#include "Engine/Font.h"
+#include "Engine/Texture.h"
+#include "GameFramework/Actor.h"
+#include "GameFramework/Pawn.h"
+#include "GameFramework/PlayerController.h"
 void FASRuntimeBind_10Module::Bind_HUD()
 {
 			FAngelscriptBinds::AddFunctionEntry(AHUD::StaticClass(), "AddHitBox", { ERASE_METHOD_PTR(AHUD, AddHitBox, (FVector2D,  FVector2D,  FName,  bool,  int32), ERASE_ARGUMENT_PACK( void )) } );

@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/ExponentialHeightFogComponent.h"
+#include "UObject/NoExportTypes.h"
+#include "Engine/TextureCube.h"
 void FASRuntimeBind_10Module::Bind_ExponentialHeightFogComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(UExponentialHeightFogComponent::StaticClass(), "SetDirectionalInscatteringColor", { ERASE_METHOD_PTR(UExponentialHeightFogComponent, SetDirectionalInscatteringColor, (FLinearColor), ERASE_ARGUMENT_PACK( void )) } );

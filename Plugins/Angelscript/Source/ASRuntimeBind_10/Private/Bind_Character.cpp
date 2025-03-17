@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "GameFramework/Character.h"
+#include "UObject/NoExportTypes.h"
+#include "Animation/AnimMontage.h"
 void FASRuntimeBind_10Module::Bind_Character()
 {
 			FAngelscriptBinds::AddFunctionEntry(ACharacter::StaticClass(), "CacheInitialMeshOffset", { ERASE_METHOD_PTR(ACharacter, CacheInitialMeshOffset, (FVector,  FRotator), ERASE_ARGUMENT_PACK(  void )) } );

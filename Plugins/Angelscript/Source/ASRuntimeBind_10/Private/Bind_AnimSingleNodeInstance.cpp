@@ -1,6 +1,9 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Animation/AnimSingleNodeInstance.h"
+#include "Animation/AnimationAsset.h"
+#include "Animation/MirrorDataTable.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_10Module::Bind_AnimSingleNodeInstance()
 {
 			FAngelscriptBinds::AddFunctionEntry(UAnimSingleNodeInstance::StaticClass(), "GetAnimationAsset", { ERASE_METHOD_PTR(UAnimSingleNodeInstance, GetAnimationAsset, () const, ERASE_ARGUMENT_PACK(  UAnimationAsset* )) } );

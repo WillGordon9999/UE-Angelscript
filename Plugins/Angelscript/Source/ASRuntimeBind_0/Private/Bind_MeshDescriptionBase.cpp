@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_0Module.h"
 #include "AngelscriptBinds.h"
 #include "MeshDescriptionBase.h"
+#include "MeshTypes.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_0Module::Bind_MeshDescriptionBase()
 {
 			FAngelscriptBinds::AddFunctionEntry(UMeshDescriptionBase::StaticClass(), "ComputePolygonTriangulation", { ERASE_METHOD_PTR(UMeshDescriptionBase, ComputePolygonTriangulation, (FPolygonID), ERASE_ARGUMENT_PACK( void )) } );

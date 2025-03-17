@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/WindowTitleBarAreaSlot.h"
+#include "Layout/Margin.h"
 void FASRuntimeBind_10Module::Bind_WindowTitleBarAreaSlot()
 {
 			FAngelscriptBinds::AddFunctionEntry(UWindowTitleBarAreaSlot::StaticClass(), "SetHorizontalAlignment", { ERASE_METHOD_PTR(UWindowTitleBarAreaSlot, SetHorizontalAlignment, (EHorizontalAlignment), ERASE_ARGUMENT_PACK( void )) } );

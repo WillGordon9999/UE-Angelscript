@@ -1,6 +1,17 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/AudioComponent.h"
+#include "Sound/SoundAttenuation.h"
+#include "Sound/SoundWave.h"
+#include "IAudioModulation.h"
+#include "UObject/NoExportTypes.h"
+#include "Quartz/AudioMixerClockHandle.h"
+#include "Sound/QuartzQuantizationUtilities.h"
+#include "Sound/AudioBus.h"
+#include "Sound/SoundModulationDestination.h"
+#include "Sound/SoundBase.h"
+#include "Sound/SoundSourceBus.h"
+#include "Sound/SoundSubmix.h"
 void FASRuntimeBind_10Module::Bind_AudioComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(UAudioComponent::StaticClass(), "AdjustAttenuation", { ERASE_METHOD_PTR(UAudioComponent, AdjustAttenuation, (const FSoundAttenuationSettings&), ERASE_ARGUMENT_PACK( void )) } );

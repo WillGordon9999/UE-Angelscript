@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/EditableTextBox.h"
+#include "UObject/NoExportTypes.h"
+#include "Styling/SlateTypes.h"
 void FASRuntimeBind_10Module::Bind_EditableTextBox()
 {
 			FAngelscriptBinds::AddFunctionEntry(UEditableTextBox::StaticClass(), "ClearError", { ERASE_METHOD_PTR(UEditableTextBox, ClearError, (), ERASE_ARGUMENT_PACK( void )) } );

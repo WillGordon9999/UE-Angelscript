@@ -34,6 +34,18 @@ namespace UnrealBuildTool.Rules
 					"ChaosSolverEngine",
 					"FieldSystemEngine",
 					"GeometryCollectionEngine",
+					"CoreUObject",
+					"InputCore",
+					"ClothingSystemRuntimeInterface",
+					"ImageCore",
+					"AudioExtensions",
+					"AudioMixer",
+					"TypedElementFramework",
+					"TypedElementRuntime",
+					"StaticMeshDescription",
+					"SlateCore",
+					"Slate",
+					"Chaos",
 				}
 			);
 		}

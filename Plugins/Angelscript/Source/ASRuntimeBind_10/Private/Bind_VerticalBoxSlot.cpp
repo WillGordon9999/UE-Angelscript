@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/VerticalBoxSlot.h"
+#include "Layout/Margin.h"
+#include "Components/SlateWrapperTypes.h"
 void FASRuntimeBind_10Module::Bind_VerticalBoxSlot()
 {
 			FAngelscriptBinds::AddFunctionEntry(UVerticalBoxSlot::StaticClass(), "SetHorizontalAlignment", { ERASE_METHOD_PTR(UVerticalBoxSlot, SetHorizontalAlignment, (EHorizontalAlignment), ERASE_ARGUMENT_PACK( void )) } );

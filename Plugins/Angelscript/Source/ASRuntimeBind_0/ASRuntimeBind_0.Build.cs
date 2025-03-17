@@ -34,6 +34,8 @@ namespace UnrealBuildTool.Rules
 					"ToolMenus",
 					"InterchangeCore",
 					"MovieSceneCapture",
+					"CoreUObject",
+					"Slate",
 				}
 			);
 		}

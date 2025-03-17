@@ -24,19 +24,14 @@ public:
 	static void Bind_SoundWave();
 	static void Bind_InstancedStaticMeshComponent();
 	static void Bind_StaticMeshActor();
-	static void Bind_MaterialInstanceConstant();
 	static void Bind_DataLayerManager();
 	static void Bind_ExponentialHeightFogComponent();
 	static void Bind_DataLayerAsset();
 	static void Bind_DataLayerInstance();
-	static void Bind_Texture2D();
 	static void Bind_MaterialExpressionMaterialFunctionCall();
-	static void Bind_ParticleSystem();
 	static void Bind_ParticleSystemComponent();
 	static void Bind_PhysicsSpringComponent();
-	static void Bind_PlanarReflection();
 	static void Bind_PlayerCameraManager();
-	static void Bind_SceneCapture2D();
 	static void Bind_SceneCaptureComponent2D();
 	static void Bind_SceneCaptureComponentCube();
 	static void Bind_SceneCaptureCube();
@@ -49,7 +44,6 @@ public:
 	static void Bind_StereoLayerComponent();
 	static void Bind_TextRenderComponent();
 	static void Bind_TimelineComponent();
-	static void Bind_VectorFieldComponent();
 	static void Bind_WindDirectionalSourceComponent();
 	static void Bind_AvoidanceManager();
 	static void Bind_AnimationSettings();
@@ -112,11 +106,9 @@ public:
 	static void Bind_LevelScriptActor();
 	static void Bind_LocationVolume();
 	static void Bind_MaterialInstanceDynamic();
-	static void Bind_MaterialParameterCollection();
 	static void Bind_AsyncPhysicsInputComponent();
 	static void Bind_ClusterUnionComponent();
 	static void Bind_PhysicalAnimationComponent();
-	static void Bind_PhysicsAsset();
 	static void Bind_PhysicsConstraintComponent();
 	static void Bind_PhysicsHandleComponent();
 	static void Bind_PhysicsSettings();
@@ -198,7 +190,6 @@ public:
 	static void Bind_WrapBox();
 	static void Bind_WrapBoxSlot();
 	static void Bind_MotionControllerComponent();
-	static void Bind_GameplayTask_SpawnActor();
 	static void Bind_AIController();
 	static void Bind_BrainComponent();
 	static void Bind_BehaviorTreeComponent();

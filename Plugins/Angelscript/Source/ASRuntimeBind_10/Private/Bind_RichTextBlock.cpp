@@ -1,6 +1,15 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/RichTextBlock.h"
+#include "Components/RichTextBlockDecorator.h"
+#include "Materials/MaterialInstanceDynamic.h"
+#include "Engine/DataTable.h"
+#include "Styling/SlateColor.h"
+#include "Fonts/SlateFontInfo.h"
+#include "Materials/MaterialInterface.h"
+#include "UObject/NoExportTypes.h"
+#include "Styling/SlateBrush.h"
+#include "Styling/SlateTypes.h"
 void FASRuntimeBind_10Module::Bind_RichTextBlock()
 {
 			FAngelscriptBinds::AddFunctionEntry(URichTextBlock::StaticClass(), "ClearAllDefaultStyleOverrides", { ERASE_METHOD_PTR(URichTextBlock, ClearAllDefaultStyleOverrides, (), ERASE_ARGUMENT_PACK( void )) } );

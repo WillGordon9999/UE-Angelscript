@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/ScrollBoxSlot.h"
+#include "Layout/Margin.h"
 void FASRuntimeBind_10Module::Bind_ScrollBoxSlot()
 {
 			FAngelscriptBinds::AddFunctionEntry(UScrollBoxSlot::StaticClass(), "SetHorizontalAlignment", { ERASE_METHOD_PTR(UScrollBoxSlot, SetHorizontalAlignment, (EHorizontalAlignment), ERASE_ARGUMENT_PACK( void )) } );

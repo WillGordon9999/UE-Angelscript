@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/StereoLayerComponent.h"
+#include "Engine/Texture.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_10Module::Bind_StereoLayerComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(UStereoLayerComponent::StaticClass(), "GetLeftTexture", { ERASE_METHOD_PTR(UStereoLayerComponent, GetLeftTexture, () const, ERASE_ARGUMENT_PACK(UTexture* )) } );

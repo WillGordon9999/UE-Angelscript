@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "PhysicsEngine/PhysicsSpringComponent.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_10Module::Bind_PhysicsSpringComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(UPhysicsSpringComponent::StaticClass(), "GetNormalizedCompressionScalar", { ERASE_METHOD_PTR(UPhysicsSpringComponent, GetNormalizedCompressionScalar, () const, ERASE_ARGUMENT_PACK( float )) } );

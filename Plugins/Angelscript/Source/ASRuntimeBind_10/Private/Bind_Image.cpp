@@ -1,6 +1,14 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/Image.h"
+#include "Materials/MaterialInstanceDynamic.h"
+#include "Styling/SlateBrush.h"
+#include "Slate/SlateBrushAsset.h"
+#include "Materials/MaterialInterface.h"
+#include "Engine/Texture2D.h"
+#include "Engine/Texture2DDynamic.h"
+#include "UObject/NoExportTypes.h"
+#include "Styling/SlateColor.h"
 void FASRuntimeBind_10Module::Bind_Image()
 {
 			FAngelscriptBinds::AddFunctionEntry(UImage::StaticClass(), "GetDynamicMaterial", { ERASE_METHOD_PTR(UImage, GetDynamicMaterial, (), ERASE_ARGUMENT_PACK( UMaterialInstanceDynamic* )) } );

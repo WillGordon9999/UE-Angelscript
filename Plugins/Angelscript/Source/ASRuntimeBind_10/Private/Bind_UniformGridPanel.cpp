@@ -1,6 +1,9 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/UniformGridPanel.h"
+#include "Components/UniformGridSlot.h"
+#include "Components/Widget.h"
+#include "Layout/Margin.h"
 void FASRuntimeBind_10Module::Bind_UniformGridPanel()
 {
 			FAngelscriptBinds::AddFunctionEntry(UUniformGridPanel::StaticClass(), "AddChildToUniformGrid", { ERASE_METHOD_PTR(UUniformGridPanel, AddChildToUniformGrid, (UWidget*,  int32,  int32), ERASE_ARGUMENT_PACK( UUniformGridSlot* )) } );

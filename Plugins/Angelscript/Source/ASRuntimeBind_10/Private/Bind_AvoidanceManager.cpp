@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "AI/Navigation/AvoidanceManager.h"
+#include "UObject/NoExportTypes.h"
+#include "GameFramework/MovementComponent.h"
 void FASRuntimeBind_10Module::Bind_AvoidanceManager()
 {
 			FAngelscriptBinds::AddFunctionEntry(UAvoidanceManager::StaticClass(), "GetAvoidanceVelocityForComponent", { ERASE_METHOD_PTR(UAvoidanceManager, GetAvoidanceVelocityForComponent, (UMovementComponent*), ERASE_ARGUMENT_PACK( FVector )) } );

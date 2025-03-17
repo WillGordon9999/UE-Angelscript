@@ -1,6 +1,9 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "PhysicsEngine/PhysicsConstraintComponent.h"
+#include "Components/PrimitiveComponent.h"
+#include "PhysicsEngine/ConstraintInstance.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_10Module::Bind_PhysicsConstraintComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(UPhysicsConstraintComponent::StaticClass(), "BreakConstraint", { ERASE_METHOD_PTR(UPhysicsConstraintComponent, BreakConstraint, (), ERASE_ARGUMENT_PACK( void )) } );
@@ -11,7 +14,6 @@ void FASRuntimeBind_10Module::Bind_PhysicsConstraintComponent()
 			FAngelscriptBinds::AddFunctionEntry(UPhysicsConstraintComponent::StaticClass(), "GetCurrentSwing2", { ERASE_METHOD_PTR(UPhysicsConstraintComponent, GetCurrentSwing2, () const, ERASE_ARGUMENT_PACK( float )) } );
 			FAngelscriptBinds::AddFunctionEntry(UPhysicsConstraintComponent::StaticClass(), "GetCurrentTwist", { ERASE_METHOD_PTR(UPhysicsConstraintComponent, GetCurrentTwist, () const, ERASE_ARGUMENT_PACK( float )) } );
 			FAngelscriptBinds::AddFunctionEntry(UPhysicsConstraintComponent::StaticClass(), "IsBroken", { ERASE_METHOD_PTR(UPhysicsConstraintComponent, IsBroken, (), ERASE_ARGUMENT_PACK( bool )) } );
-			//FAngelscriptBinds::AddFunctionEntry(UPhysicsConstraintComponent::StaticClass(), "IsProjectionEnabled", { ERASE_METHOD_PTR(UPhysicsConstraintComponent, IsProjectionEnabled, () const, ERASE_ARGUMENT_PACK(bool )) } );
 			FAngelscriptBinds::AddFunctionEntry(UPhysicsConstraintComponent::StaticClass(), "SetAngularBreakable", { ERASE_METHOD_PTR(UPhysicsConstraintComponent, SetAngularBreakable, (bool,  float), ERASE_ARGUMENT_PACK( void )) } );
 			FAngelscriptBinds::AddFunctionEntry(UPhysicsConstraintComponent::StaticClass(), "SetAngularDriveMode", { ERASE_METHOD_PTR(UPhysicsConstraintComponent, SetAngularDriveMode, (EAngularDriveMode::Type), ERASE_ARGUMENT_PACK( void )) } );
 			FAngelscriptBinds::AddFunctionEntry(UPhysicsConstraintComponent::StaticClass(), "SetAngularDriveParams", { ERASE_METHOD_PTR(UPhysicsConstraintComponent, SetAngularDriveParams, (float,  float,  float), ERASE_ARGUMENT_PACK( void )) } );

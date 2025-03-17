@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "WorldPartition/DataLayer/DataLayerAsset.h"
+#include "UObject/NoExportTypes.h"
+#include "WorldPartition/DataLayer/DataLayerType.h"
 void FASRuntimeBind_10Module::Bind_DataLayerAsset()
 {
 			FAngelscriptBinds::AddFunctionEntry(UDataLayerAsset::StaticClass(), "GetDebugColor", { ERASE_METHOD_PTR(UDataLayerAsset, GetDebugColor, () const, ERASE_ARGUMENT_PACK(FColor )) } );

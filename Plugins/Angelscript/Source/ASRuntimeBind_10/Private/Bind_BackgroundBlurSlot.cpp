@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/BackgroundBlurSlot.h"
+#include "Layout/Margin.h"
 void FASRuntimeBind_10Module::Bind_BackgroundBlurSlot()
 {
 			FAngelscriptBinds::AddFunctionEntry(UBackgroundBlurSlot::StaticClass(), "SetHorizontalAlignment", { ERASE_METHOD_PTR(UBackgroundBlurSlot, SetHorizontalAlignment, (EHorizontalAlignment), ERASE_ARGUMENT_PACK( void )) } );

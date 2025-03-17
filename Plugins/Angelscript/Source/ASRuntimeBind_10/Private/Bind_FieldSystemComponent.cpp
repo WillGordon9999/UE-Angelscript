@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Field/FieldSystemComponent.h"
+#include "Field/FieldSystemObjects.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_10Module::Bind_FieldSystemComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(UFieldSystemComponent::StaticClass(), "AddFieldCommand", { ERASE_METHOD_PTR(UFieldSystemComponent, AddFieldCommand, ( bool,  EFieldPhysicsType,  UFieldSystemMetaData*,  UFieldNodeBase*), ERASE_ARGUMENT_PACK( void )) } );

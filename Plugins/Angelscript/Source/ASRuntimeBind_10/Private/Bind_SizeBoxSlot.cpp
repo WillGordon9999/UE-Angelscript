@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/SizeBoxSlot.h"
+#include "Layout/Margin.h"
 void FASRuntimeBind_10Module::Bind_SizeBoxSlot()
 {
 			FAngelscriptBinds::AddFunctionEntry(USizeBoxSlot::StaticClass(), "SetHorizontalAlignment", { ERASE_METHOD_PTR(USizeBoxSlot, SetHorizontalAlignment, (EHorizontalAlignment), ERASE_ARGUMENT_PACK( void )) } );

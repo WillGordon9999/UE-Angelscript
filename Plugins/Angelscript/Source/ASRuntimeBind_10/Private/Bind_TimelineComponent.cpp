@@ -1,6 +1,9 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/TimelineComponent.h"
+#include "Curves/CurveFloat.h"
+#include "Curves/CurveLinearColor.h"
+#include "Curves/CurveVector.h"
 void FASRuntimeBind_10Module::Bind_TimelineComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(UTimelineComponent::StaticClass(), "AddEvent", { ERASE_METHOD_PTR(UTimelineComponent, AddEvent, (float,  FOnTimelineEvent), ERASE_ARGUMENT_PACK( void )) } );

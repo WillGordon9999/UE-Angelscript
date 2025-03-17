@@ -1,6 +1,13 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Materials/MaterialInstanceDynamic.h"
+#include "Materials/MaterialInstance.h"
+#include "Materials/MaterialInterface.h"
+#include "MaterialTypes.h"
+#include "Engine/Texture.h"
+#include "UObject/NoExportTypes.h"
+#include "VT/RuntimeVirtualTexture.h"
+#include "SparseVolumeTexture/SparseVolumeTexture.h"
 void FASRuntimeBind_10Module::Bind_MaterialInstanceDynamic()
 {
 			FAngelscriptBinds::AddFunctionEntry(UMaterialInstanceDynamic::StaticClass(), "CopyParameterOverrides", { ERASE_METHOD_PTR(UMaterialInstanceDynamic, CopyParameterOverrides, (UMaterialInstance*), ERASE_ARGUMENT_PACK( void )) } );

@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/RectLightComponent.h"
+#include "Engine/Texture.h"
 void FASRuntimeBind_10Module::Bind_RectLightComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(URectLightComponent::StaticClass(), "SetBarnDoorAngle", { ERASE_METHOD_PTR(URectLightComponent, SetBarnDoorAngle, (float), ERASE_ARGUMENT_PACK( void )) } );

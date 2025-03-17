@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "EnvironmentQuery/EnvQueryInstanceBlueprintWrapper.h"
+#include "GameFramework/Actor.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_10Module::Bind_EnvQueryInstanceBlueprintWrapper()
 {
 			FAngelscriptBinds::AddFunctionEntry(UEnvQueryInstanceBlueprintWrapper::StaticClass(), "GetItemScore", { ERASE_METHOD_PTR(UEnvQueryInstanceBlueprintWrapper, GetItemScore, (int32) const, ERASE_ARGUMENT_PACK( float )) } );

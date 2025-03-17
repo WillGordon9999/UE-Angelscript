@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/MenuAnchor.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_10Module::Bind_MenuAnchor()
 {
 			FAngelscriptBinds::AddFunctionEntry(UMenuAnchor::StaticClass(), "Close", { ERASE_METHOD_PTR(UMenuAnchor, Close, (), ERASE_ARGUMENT_PACK( void )) } );

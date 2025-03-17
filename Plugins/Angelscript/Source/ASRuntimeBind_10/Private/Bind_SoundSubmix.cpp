@@ -1,6 +1,9 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Sound/SoundSubmix.h"
+#include "UObject/NoExportTypes.h"
+#include "Sound/SoundSubmixSend.h"
+#include "Sound/SoundWave.h"
 void FASRuntimeBind_10Module::Bind_SoundSubmix()
 {
 			FAngelscriptBinds::AddFunctionEntry(USoundSubmix::StaticClass(), "AddEnvelopeFollowerDelegate", { ERASE_METHOD_PTR(USoundSubmix, AddEnvelopeFollowerDelegate, (const UObject*,  const FOnSubmixEnvelopeBP&), ERASE_ARGUMENT_PACK( void )) } );

@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/MultiLineEditableTextBox.h"
+#include "UObject/NoExportTypes.h"
+#include "Styling/SlateTypes.h"
 void FASRuntimeBind_10Module::Bind_MultiLineEditableTextBox()
 {
 			FAngelscriptBinds::AddFunctionEntry(UMultiLineEditableTextBox::StaticClass(), "GetHintText", { ERASE_METHOD_PTR(UMultiLineEditableTextBox, GetHintText, () const, ERASE_ARGUMENT_PACK( FText )) } );

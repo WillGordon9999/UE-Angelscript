@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_0Module.h"
 #include "AngelscriptBinds.h"
 #include "Nodes/InterchangeFactoryBaseNode.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_0Module::Bind_InterchangeFactoryBaseNode()
 {
 			FAngelscriptBinds::AddFunctionEntry(UInterchangeFactoryBaseNode::StaticClass(), "AddFactoryDependencyUid", { ERASE_METHOD_PTR(UInterchangeFactoryBaseNode, AddFactoryDependencyUid, (const FString&), ERASE_ARGUMENT_PACK( bool )) } );

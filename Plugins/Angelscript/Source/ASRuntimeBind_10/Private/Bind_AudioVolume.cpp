@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Sound/AudioVolume.h"
+#include "Sound/ReverbSettings.h"
 void FASRuntimeBind_10Module::Bind_AudioVolume()
 {
 			FAngelscriptBinds::AddFunctionEntry(AAudioVolume::StaticClass(), "SetEnabled", { ERASE_METHOD_PTR(AAudioVolume, SetEnabled, (bool), ERASE_ARGUMENT_PACK( void )) } );

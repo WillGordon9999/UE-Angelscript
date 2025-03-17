@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Camera/CameraComponent.h"
+#include "Camera/CameraTypes.h"
 void FASRuntimeBind_10Module::Bind_CameraComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(UCameraComponent::StaticClass(), "AddOrUpdateBlendable", { ERASE_METHOD_PTR(UCameraComponent, AddOrUpdateBlendable, (TScriptInterface<IBlendableInterface>,  float), ERASE_ARGUMENT_PACK(void )) } );

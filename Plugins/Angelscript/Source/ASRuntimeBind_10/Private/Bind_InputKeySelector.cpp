@@ -1,6 +1,9 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/InputKeySelector.h"
+#include "InputCoreTypes.h"
+#include "Framework/Commands/InputChord.h"
+#include "Components/SlateWrapperTypes.h"
 void FASRuntimeBind_10Module::Bind_InputKeySelector()
 {
 			FAngelscriptBinds::AddFunctionEntry(UInputKeySelector::StaticClass(), "GetIsSelectingKey", { ERASE_METHOD_PTR(UInputKeySelector, GetIsSelectingKey, () const, ERASE_ARGUMENT_PACK( bool )) } );

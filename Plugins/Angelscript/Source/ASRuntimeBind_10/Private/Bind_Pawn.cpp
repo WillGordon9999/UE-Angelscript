@@ -1,6 +1,12 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "GameFramework/Pawn.h"
+#include "UObject/NoExportTypes.h"
+#include "GameFramework/Controller.h"
+#include "GameFramework/PlayerController.h"
+#include "GameFramework/PawnMovementComponent.h"
+#include "Components/InputComponent.h"
+#include "GameFramework/Actor.h"
 void FASRuntimeBind_10Module::Bind_Pawn()
 {
 			FAngelscriptBinds::AddFunctionEntry(APawn::StaticClass(), "AddControllerPitchInput", { ERASE_METHOD_PTR(APawn, AddControllerPitchInput, (float), ERASE_ARGUMENT_PACK(  void )) } );

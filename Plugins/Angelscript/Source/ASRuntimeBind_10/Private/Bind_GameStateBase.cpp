@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "GameFramework/GameStateBase.h"
+#include "GameFramework/Controller.h"
 void FASRuntimeBind_10Module::Bind_GameStateBase()
 {
 			FAngelscriptBinds::AddFunctionEntry(AGameStateBase::StaticClass(), "GetPlayerRespawnDelay", { ERASE_METHOD_PTR(AGameStateBase, GetPlayerRespawnDelay, (AController*) const, ERASE_ARGUMENT_PACK(  float )) } );

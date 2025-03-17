@@ -1,6 +1,9 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/CanvasPanelSlot.h"
+#include "UObject/NoExportTypes.h"
+#include "Widgets/Layout/Anchors.h"
+#include "Layout/Margin.h"
 void FASRuntimeBind_10Module::Bind_CanvasPanelSlot()
 {
 			FAngelscriptBinds::AddFunctionEntry(UCanvasPanelSlot::StaticClass(), "GetAlignment", { ERASE_METHOD_PTR(UCanvasPanelSlot, GetAlignment, () const, ERASE_ARGUMENT_PACK( FVector2D )) } );

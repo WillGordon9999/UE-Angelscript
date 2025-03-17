@@ -1,6 +1,9 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "GameFramework/ProjectileMovementComponent.h"
+#include "UObject/NoExportTypes.h"
+#include "Components/SceneComponent.h"
+#include "Engine/HitResult.h"
 void FASRuntimeBind_10Module::Bind_ProjectileMovementComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(UProjectileMovementComponent::StaticClass(), "IsInterpolationComplete", { ERASE_METHOD_PTR(UProjectileMovementComponent, IsInterpolationComplete, () const, ERASE_ARGUMENT_PACK(bool )) } );

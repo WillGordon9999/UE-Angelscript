@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/Slider.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_10Module::Bind_Slider()
 {
 			FAngelscriptBinds::AddFunctionEntry(USlider::StaticClass(), "GetNormalizedValue", { ERASE_METHOD_PTR(USlider, GetNormalizedValue, () const, ERASE_ARGUMENT_PACK( float )) } );

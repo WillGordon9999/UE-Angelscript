@@ -1,6 +1,22 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "GameFramework/PlayerController.h"
+#include "GameFramework/TouchInterface.h"
+#include "GameFramework/HUD.h"
+#include "GameFramework/Actor.h"
+#include "Camera/CameraShakeBase.h"
+#include "Camera/CameraTypes.h"
+#include "UObject/NoExportTypes.h"
+#include "Camera/CameraShakeSourceComponent.h"
+#include "GameFramework/ForceFeedbackEffect.h"
+#include "Engine/HitResult.h"
+#include "InputCoreTypes.h"
+#include "GameFramework/PlayerInput.h"
+#include "GameFramework/SpectatorPawn.h"
+#include "WorldPartition/WorldPartitionStreamingSource.h"
+#include "Haptics/HapticFeedbackEffect_Base.h"
+#include "Components/SceneComponent.h"
+#include "Blueprint/UserWidget.h"
 void FASRuntimeBind_10Module::Bind_PlayerController()
 {
 			FAngelscriptBinds::AddFunctionEntry(APlayerController::StaticClass(), "ActivateTouchInterface", { ERASE_METHOD_PTR(APlayerController, ActivateTouchInterface, (class UTouchInterface*), ERASE_ARGUMENT_PACK(  void )) } );

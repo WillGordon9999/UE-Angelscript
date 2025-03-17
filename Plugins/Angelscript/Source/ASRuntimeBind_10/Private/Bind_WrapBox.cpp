@@ -1,6 +1,9 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/WrapBox.h"
+#include "Components/WrapBoxSlot.h"
+#include "Components/Widget.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_10Module::Bind_WrapBox()
 {
 			FAngelscriptBinds::AddFunctionEntry(UWrapBox::StaticClass(), "AddChildToWrapBox", { ERASE_METHOD_PTR(UWrapBox, AddChildToWrapBox, (UWidget*), ERASE_ARGUMENT_PACK( UWrapBoxSlot* )) } );

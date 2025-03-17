@@ -1,6 +1,13 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/Border.h"
+#include "Materials/MaterialInstanceDynamic.h"
+#include "Styling/SlateBrush.h"
+#include "UObject/NoExportTypes.h"
+#include "Slate/SlateBrushAsset.h"
+#include "Materials/MaterialInterface.h"
+#include "Engine/Texture2D.h"
+#include "Layout/Margin.h"
 void FASRuntimeBind_10Module::Bind_Border()
 {
 			FAngelscriptBinds::AddFunctionEntry(UBorder::StaticClass(), "GetDynamicMaterial", { ERASE_METHOD_PTR(UBorder, GetDynamicMaterial, (), ERASE_ARGUMENT_PACK( UMaterialInstanceDynamic* )) } );

@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/CheckBox.h"
+#include "Styling/SlateTypes.h"
 void FASRuntimeBind_10Module::Bind_CheckBox()
 {
 			FAngelscriptBinds::AddFunctionEntry(UCheckBox::StaticClass(), "GetCheckedState", { ERASE_METHOD_PTR(UCheckBox, GetCheckedState, () const, ERASE_ARGUMENT_PACK( ECheckBoxState )) } );

@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/Button.h"
+#include "UObject/NoExportTypes.h"
+#include "Styling/SlateTypes.h"
 void FASRuntimeBind_10Module::Bind_Button()
 {
 			FAngelscriptBinds::AddFunctionEntry(UButton::StaticClass(), "IsPressed", { ERASE_METHOD_PTR(UButton, IsPressed, () const, ERASE_ARGUMENT_PACK( bool )) } );

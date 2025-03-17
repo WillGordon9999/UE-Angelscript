@@ -1,6 +1,9 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/EditableText.h"
+#include "Fonts/SlateFontInfo.h"
+#include "Materials/MaterialInterface.h"
+#include "Styling/SlateTypes.h"
 void FASRuntimeBind_10Module::Bind_EditableText()
 {
 			FAngelscriptBinds::AddFunctionEntry(UEditableText::StaticClass(), "GetFont", { ERASE_METHOD_PTR(UEditableText, GetFont, () const, ERASE_ARGUMENT_PACK( const FSlateFontInfo& )) } );

@@ -1,6 +1,9 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/MultiLineEditableText.h"
+#include "Fonts/SlateFontInfo.h"
+#include "Materials/MaterialInterface.h"
+#include "Styling/SlateTypes.h"
 void FASRuntimeBind_10Module::Bind_MultiLineEditableText()
 {
 			FAngelscriptBinds::AddFunctionEntry(UMultiLineEditableText::StaticClass(), "GetFont", { ERASE_METHOD_PTR(UMultiLineEditableText, GetFont, () const, ERASE_ARGUMENT_PACK( const FSlateFontInfo& )) } );

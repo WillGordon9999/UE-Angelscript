@@ -1,6 +1,9 @@
 #include "ASRuntimeBind_0Module.h"
 #include "AngelscriptBinds.h"
 #include "Nodes/InterchangeBaseNodeContainer.h"
+#include "Nodes/InterchangeBaseNode.h"
+#include "Nodes/InterchangeFactoryBaseNode.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_0Module::Bind_InterchangeBaseNodeContainer()
 {
 			FAngelscriptBinds::AddFunctionEntry(UInterchangeBaseNodeContainer::StaticClass(), "AddNode", { ERASE_METHOD_PTR(UInterchangeBaseNodeContainer, AddNode, (UInterchangeBaseNode*), ERASE_ARGUMENT_PACK( FString )) } );

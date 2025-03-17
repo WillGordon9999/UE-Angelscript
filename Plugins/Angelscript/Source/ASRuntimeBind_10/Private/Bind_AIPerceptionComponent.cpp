@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Perception/AIPerceptionComponent.h"
+#include "GameFramework/Actor.h"
+#include "Perception/AISense.h"
 void FASRuntimeBind_10Module::Bind_AIPerceptionComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(UAIPerceptionComponent::StaticClass(), "ForgetAll", { ERASE_METHOD_PTR(UAIPerceptionComponent, ForgetAll, (), ERASE_ARGUMENT_PACK( void )) } );

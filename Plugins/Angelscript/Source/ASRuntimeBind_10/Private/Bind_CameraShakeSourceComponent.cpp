@@ -1,6 +1,9 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Camera/CameraShakeSourceComponent.h"
+#include "UObject/NoExportTypes.h"
+#include "Camera/CameraShakeBase.h"
+#include "Camera/CameraTypes.h"
 void FASRuntimeBind_10Module::Bind_CameraShakeSourceComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(UCameraShakeSourceComponent::StaticClass(), "GetAttenuationFactor", { ERASE_METHOD_PTR(UCameraShakeSourceComponent, GetAttenuationFactor, (const FVector&) const, ERASE_ARGUMENT_PACK( float )) } );

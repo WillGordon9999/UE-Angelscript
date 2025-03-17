@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/SpinBox.h"
+#include "Styling/SlateColor.h"
 void FASRuntimeBind_10Module::Bind_SpinBox()
 {
 			FAngelscriptBinds::AddFunctionEntry(USpinBox::StaticClass(), "ClearMaxSliderValue", { ERASE_METHOD_PTR(USpinBox, ClearMaxSliderValue, (), ERASE_ARGUMENT_PACK( void )) } );

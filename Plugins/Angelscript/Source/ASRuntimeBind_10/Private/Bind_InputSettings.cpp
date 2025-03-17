@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "GameFramework/InputSettings.h"
+#include "GameFramework/PlayerInput.h"
 void FASRuntimeBind_10Module::Bind_InputSettings()
 {
 			FAngelscriptBinds::AddFunctionEntry(UInputSettings::StaticClass(), "AddActionMapping", { ERASE_METHOD_PTR(UInputSettings, AddActionMapping, (const FInputActionKeyMapping&,  bool), ERASE_ARGUMENT_PACK( void )) } );

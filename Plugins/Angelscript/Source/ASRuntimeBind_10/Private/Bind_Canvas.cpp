@@ -1,6 +1,11 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Engine/Canvas.h"
+#include "UObject/NoExportTypes.h"
+#include "Engine/Texture.h"
+#include "Materials/MaterialInterface.h"
+#include "Engine/EngineTypes.h"
+#include "Engine/Font.h"
 void FASRuntimeBind_10Module::Bind_Canvas()
 {
 			FAngelscriptBinds::AddFunctionEntry(UCanvas::StaticClass(), "K2_Deproject", { ERASE_METHOD_PTR(UCanvas, K2_Deproject, (FVector2D,  FVector&,  FVector&), ERASE_ARGUMENT_PACK( void )) } );

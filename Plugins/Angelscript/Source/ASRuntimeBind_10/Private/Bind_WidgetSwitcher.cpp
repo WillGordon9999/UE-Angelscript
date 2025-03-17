@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/WidgetSwitcher.h"
+#include "Components/Widget.h"
 void FASRuntimeBind_10Module::Bind_WidgetSwitcher()
 {
 			FAngelscriptBinds::AddFunctionEntry(UWidgetSwitcher::StaticClass(), "GetActiveWidget", { ERASE_METHOD_PTR(UWidgetSwitcher, GetActiveWidget, () const, ERASE_ARGUMENT_PACK( UWidget* )) } );

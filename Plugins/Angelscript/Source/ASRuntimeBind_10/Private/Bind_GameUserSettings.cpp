@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "GameFramework/GameUserSettings.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_10Module::Bind_GameUserSettings()
 {
 			FAngelscriptBinds::AddFunctionEntry(UGameUserSettings::StaticClass(), "ApplyHardwareBenchmarkResults", { ERASE_METHOD_PTR(UGameUserSettings, ApplyHardwareBenchmarkResults, (), ERASE_ARGUMENT_PACK(  void )) } );

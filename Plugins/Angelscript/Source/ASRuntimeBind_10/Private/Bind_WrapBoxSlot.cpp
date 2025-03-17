@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/WrapBoxSlot.h"
+#include "Layout/Margin.h"
 void FASRuntimeBind_10Module::Bind_WrapBoxSlot()
 {
 			FAngelscriptBinds::AddFunctionEntry(UWrapBoxSlot::StaticClass(), "SetFillEmptySpace", { ERASE_METHOD_PTR(UWrapBoxSlot, SetFillEmptySpace, (bool), ERASE_ARGUMENT_PACK( void )) } );

@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Camera/CameraModifier.h"
+#include "GameFramework/Actor.h"
 void FASRuntimeBind_10Module::Bind_CameraModifier()
 {
 			FAngelscriptBinds::AddFunctionEntry(UCameraModifier::StaticClass(), "DisableModifier", { ERASE_METHOD_PTR(UCameraModifier, DisableModifier, (bool), ERASE_ARGUMENT_PACK(  void )) } );

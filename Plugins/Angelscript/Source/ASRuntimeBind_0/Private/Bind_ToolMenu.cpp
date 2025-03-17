@@ -1,6 +1,12 @@
 #include "ASRuntimeBind_0Module.h"
 #include "AngelscriptBinds.h"
 #include "ToolMenu.h"
+#include "ToolMenuSection.h"
+#include "ToolMenuEntry.h"
+#include "ToolMenuEntryScript.h"
+#include "ToolMenuMisc.h"
+#include "ToolMenuOwner.h"
+#include "Framework/MultiBox/MultiBoxDefs.h"
 void FASRuntimeBind_0Module::Bind_ToolMenu()
 {
 			FAngelscriptBinds::AddFunctionEntry(UToolMenu::StaticClass(), "AddDynamicSectionScript", { ERASE_METHOD_PTR(UToolMenu, AddDynamicSectionScript, (const FName,  UToolMenuSectionDynamic*), ERASE_ARGUMENT_PACK(void )) } );

@@ -1,6 +1,9 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "GameFramework/PlayerState.h"
+#include "GameFramework/OnlineReplStructs.h"
+#include "GameFramework/Pawn.h"
+#include "GameFramework/PlayerController.h"
 void FASRuntimeBind_10Module::Bind_PlayerState()
 {
 			FAngelscriptBinds::AddFunctionEntry(APlayerState::StaticClass(), "BP_GetUniqueId", { ERASE_METHOD_PTR(APlayerState, BP_GetUniqueId, () const, ERASE_ARGUMENT_PACK( FUniqueNetIdRepl )) } );

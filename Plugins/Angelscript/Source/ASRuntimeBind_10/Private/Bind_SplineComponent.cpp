@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/SplineComponent.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_10Module::Bind_SplineComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(USplineComponent::StaticClass(), "AddPoint", { ERASE_METHOD_PTR(USplineComponent, AddPoint, (const FSplinePoint&,  bool), ERASE_ARGUMENT_PACK( void )) } );

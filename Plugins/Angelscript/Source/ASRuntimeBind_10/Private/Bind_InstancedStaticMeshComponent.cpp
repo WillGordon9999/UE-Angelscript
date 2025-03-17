@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/InstancedStaticMeshComponent.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_10Module::Bind_InstancedStaticMeshComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(UInstancedStaticMeshComponent::StaticClass(), "AddInstance", { ERASE_METHOD_PTR(UInstancedStaticMeshComponent, AddInstance, (const FTransform&,  bool), ERASE_ARGUMENT_PACK(  int32 )) } );

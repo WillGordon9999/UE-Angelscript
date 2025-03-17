@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/GridPanel.h"
+#include "Components/GridSlot.h"
+#include "Components/Widget.h"
 void FASRuntimeBind_10Module::Bind_GridPanel()
 {
 			FAngelscriptBinds::AddFunctionEntry(UGridPanel::StaticClass(), "AddChildToGrid", { ERASE_METHOD_PTR(UGridPanel, AddChildToGrid, (UWidget*,  int32,  int32), ERASE_ARGUMENT_PACK( UGridSlot* )) } );

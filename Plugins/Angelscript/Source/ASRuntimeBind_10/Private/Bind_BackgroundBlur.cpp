@@ -1,6 +1,9 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/BackgroundBlur.h"
+#include "UObject/NoExportTypes.h"
+#include "Styling/SlateBrush.h"
+#include "Layout/Margin.h"
 void FASRuntimeBind_10Module::Bind_BackgroundBlur()
 {
 			FAngelscriptBinds::AddFunctionEntry(UBackgroundBlur::StaticClass(), "SetApplyAlphaToBlur", { ERASE_METHOD_PTR(UBackgroundBlur, SetApplyAlphaToBlur, (bool), ERASE_ARGUMENT_PACK( void )) } );

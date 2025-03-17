@@ -1,6 +1,12 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Elements/Framework/TypedElementCommonActions.h"
+#include "Elements/Framework/TypedElementListProxy.h"
+#include "Elements/Framework/TypedElementSelectionSet.h"
+#include "Engine/World.h"
+#include "Elements/Interfaces/TypedElementWorldInterface.h"
+#include "Elements/Framework/TypedElementHandle.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_10Module::Bind_TypedElementCommonActions()
 {
 			FAngelscriptBinds::AddFunctionEntry(UTypedElementCommonActions::StaticClass(), "CopyNormalizedElements", { ERASE_METHOD_PTR(UTypedElementCommonActions, CopyNormalizedElements, (const FScriptTypedElementListProxy&), ERASE_ARGUMENT_PACK( bool )) } );

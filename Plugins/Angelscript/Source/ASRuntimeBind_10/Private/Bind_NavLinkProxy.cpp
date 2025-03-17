@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Navigation/NavLinkProxy.h"
+#include "GameFramework/Actor.h"
 void FASRuntimeBind_10Module::Bind_NavLinkProxy()
 {
 			FAngelscriptBinds::AddFunctionEntry(ANavLinkProxy::StaticClass(), "HasMovingAgents", { ERASE_METHOD_PTR(ANavLinkProxy, HasMovingAgents, () const, ERASE_ARGUMENT_PACK( bool )) } );

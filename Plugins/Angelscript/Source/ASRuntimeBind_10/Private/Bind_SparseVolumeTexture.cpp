@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "SparseVolumeTexture/SparseVolumeTexture.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_10Module::Bind_SparseVolumeTexture()
 {
 			FAngelscriptBinds::AddFunctionEntry(USparseVolumeTexture::StaticClass(), "GetFrameTransform", { ERASE_METHOD_PTR(USparseVolumeTexture, GetFrameTransform, () const, ERASE_ARGUMENT_PACK( FTransform )) } );

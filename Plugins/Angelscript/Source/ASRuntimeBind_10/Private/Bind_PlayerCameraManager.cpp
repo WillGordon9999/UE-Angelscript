@@ -1,6 +1,13 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Camera/PlayerCameraManager.h"
+#include "GameFramework/Actor.h"
+#include "Camera/CameraModifier.h"
+#include "UObject/NoExportTypes.h"
+#include "GameFramework/PlayerController.h"
+#include "Camera/CameraShakeBase.h"
+#include "Camera/CameraTypes.h"
+#include "Camera/CameraShakeSourceComponent.h"
 void FASRuntimeBind_10Module::Bind_PlayerCameraManager()
 {
 			FAngelscriptBinds::AddFunctionEntry(APlayerCameraManager::StaticClass(), "AddGenericCameraLensEffect", { ERASE_METHOD_PTR(APlayerCameraManager, AddGenericCameraLensEffect, ( TSubclassOf<AActor>), ERASE_ARGUMENT_PACK(  TScriptInterface<class ICameraLensEffectInterface> )) } );

@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "GameFramework/CheatManager.h"
+#include "GameFramework/PlayerController.h"
 void FASRuntimeBind_10Module::Bind_CheatManager()
 {
 			FAngelscriptBinds::AddFunctionEntry(UCheatManager::StaticClass(), "ChangeSize", { ERASE_METHOD_PTR(UCheatManager, ChangeSize, (float), ERASE_ARGUMENT_PACK(  void )) } );

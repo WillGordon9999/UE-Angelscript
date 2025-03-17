@@ -1,6 +1,19 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "GameFramework/Actor.h"
+#include "Components/ActorComponent.h"
+#include "UObject/NoExportTypes.h"
+#include "Components/InputComponent.h"
+#include "GameFramework/PlayerController.h"
+#include "InputCoreTypes.h"
+#include "GameFramework/Pawn.h"
+#include "GameFramework/Controller.h"
+#include "Engine/Level.h"
+#include "Components/PrimitiveComponent.h"
+#include "Components/ChildActorComponent.h"
+#include "Engine/EngineTypes.h"
+#include "Engine/HitResult.h"
+#include "Components/SceneComponent.h"
 void FASRuntimeBind_10Module::Bind_Actor()
 {
 			FAngelscriptBinds::AddFunctionEntry(AActor::StaticClass(), "ActorHasTag", { ERASE_METHOD_PTR(AActor, ActorHasTag, (FName) const, ERASE_ARGUMENT_PACK( bool )) } );

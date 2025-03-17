@@ -1,6 +1,10 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "GameFramework/InputDeviceSubsystem.h"
+#include "GameFramework/InputDevicePropertyHandle.h"
+#include "GameFramework/InputDeviceProperties.h"
+#include "GameFramework/InputSettings.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_10Module::Bind_InputDeviceSubsystem()
 {
 			FAngelscriptBinds::AddFunctionEntry(UInputDeviceSubsystem::StaticClass(), "ActivateDevicePropertyOfClass", { ERASE_METHOD_PTR(UInputDeviceSubsystem, ActivateDevicePropertyOfClass, (TSubclassOf<UInputDeviceProperty>,  const FActivateDevicePropertyParams&), ERASE_ARGUMENT_PACK( FInputDevicePropertyHandle )) } );

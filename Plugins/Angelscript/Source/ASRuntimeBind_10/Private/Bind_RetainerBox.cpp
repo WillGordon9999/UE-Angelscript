@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/RetainerBox.h"
+#include "Materials/MaterialInstanceDynamic.h"
+#include "Materials/MaterialInterface.h"
 void FASRuntimeBind_10Module::Bind_RetainerBox()
 {
 			FAngelscriptBinds::AddFunctionEntry(URetainerBox::StaticClass(), "GetEffectMaterial", { ERASE_METHOD_PTR(URetainerBox, GetEffectMaterial, () const, ERASE_ARGUMENT_PACK( UMaterialInstanceDynamic* )) } );

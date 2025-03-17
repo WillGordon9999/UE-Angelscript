@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "PhysicsEngine/PhysicsHandleComponent.h"
+#include "Components/PrimitiveComponent.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_10Module::Bind_PhysicsHandleComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(UPhysicsHandleComponent::StaticClass(), "GetGrabbedComponent", { ERASE_METHOD_PTR(UPhysicsHandleComponent, GetGrabbedComponent, () const, ERASE_ARGUMENT_PACK( class UPrimitiveComponent* )) } );

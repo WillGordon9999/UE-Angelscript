@@ -1,6 +1,9 @@
 #include "ASRuntimeBind_0Module.h"
 #include "AngelscriptBinds.h"
 #include "Elements/Framework/TypedElementSelectionSet.h"
+#include "Elements/Framework/TypedElementHandle.h"
+#include "Elements/Interfaces/TypedElementSelectionInterface.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_0Module::Bind_TypedElementSelectionSet()
 {
 			FAngelscriptBinds::AddFunctionEntry(UTypedElementSelectionSet::StaticClass(), "AllowSelectionModifiers", { ERASE_METHOD_PTR(UTypedElementSelectionSet, AllowSelectionModifiers, (const FScriptTypedElementHandle&) const, ERASE_ARGUMENT_PACK( bool )) } );

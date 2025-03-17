@@ -1,6 +1,9 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/DecalComponent.h"
+#include "Materials/MaterialInstanceDynamic.h"
+#include "Materials/MaterialInterface.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_10Module::Bind_DecalComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(UDecalComponent::StaticClass(), "CreateDynamicMaterialInstance", { ERASE_METHOD_PTR(UDecalComponent, CreateDynamicMaterialInstance, (), ERASE_ARGUMENT_PACK(  class UMaterialInstanceDynamic* )) } );

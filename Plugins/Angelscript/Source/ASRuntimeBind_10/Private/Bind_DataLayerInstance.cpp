@@ -1,6 +1,9 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "WorldPartition/DataLayer/DataLayerInstance.h"
+#include "WorldPartition/DataLayer/DataLayerAsset.h"
+#include "UObject/NoExportTypes.h"
+#include "WorldPartition/DataLayer/DataLayerType.h"
 void FASRuntimeBind_10Module::Bind_DataLayerInstance()
 {
 			FAngelscriptBinds::AddFunctionEntry(UDataLayerInstance::StaticClass(), "GetAsset", { ERASE_METHOD_PTR(UDataLayerInstance, GetAsset, () const, ERASE_ARGUMENT_PACK( const UDataLayerAsset* )) } );

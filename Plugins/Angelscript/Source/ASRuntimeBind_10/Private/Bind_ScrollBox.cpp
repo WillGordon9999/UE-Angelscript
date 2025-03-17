@@ -1,6 +1,12 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/ScrollBox.h"
+#include "Components/Widget.h"
+#include "Widgets/Layout/SScrollBox.h"
+#include "Styling/SlateTypes.h"
+#include "Layout/Margin.h"
+#include "UObject/NoExportTypes.h"
+#include "Components/SlateWrapperTypes.h"
 void FASRuntimeBind_10Module::Bind_ScrollBox()
 {
 			FAngelscriptBinds::AddFunctionEntry(UScrollBox::StaticClass(), "EndInertialScrolling", { ERASE_METHOD_PTR(UScrollBox, EndInertialScrolling, (), ERASE_ARGUMENT_PACK( void )) } );

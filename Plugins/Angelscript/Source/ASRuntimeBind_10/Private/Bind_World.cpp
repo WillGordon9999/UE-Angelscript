@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Engine/World.h"
+#include "WorldPartition/DataLayer/DataLayerManager.h"
+#include "GameFramework/WorldSettings.h"
 void FASRuntimeBind_10Module::Bind_World()
 {
 			FAngelscriptBinds::AddFunctionEntry(UWorld::StaticClass(), "GetDataLayerManager", { ERASE_METHOD_PTR(UWorld, GetDataLayerManager, () const, ERASE_ARGUMENT_PACK(UDataLayerManager* )) } );

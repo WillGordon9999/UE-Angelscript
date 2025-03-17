@@ -1,6 +1,11 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/WidgetComponent.h"
+#include "UObject/NoExportTypes.h"
+#include "Materials/MaterialInstanceDynamic.h"
+#include "Engine/LocalPlayer.h"
+#include "Engine/TextureRenderTarget2D.h"
+#include "Blueprint/UserWidget.h"
 void FASRuntimeBind_10Module::Bind_WidgetComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(UWidgetComponent::StaticClass(), "GetCurrentDrawSize", { ERASE_METHOD_PTR(UWidgetComponent, GetCurrentDrawSize, () const, ERASE_ARGUMENT_PACK( FVector2D )) } );

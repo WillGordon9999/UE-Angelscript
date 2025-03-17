@@ -1,6 +1,12 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "UObject/NoExportTypes.h"
+#include "GameFramework/Character.h"
+#include "Components/PrimitiveComponent.h"
+#include "Engine/HitResult.h"
+#include "CharacterMovementComponentAsync.h"
+#include "AI/Navigation/NavigationAvoidanceTypes.h"
 void FASRuntimeBind_10Module::Bind_CharacterMovementComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(UCharacterMovementComponent::StaticClass(), "AddForce", { ERASE_METHOD_PTR(UCharacterMovementComponent, AddForce, ( FVector), ERASE_ARGUMENT_PACK(  void )) } );

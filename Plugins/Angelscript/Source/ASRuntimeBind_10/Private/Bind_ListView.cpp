@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/ListView.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_10Module::Bind_ListView()
 {
 			FAngelscriptBinds::AddFunctionEntry(UListView::StaticClass(), "AddItem", { ERASE_METHOD_PTR(UListView, AddItem, (UObject*), ERASE_ARGUMENT_PACK( void )) } );

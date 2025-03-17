@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Engine/ViewportStatsSubsystem.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_10Module::Bind_ViewportStatsSubsystem()
 {
 			FAngelscriptBinds::AddFunctionEntry(UViewportStatsSubsystem::StaticClass(), "AddDisplayDelegate", { ERASE_METHOD_PTR(UViewportStatsSubsystem, AddDisplayDelegate, (FViewportDisplayCallback const&), ERASE_ARGUMENT_PACK( int32 )) } );

@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_0Module.h"
 #include "AngelscriptBinds.h"
 #include "StaticMeshDescription.h"
+#include "UObject/NoExportTypes.h"
+#include "MeshTypes.h"
 void FASRuntimeBind_0Module::Bind_StaticMeshDescription()
 {
 			FAngelscriptBinds::AddFunctionEntry(UStaticMeshDescription::StaticClass(), "CreateCube", { ERASE_METHOD_PTR(UStaticMeshDescription, CreateCube, (FVector,  FVector,  FPolygonGroupID, 

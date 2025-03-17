@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Animation/Skeleton.h"
+#include "Animation/BlendProfile.h"
 void FASRuntimeBind_10Module::Bind_Skeleton()
 {
 			FAngelscriptBinds::AddFunctionEntry(USkeleton::StaticClass(), "AddCompatibleSkeleton", { ERASE_METHOD_PTR(USkeleton, AddCompatibleSkeleton, (const USkeleton*), ERASE_ARGUMENT_PACK( void )) } );

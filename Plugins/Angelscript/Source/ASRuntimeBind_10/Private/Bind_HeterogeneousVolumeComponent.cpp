@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/HeterogeneousVolumeComponent.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_10Module::Bind_HeterogeneousVolumeComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(UHeterogeneousVolumeComponent::StaticClass(), "Play", { ERASE_METHOD_PTR(UHeterogeneousVolumeComponent, Play, (), ERASE_ARGUMENT_PACK( void )) } );

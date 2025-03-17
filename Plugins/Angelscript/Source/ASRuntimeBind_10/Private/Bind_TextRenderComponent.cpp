@@ -1,6 +1,9 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/TextRenderComponent.h"
+#include "UObject/NoExportTypes.h"
+#include "Engine/Font.h"
+#include "Materials/MaterialInterface.h"
 void FASRuntimeBind_10Module::Bind_TextRenderComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(UTextRenderComponent::StaticClass(), "GetTextLocalSize", { ERASE_METHOD_PTR(UTextRenderComponent, GetTextLocalSize, () const, ERASE_ARGUMENT_PACK( FVector )) } );

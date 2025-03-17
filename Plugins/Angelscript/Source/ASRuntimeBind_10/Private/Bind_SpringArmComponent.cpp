@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_10Module::Bind_SpringArmComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(USpringArmComponent::StaticClass(), "GetTargetRotation", { ERASE_METHOD_PTR(USpringArmComponent, GetTargetRotation, () const, ERASE_ARGUMENT_PACK( FRotator )) } );
