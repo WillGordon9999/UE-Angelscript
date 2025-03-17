@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_80Module.h"
 #include "AngelscriptBinds.h"
 #include "SynthComponents/SynthComponentGranulator.h"
+#include "UObject/NoExportTypes.h"
+#include "Sound/SoundWave.h"
 void FASRuntimeBind_80Module::Bind_GranularSynth()
 {
 			FAngelscriptBinds::AddFunctionEntry(UGranularSynth::StaticClass(), "GetCurrentPlayheadTime", { ERASE_METHOD_PTR(UGranularSynth, GetCurrentPlayheadTime, () const, ERASE_ARGUMENT_PACK(float )) } );

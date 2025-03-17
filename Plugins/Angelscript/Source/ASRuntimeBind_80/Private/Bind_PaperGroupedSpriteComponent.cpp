@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_80Module.h"
 #include "AngelscriptBinds.h"
 #include "PaperGroupedSpriteComponent.h"
+#include "UObject/NoExportTypes.h"
+#include "PaperSprite.h"
 void FASRuntimeBind_80Module::Bind_PaperGroupedSpriteComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(UPaperGroupedSpriteComponent::StaticClass(), "AddInstance", { ERASE_METHOD_PTR(UPaperGroupedSpriteComponent, AddInstance, (const FTransform&,  UPaperSprite*,  bool,  FLinearColor), ERASE_ARGUMENT_PACK(int32 )) } );

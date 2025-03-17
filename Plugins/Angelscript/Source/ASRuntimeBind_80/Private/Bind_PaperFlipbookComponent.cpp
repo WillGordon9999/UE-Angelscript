@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_80Module.h"
 #include "AngelscriptBinds.h"
 #include "PaperFlipbookComponent.h"
+#include "PaperFlipbook.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_80Module::Bind_PaperFlipbookComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(UPaperFlipbookComponent::StaticClass(), "GetFlipbook", { ERASE_METHOD_PTR(UPaperFlipbookComponent, GetFlipbook, (), ERASE_ARGUMENT_PACK( UPaperFlipbook* )) } );

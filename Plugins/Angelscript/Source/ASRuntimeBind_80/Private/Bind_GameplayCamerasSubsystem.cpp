@@ -1,6 +1,9 @@
 #include "ASRuntimeBind_80Module.h"
 #include "AngelscriptBinds.h"
 #include "GameplayCamerasSubsystem.h"
+#include "GameFramework/PlayerController.h"
+#include "Animations/CameraAnimationCameraModifier.h"
+#include "CameraAnimationSequence.h"
 void FASRuntimeBind_80Module::Bind_GameplayCamerasSubsystem()
 {
 			//FAngelscriptBinds::AddFunctionEntry(UGameplayCamerasSubsystem::StaticClass(), "IsCameraAnimationActive", { ERASE_METHOD_PTR(UGameplayCamerasSubsystem, IsCameraAnimationActive, (APlayerController*,  const FCameraAnimationHandle&) const, ERASE_ARGUMENT_PACK(bool )) } );

@@ -24,16 +24,21 @@ namespace UnrealBuildTool.Rules
 			(
 				new string[]
 				{
-					"AudioWidgets",
-					"ProceduralMeshComponent",
-					"ResonanceAudio",
 					"Synthesis",
+					"AnimationSharing",
+					"InterchangeNodes",
+					"InterchangeFactoryNodes",
+					"VariantManager",
+					"InterchangePipelines",
 					"TemplateSequence",
 					"GameplayCameras",
 					"Paper2D",
 					"AnimNext",
-					"GameplayBehaviorsModule",
-					"AngelPortV2",
+					"AudioExtensions",
+					"Engine",
+					"CoreUObject",
+					"InterchangeCore",
+					"CinematicCamera",
 				}
 			);
 		}

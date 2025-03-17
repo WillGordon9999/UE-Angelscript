@@ -1,6 +1,9 @@
 #include "ASRuntimeBind_90Module.h"
 #include "AngelscriptBinds.h"
 #include "MotionWarpingComponent.h"
+#include "RootMotionModifier.h"
+#include "Components/SceneComponent.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_90Module::Bind_MotionWarpingComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(UMotionWarpingComponent::StaticClass(), "AddOrUpdateWarpTarget", { ERASE_METHOD_PTR(UMotionWarpingComponent, AddOrUpdateWarpTarget, (const FMotionWarpingTarget&), ERASE_ARGUMENT_PACK(void )) } );

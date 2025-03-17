@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_80Module.h"
 #include "AngelscriptBinds.h"
 #include "SynthComponents/SynthComponentMonoWaveTable.h"
+#include "EpicSynth1Types.h"
 void FASRuntimeBind_80Module::Bind_SynthComponentMonoWaveTable()
 {
 			FAngelscriptBinds::AddFunctionEntry(USynthComponentMonoWaveTable::StaticClass(), "GetCurveTangent", { ERASE_METHOD_PTR(USynthComponentMonoWaveTable, GetCurveTangent, (int32), ERASE_ARGUMENT_PACK(float )) } );

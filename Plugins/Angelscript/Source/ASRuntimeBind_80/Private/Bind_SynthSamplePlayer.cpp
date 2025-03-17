@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_80Module.h"
 #include "AngelscriptBinds.h"
 #include "SynthComponents/SynthComponentWaveTable.h"
+#include "Sound/SoundWave.h"
 void FASRuntimeBind_80Module::Bind_SynthSamplePlayer()
 {
 			FAngelscriptBinds::AddFunctionEntry(USynthSamplePlayer::StaticClass(), "GetCurrentPlaybackProgressPercent", { ERASE_METHOD_PTR(USynthSamplePlayer, GetCurrentPlaybackProgressPercent, () const, ERASE_ARGUMENT_PACK(float )) } );

@@ -24,16 +24,18 @@ namespace UnrealBuildTool.Rules
 			(
 				new string[]
 				{
-					"GeometryFramework",
+					"GameplayBehaviorsModule",
+					"AngelPortV2",
 					"TraceUtilities",
-					"GeometryCache",
 					"AnimationModifierLibrary",
 					"MotionWarping",
+					"GeometryCache",
 					"ActorLayerUtilities",
+					"SequencerScripting",
 					"AndroidPermission",
 					"AppleImageUtils",
-					"AssetTags",
-					"SequencerScripting",
+					"Engine",
+					"CoreUObject",
 				}
 			);
 		}

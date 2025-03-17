@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_80Module.h"
 #include "AngelscriptBinds.h"
 #include "PaperFlipbook.h"
+#include "PaperSprite.h"
 void FASRuntimeBind_80Module::Bind_PaperFlipbook()
 {
 			FAngelscriptBinds::AddFunctionEntry(UPaperFlipbook::StaticClass(), "GetKeyFrameIndexAtTime", { ERASE_METHOD_PTR(UPaperFlipbook, GetKeyFrameIndexAtTime, (float,  bool) const, ERASE_ARGUMENT_PACK(int32 )) } );

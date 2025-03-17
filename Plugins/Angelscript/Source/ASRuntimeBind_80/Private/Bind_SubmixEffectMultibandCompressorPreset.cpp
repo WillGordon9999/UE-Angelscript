@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_80Module.h"
 #include "AngelscriptBinds.h"
 #include "SubmixEffects/SubmixEffectMultiBandCompressor.h"
+#include "Sound/AudioBus.h"
+#include "Sound/SoundSubmix.h"
 void FASRuntimeBind_80Module::Bind_SubmixEffectMultibandCompressorPreset()
 {
 			FAngelscriptBinds::AddFunctionEntry(USubmixEffectMultibandCompressorPreset::StaticClass(), "ResetKey", { ERASE_METHOD_PTR(USubmixEffectMultibandCompressorPreset, ResetKey, (), ERASE_ARGUMENT_PACK(void )) } );

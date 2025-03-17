@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_80Module.h"
 #include "AngelscriptBinds.h"
 #include "UI/Synth2DSlider.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_80Module::Bind_Synth2DSlider()
 {
 			FAngelscriptBinds::AddFunctionEntry(USynth2DSlider::StaticClass(), "GetValue", { ERASE_METHOD_PTR(USynth2DSlider, GetValue, () const, ERASE_ARGUMENT_PACK(FVector2D )) } );

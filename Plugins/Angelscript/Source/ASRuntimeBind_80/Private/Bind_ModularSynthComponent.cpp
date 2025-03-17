@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_80Module.h"
 #include "AngelscriptBinds.h"
 #include "SynthComponents/EpicSynth1Component.h"
+#include "EpicSynth1Types.h"
 void FASRuntimeBind_80Module::Bind_ModularSynthComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(UModularSynthComponent::StaticClass(), "CreatePatch", { ERASE_METHOD_PTR(UModularSynthComponent, CreatePatch, (const ESynth1PatchSource,  const TArray<FSynth1PatchCable>&,  const bool), ERASE_ARGUMENT_PACK(FPatchId )) } );

@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_90Module.h"
 #include "AngelscriptBinds.h"
 #include "GeometryCacheComponent.h"
+#include "UObject/NoExportTypes.h"
+#include "GeometryCache.h"
 void FASRuntimeBind_90Module::Bind_GeometryCacheComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(UGeometryCacheComponent::StaticClass(), "GetAnimationTime", { ERASE_METHOD_PTR(UGeometryCacheComponent, GetAnimationTime, () const, ERASE_ARGUMENT_PACK(float )) } );

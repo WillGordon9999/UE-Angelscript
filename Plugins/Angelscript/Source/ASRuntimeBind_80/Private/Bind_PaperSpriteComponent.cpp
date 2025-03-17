@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_80Module.h"
 #include "AngelscriptBinds.h"
 #include "PaperSpriteComponent.h"
+#include "PaperSprite.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_80Module::Bind_PaperSpriteComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(UPaperSpriteComponent::StaticClass(), "GetSprite", { ERASE_METHOD_PTR(UPaperSpriteComponent, GetSprite, (), ERASE_ARGUMENT_PACK( UPaperSprite* )) } );

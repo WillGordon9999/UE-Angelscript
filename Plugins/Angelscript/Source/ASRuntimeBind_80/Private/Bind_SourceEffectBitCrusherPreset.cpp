@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_80Module.h"
 #include "AngelscriptBinds.h"
 #include "SourceEffects/SourceEffectBitCrusher.h"
+#include "IAudioModulation.h"
 void FASRuntimeBind_80Module::Bind_SourceEffectBitCrusherPreset()
 {
 			FAngelscriptBinds::AddFunctionEntry(USourceEffectBitCrusherPreset::StaticClass(), "SetBitModulator", { ERASE_METHOD_PTR(USourceEffectBitCrusherPreset, SetBitModulator, (const USoundModulatorBase*), ERASE_ARGUMENT_PACK(void )) } );

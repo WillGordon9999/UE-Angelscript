@@ -1,6 +1,9 @@
 #include "ASRuntimeBind_80Module.h"
 #include "AngelscriptBinds.h"
 #include "TemplateSequenceActor.h"
+#include "TemplateSequence.h"
+#include "TemplateSequencePlayer.h"
+#include "GameFramework/Actor.h"
 void FASRuntimeBind_80Module::Bind_TemplateSequenceActor()
 {
 			FAngelscriptBinds::AddFunctionEntry(ATemplateSequenceActor::StaticClass(), "GetSequence", { ERASE_METHOD_PTR(ATemplateSequenceActor, GetSequence, () const, ERASE_ARGUMENT_PACK(UTemplateSequence* )) } );
