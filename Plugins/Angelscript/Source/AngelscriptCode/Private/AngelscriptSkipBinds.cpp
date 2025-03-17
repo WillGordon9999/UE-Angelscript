@@ -1,15 +1,19 @@
 #include "CoreMinimal.h"
 #include "AngelscriptBinds.h"
-#include "Engine/SkeletalMesh.h"
 
 AS_FORCE_LINK const FAngelscriptBinds::FBind Bind_Skip
 (
 	(int32)FAngelscriptBinds::EOrder::Late,
 	[]()
-	{
-		FAngelscriptBinds::SkipFunctionEntry(UStaticMesh::StaticClass(), "GetMinLODForQualityLevels");
-		FAngelscriptBinds::SkipFunctionEntry(UStaticMesh::StaticClass(), "SetMinLODForQualityLevels");
-		FAngelscriptBinds::SkipFunctionEntry(USkeletalMesh::StaticClass(), "GetMinLODForQualityLevels");
-		FAngelscriptBinds::SkipFunctionEntry(USkeletalMesh::StaticClass(), "SetMinLODForQualityLevels");
+	{		
+		FAngelscriptBinds::AddSkipEntry("StaticMesh", "GetMinLODForQualityLevels");
+		FAngelscriptBinds::AddSkipEntry("StaticMesh", "SetMinLODForQualityLevels");
+		FAngelscriptBinds::AddSkipEntry("SkeletalMesh", "GetMinLODForQualityLevels");
+		FAngelscriptBinds::AddSkipEntry("SkeletalMesh", "SetMinLODForQualityLevels");
+		FAngelscriptBinds::AddSkipEntry("SourceEffectEQPreset", "SetSettings");
+		FAngelscriptBinds::AddSkipClass("ClothingSimulationInteractorNv");
+		FAngelscriptBinds::AddSkipClass("NiagaraPreviewGrid");
+		FAngelscriptBinds::AddSkipClass("GameplayCamerasSubsystem");
+		FAngelscriptBinds::AddSkipClass("AsyncAction_PerformTargeting");
 	}
 );

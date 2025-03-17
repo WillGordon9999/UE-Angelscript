@@ -780,17 +780,81 @@ void FAngelscriptEditorModule::RegisterToolsMenuEntries()
 void FunctionTests()
 {	
 	TArray<FString> lines;
-	
+
 	for (UFunction* Function : TObjectRange<UFunction>())
 	{
-		if (Function->HasAllFunctionFlags(FUNC_BlueprintCallable | FUNC_Native))
-		{
-			FString line = Function->GetOuterUClass()->GetName() + " " + Function->GetName();
+		if (Function->HasAllFunctionFlags(FUNC_BlueprintCallable | FUNC_Native | FUNC_Static))
+		{			
+			FString name = Function->GetName();
+			FString args = "(";
+			FString retType = FString();
+			FString ClassType = Function->GetOuterUClass()->GetName() + "::";
+			bool firstArg = true;
+			for (TFieldIterator<FProperty> It(Function); It; ++It)
+			{
+				FProperty* prop = *It;
+
+				if (firstArg)
+					firstArg = false;
+				else
+					args += ", ";
+
+				FString* retOrArg = nullptr;
+				if (!prop->HasAnyPropertyFlags(CPF_ReturnParm))
+					retOrArg = &args;
+				else
+					retOrArg = &retType;
+								
+				if (prop->HasAnyPropertyFlags(CPF_ConstParm))
+					*retOrArg += "const ";
+
+				FString Extend;
+				FString type = prop->GetCPPType(&Extend) + Extend;
+				*retOrArg += type;
+
+				if (prop->HasAnyPropertyFlags(CPF_ReferenceParm | CPF_OutParm))
+					*retOrArg += "&";
+
+				if (!prop->HasAnyPropertyFlags(CPF_ReturnParm))
+					args += " " + prop->GetName();				
+			}
+
+			args += ")";
+
+			if (retType.IsEmpty())
+				retType = "void ";
+
+			FString line = retType + " " + ClassType + name + args + "\n";
 			lines.Add(line);
 		}
 	}
+	
+	FFileHelper::SaveStringArrayToFile(lines, *(FAngelscriptManager::Get().GetScriptRootDirectory() / TEXT("Static-Functions-Test.txt")));
 
-	FFileHelper::SaveStringArrayToFile(lines, *(FAngelscriptManager::Get().GetScriptRootDirectory() / TEXT("Functions-Test.txt")));
+	//FString Path = "DSP/Filter.h";
+	//FString FullPath = FPaths::ConvertRelativePathToFull(Path);
+
+	//FString ClassPath;
+	//if (FSourceCodeNavigation::FindClassHeaderPath(Function, ClassPath))
+	//{
+	//	FString ModulePath = FAngelscriptEditorModule::GetIncludeForModule(Function->GetOuterUClass(), ClassPath);
+	//	lines.Add(ModulePath);
+	//}
+
+
+	//FInterfaceProperty
+	//TArray<FString> lines;
+	//
+	//for (UFunction* Function : TObjectRange<UFunction>())
+	//{
+	//	if (Function->HasAllFunctionFlags(FUNC_BlueprintCallable | FUNC_Native))
+	//	{
+	//		FString line = Function->GetOuterUClass()->GetName() + " " + Function->GetName();
+	//		lines.Add(line);
+	//	}
+	//}
+	//
+	//FFileHelper::SaveStringArrayToFile(lines, *(FAngelscriptManager::Get().GetScriptRootDirectory() / TEXT("Functions-Test.txt")));
 
 	///*
 	//for (UClass* Class : TObjectRange<UClass>())
@@ -1060,7 +1124,10 @@ void FAngelscriptEditorModule::GenerateBindDatabases()
 		Class->GetPackage()->GetName(Name);		
 		FString ClassName = Class->GetName();
 
-		if (ClassName.Contains("UDEPRECATED", ESearchCase::CaseSensitive))
+		if (FAngelscriptBinds::CheckForSkipClass(Class->GetFName()))
+			continue;
+
+		if (ClassName.Contains("DEPRECATED", ESearchCase::CaseSensitive))
 			continue;
 
 		if (Name.Contains("Angelscript"))
@@ -1575,7 +1642,9 @@ void FAngelscriptEditorModule::GenerateFunctionEntries(UClass* Class, TArray<FSt
 	{
 		FFileHelper::LoadFileToString(Header, *HeaderPath);
 	}
-
+	
+	//if (ClassName.Contains("NiagaraEffect"))
+	//	UE_LOG(Angelscript, Log, TEXT("Found Target"));
 	//TArray<FString> HeaderArray;
 	//FFileHelper::LoadFileToStringArray(HeaderArray, *HeaderPath);
 	
@@ -1847,12 +1916,15 @@ void FAngelscriptEditorModule::GenerateFunctionEntries(UClass* Class, TArray<FSt
 
 		if (!Function->HasAnyFunctionFlags(FUNC_BlueprintCallable))
 			continue;
-				
-		if (FAngelscriptBinds::CheckForSkip(Class, Function))
-			continue;
-		
+								
 		if (Function->HasAnyFunctionFlags(FUNC_Private | FUNC_Protected | FUNC_Static)) //Will do later
 			continue;
+
+		//if (FAngelscriptBinds::CheckForSkipEntry(Class->GetName(), Function->GetName()))
+		if (FAngelscriptBinds::CheckForSkipEntry(Class->GetFName(), FuncName))
+		{
+			continue;
+		}
 		
 		//if (Class->HasAnyClassFlags(CLASS_MinimalAPI) && Function->HasAnyFunctionFlags(FUNC_RequiredAPI))
 
@@ -2095,6 +2167,8 @@ void FAngelscriptEditorModule::GenerateFunctionEntries(UClass* Class, TArray<FSt
 			line += ClassName + "::" + name + ", (";
 		}
 		
+		
+
 		bool firstArg2 = true;
 		for (FString type : finalArgs)
 		{			
@@ -2108,8 +2182,37 @@ void FAngelscriptEditorModule::GenerateFunctionEntries(UClass* Class, TArray<FSt
 
 		line += ")";
 
-		if (Function->HasAnyFunctionFlags(FUNC_Const))
-			line += " const";
+		TTuple<int32, int32> constChecks(-1, -1);
+
+		if (Function->HasAnyFunctionFlags(FUNC_Const)) 
+		{
+			//Apparently the Const flag cannot be 100% trusted, so we do this check to ensure
+			int32 parenCheck = funcOnly.Find(")", ESearchCase::CaseSensitive, ESearchDir::FromEnd);
+			int32 constFind = funcOnly.Find("const", ESearchCase::CaseSensitive, ESearchDir::FromEnd);
+			if (parenCheck != -1 && constFind != -1)
+			{
+				constChecks.Key = parenCheck;
+				constChecks.Value = constFind;
+				if (constFind >= parenCheck)
+				{
+					//UE_LOG(Angelscript, Log, TEXT("CHECK THIS"));
+					line += " const";
+				}
+			}
+		}		
+		//else
+		//{
+		//	int32 parenCheck = funcOnly.Find(")", ESearchCase::CaseSensitive, ESearchDir::FromEnd);
+		//	int32 constFind = funcOnly.Find("const", ESearchCase::CaseSensitive, ESearchDir::FromEnd);
+		//	if (parenCheck != -1 && constFind != -1)
+		//	{
+		//		if (constFind > parenCheck)
+		//		{
+		//			UE_LOG(Angelscript, Log, TEXT("CHECK THIS"));
+		//			line += " const";
+		//		}
+		//	}
+		//}
 		
 		//auto apiCheck = FindAll(finalRet, "(", "_API " + origRet, true);
 		//for (auto& elem : apiCheck)

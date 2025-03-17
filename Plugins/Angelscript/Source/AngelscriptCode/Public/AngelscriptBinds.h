@@ -451,8 +451,11 @@ struct ANGELSCRIPTCODE_API FAngelscriptBinds
 	static TMap<UClass*, TMap<FString, FFuncEntry>> ClassFuncMaps;
 	//It's really tempting to make this just a TSet with "ClassName FuncName"
 	//Only need to make sure it gets setup before Generate Binds can be called haha
-	static TMap<UClass*, TSet<FString>> SkipBinds; 
 	static TArray<FString> BindModuleNames;
+	static TMap<UClass*, TSet<FString>> SkipBinds; 
+	static TSet<TTuple<FName, FName>> SkipBindNames; //Soft references to resolve later
+	static TSet<FName> SkipBindClasses;
+	//static TSet<TTuple<FString, FString>> SkipBindNames; //Soft references to resolve later
 
 	static void AddFunctionEntry(UClass* Class, FString Name, FFuncEntry Entry)
 	{
@@ -484,6 +487,42 @@ struct ANGELSCRIPTCODE_API FAngelscriptBinds
 		{
 			SkipBinds.Add(Class, TSet<FString>()).Add(Name);
 		}
+	}
+
+	static void AddSkipClass(FName ClassName)
+	{
+		if (!SkipBindClasses.Contains(ClassName))
+			SkipBindClasses.Add(ClassName);
+	}
+
+	//static void AddSkipEntry(FString ClassName, FString FunctionName)
+	static void AddSkipEntry(FName ClassName, FName FunctionName)
+	{
+		//TTuple<FString, FString> tuple = TTuple<FString, FString>(ClassName, FunctionName);
+		TTuple<FName, FName> tuple = TTuple<FName, FName>(ClassName, FunctionName);
+		if (!SkipBindNames.Contains(tuple))
+		{
+			SkipBindNames.Add(tuple);
+		}
+	}
+
+	static bool CheckForSkipClass(FName ClassName)
+	{
+		if (SkipBindClasses.Contains(ClassName))
+			return true;
+		return false;
+	}
+
+	//static bool CheckForSkipEntry(FString ClassName, FString FunctionName)
+	static bool CheckForSkipEntry(FName ClassName, FName FunctionName)
+	{
+		//TTuple<FString, FString> tuple = TTuple<FString, FString>(ClassName, FunctionName);
+		TTuple<FName, FName> tuple = TTuple<FName, FName>(ClassName, FunctionName);
+		
+		if (SkipBindNames.Contains(tuple))
+			return true;
+
+		return false;
 	}
 
 	static bool CheckForSkip(UClass* Class, UFunction* Function)
