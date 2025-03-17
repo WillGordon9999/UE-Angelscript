@@ -1,6 +1,8 @@
 #include "ASEditorBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "ActorGroupingUtils.h"
+#include "GameFramework/Actor.h"
+#include "Editor/GroupActor.h"
 void FASEditorBind_10Module::Bind_ActorGroupingUtils()
 {
 			FAngelscriptBinds::AddFunctionEntry(UActorGroupingUtils::StaticClass(), "AddSelectedToGroup", { ERASE_METHOD_PTR(UActorGroupingUtils, AddSelectedToGroup, (), ERASE_ARGUMENT_PACK(  void )) } );

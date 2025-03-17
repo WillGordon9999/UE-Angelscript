@@ -1,6 +1,9 @@
 #include "ASEditorBind_20Module.h"
 #include "AngelscriptBinds.h"
 #include "MetasoundEditorSubsystem.h"
+#include "MetasoundBuilderSubsystem.h"
+#include "Sound/SoundWave.h"
+#include "UObject/NoExportTypes.h"
 void FASEditorBind_20Module::Bind_MetaSoundEditorSubsystem()
 {
 			FAngelscriptBinds::AddFunctionEntry(UMetaSoundEditorSubsystem::StaticClass(), "BuildToAsset", { ERASE_METHOD_PTR(UMetaSoundEditorSubsystem, BuildToAsset, ( UMetaSoundBuilderBase*, 

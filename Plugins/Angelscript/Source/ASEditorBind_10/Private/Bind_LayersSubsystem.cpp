@@ -1,6 +1,10 @@
 #include "ASEditorBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Layers/LayersSubsystem.h"
+#include "GameFramework/Actor.h"
+#include "Layers/Layer.h"
+#include "Engine/Level.h"
+#include "Engine/World.h"
 void FASEditorBind_10Module::Bind_LayersSubsystem()
 {
 			FAngelscriptBinds::AddFunctionEntry(ULayersSubsystem::StaticClass(), "AddActorsToLayer", { ERASE_METHOD_PTR(ULayersSubsystem, AddActorsToLayer, (const TArray< AActor* >&,  const FName&), ERASE_ARGUMENT_PACK( bool )) } );

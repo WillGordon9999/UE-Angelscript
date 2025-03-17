@@ -1,6 +1,11 @@
 #include "ASEditorBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "SubobjectDataSubsystem.h"
+#include "SubobjectDataHandle.h"
+#include "Engine/Blueprint.h"
+#include "UObject/NoExportTypes.h"
+#include "SubobjectData.h"
+#include "GameFramework/Actor.h"
 void FASEditorBind_10Module::Bind_SubobjectDataSubsystem()
 {
 			FAngelscriptBinds::AddFunctionEntry(USubobjectDataSubsystem::StaticClass(), "AddNewSubobject", { ERASE_METHOD_PTR(USubobjectDataSubsystem, AddNewSubobject, (const FAddNewSubobjectParams&,  FText&), ERASE_ARGUMENT_PACK(FSubobjectDataHandle )) } );

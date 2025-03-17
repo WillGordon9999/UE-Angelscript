@@ -35,6 +35,10 @@ namespace UnrealBuildTool.Rules
 					"AnimationBlueprintLibrary",
 					"UnrealEd",
 					"Persona",
+					"Engine",
+					"CoreUObject",
+					"AnimGraphRuntime",
+					"AssetTools",
 				}
 			);
 		}

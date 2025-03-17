@@ -22,7 +22,6 @@ public:
 	static void Bind_AssetImportTask();
 	static void Bind_EditorActorSubsystem();
 	static void Bind_EditorAssetSubsystem();
-	static void Bind_FbxImportUI();
 	static void Bind_LayersSubsystem();
 	static void Bind_ReimportFbxSceneFactory();
 	static void Bind_UnrealEditorSubsystem();

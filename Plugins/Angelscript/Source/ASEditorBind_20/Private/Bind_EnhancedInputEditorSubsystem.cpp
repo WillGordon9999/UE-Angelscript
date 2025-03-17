@@ -1,6 +1,7 @@
 #include "ASEditorBind_20Module.h"
 #include "AngelscriptBinds.h"
 #include "EnhancedInputEditorSubsystem.h"
+#include "Components/InputComponent.h"
 void FASEditorBind_20Module::Bind_EnhancedInputEditorSubsystem()
 {
 			FAngelscriptBinds::AddFunctionEntry(UEnhancedInputEditorSubsystem::StaticClass(), "IsConsumingInput", { ERASE_METHOD_PTR(UEnhancedInputEditorSubsystem, IsConsumingInput, () const, ERASE_ARGUMENT_PACK(bool )) } );

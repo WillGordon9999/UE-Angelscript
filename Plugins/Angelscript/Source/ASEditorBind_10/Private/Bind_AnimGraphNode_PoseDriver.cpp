@@ -1,6 +1,8 @@
 #include "ASEditorBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "AnimGraphNode_PoseDriver.h"
+#include "AnimNodes/AnimNode_PoseDriver.h"
+#include "RBF/RBFSolver.h"
 void FASEditorBind_10Module::Bind_AnimGraphNode_PoseDriver()
 {
 			FAngelscriptBinds::AddFunctionEntry(UAnimGraphNode_PoseDriver::StaticClass(), "CopyTargetsFromPoseAsset", { ERASE_METHOD_PTR(UAnimGraphNode_PoseDriver, CopyTargetsFromPoseAsset, (), ERASE_ARGUMENT_PACK(void )) } );

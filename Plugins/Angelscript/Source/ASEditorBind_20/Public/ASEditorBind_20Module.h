@@ -21,5 +21,5 @@ public:
 	static void Bind_EditorUtilitySubsystem();
 	static void Bind_EditorValidatorSubsystem();
 	static void Bind_SequencerCurveEditorObject();
-	static void Bind_SkeletalMeshEditorSubsystem();
+	static void Bind_GeneratedDynamicMeshActor();
 };

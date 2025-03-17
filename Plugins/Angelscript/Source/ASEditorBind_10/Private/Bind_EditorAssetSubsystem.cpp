@@ -1,6 +1,7 @@
 #include "ASEditorBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Subsystems/EditorAssetSubsystem.h"
+#include "UObject/NoExportTypes.h"
 void FASEditorBind_10Module::Bind_EditorAssetSubsystem()
 {
 			FAngelscriptBinds::AddFunctionEntry(UEditorAssetSubsystem::StaticClass(), "AddOnExtractAssetFromFile", { ERASE_METHOD_PTR(UEditorAssetSubsystem, AddOnExtractAssetFromFile, (FOnExtractAssetFromFileDynamic), ERASE_ARGUMENT_PACK( void )) } );

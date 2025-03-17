@@ -34,7 +34,14 @@ namespace UnrealBuildTool.Rules
 					"Blutility",
 					"DataValidation",
 					"SequencerScriptingEditor",
-					"SkeletalMeshEditor",
+					"GeometryScriptingEditor",
+					"CoreUObject",
+					"Engine",
+					"RigVMDeveloper",
+					"RigVM",
+					"Niagara",
+					"MetasoundEngine",
+					"UMG",
 				}
 			);
 		}

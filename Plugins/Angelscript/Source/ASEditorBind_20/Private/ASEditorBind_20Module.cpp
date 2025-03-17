@@ -23,7 +23,7 @@ void FASEditorBind_20Module::StartupModule()
 			Bind_EditorUtilitySubsystem();
 			Bind_EditorValidatorSubsystem();
 			Bind_SequencerCurveEditorObject();
-			Bind_SkeletalMeshEditorSubsystem();
+			Bind_GeneratedDynamicMeshActor();
 		}
 	);
 

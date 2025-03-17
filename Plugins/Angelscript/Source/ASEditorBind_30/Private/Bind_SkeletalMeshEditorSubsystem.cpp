@@ -1,7 +1,8 @@
-#include "ASEditorBind_20Module.h"
+#include "ASEditorBind_30Module.h"
 #include "AngelscriptBinds.h"
 #include "SkeletalMeshEditorSubsystem.h"
-void FASEditorBind_20Module::Bind_SkeletalMeshEditorSubsystem()
+#include "Engine/SkeletalMesh.h"
+void FASEditorBind_30Module::Bind_SkeletalMeshEditorSubsystem()
 {
 			FAngelscriptBinds::AddFunctionEntry(USkeletalMeshEditorSubsystem::StaticClass(), "GetLODMaterialSlot", { ERASE_METHOD_PTR(USkeletalMeshEditorSubsystem, GetLODMaterialSlot, (USkeletalMesh*,  int32,  int32), ERASE_ARGUMENT_PACK(int32 )) } );
 			FAngelscriptBinds::AddFunctionEntry(USkeletalMeshEditorSubsystem::StaticClass(), "GetNumSections", { ERASE_METHOD_PTR(USkeletalMeshEditorSubsystem, GetNumSections, (USkeletalMesh*,  int32), ERASE_ARGUMENT_PACK(int32 )) } );

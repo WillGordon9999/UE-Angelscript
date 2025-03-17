@@ -1,6 +1,10 @@
 #include "ASEditorBind_20Module.h"
 #include "AngelscriptBinds.h"
 #include "EditorValidatorSubsystem.h"
+#include "EditorValidatorBase.h"
+#include "UObject/NoExportTypes.h"
+#include "Misc/DataValidation.h"
+#include "DataValidationChangelist.h"
 void FASEditorBind_20Module::Bind_EditorValidatorSubsystem()
 {
 			FAngelscriptBinds::AddFunctionEntry(UEditorValidatorSubsystem::StaticClass(), "AddValidator", { ERASE_METHOD_PTR(UEditorValidatorSubsystem, AddValidator, (UEditorValidatorBase*), ERASE_ARGUMENT_PACK(void )) } );

@@ -12,9 +12,7 @@ void FASEditorBind_0Module::StartupModule()
 		{
 			Bind_MovieSceneUserImportFBXControlRigSettings();
 			Bind_MovieSceneUserExportFBXControlRigSettings();
-			Bind_SequencerOutlinerScriptingObject();
 			Bind_ContentBrowserAssetContextMenuContext();
-			Bind_SequencerModuleScriptingLayer();
 			Bind_VREditorInteractor();
 			Bind_VREditorTeleporter();
 			Bind_ViewportWorldInteraction();

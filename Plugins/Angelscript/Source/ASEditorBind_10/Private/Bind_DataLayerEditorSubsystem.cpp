@@ -1,6 +1,12 @@
 #include "ASEditorBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "DataLayer/DataLayerEditorSubsystem.h"
+#include "GameFramework/Actor.h"
+#include "WorldPartition/DataLayer/DataLayerInstance.h"
+#include "WorldPartition/DataLayer/ExternalDataLayerAsset.h"
+#include "WorldPartition/DataLayer/ActorDataLayer.h"
+#include "WorldPartition/DataLayer/DataLayerAsset.h"
+#include "WorldPartition/DataLayer/DataLayer.h"
 void FASEditorBind_10Module::Bind_DataLayerEditorSubsystem()
 {
 			FAngelscriptBinds::AddFunctionEntry(UDataLayerEditorSubsystem::StaticClass(), "AddActorsToDataLayer", { ERASE_METHOD_PTR(UDataLayerEditorSubsystem, AddActorsToDataLayer, (const TArray<AActor*>&,  UDataLayerInstance*), ERASE_ARGUMENT_PACK(bool )) } );

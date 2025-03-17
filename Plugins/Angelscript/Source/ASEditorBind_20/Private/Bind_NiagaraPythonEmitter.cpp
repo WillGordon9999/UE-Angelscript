@@ -1,6 +1,7 @@
 #include "ASEditorBind_20Module.h"
 #include "AngelscriptBinds.h"
 #include "UpgradeNiagaraScriptResults.h"
+#include "NiagaraEmitter.h"
 void FASEditorBind_20Module::Bind_NiagaraPythonEmitter()
 {
 			FAngelscriptBinds::AddFunctionEntry(UNiagaraPythonEmitter::StaticClass(), "GetModule", { ERASE_METHOD_PTR(UNiagaraPythonEmitter, GetModule, (const FString&) const, ERASE_ARGUMENT_PACK(UNiagaraPythonModule* )) } );

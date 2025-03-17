@@ -35,6 +35,12 @@ namespace UnrealBuildTool.Rules
 					"LevelEditor",
 					"FoliageEdit",
 					"MaterialEditor",
+					"CoreUObject",
+					"InputCore",
+					"HeadMountedDisplay",
+					"Engine",
+					"TypedElementFramework",
+					"TypedElementRuntime",
 				}
 			);
 		}

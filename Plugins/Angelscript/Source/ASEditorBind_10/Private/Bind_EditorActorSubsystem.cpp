@@ -1,6 +1,11 @@
 #include "ASEditorBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "Subsystems/EditorActorSubsystem.h"
+#include "GameFramework/Actor.h"
+#include "Engine/World.h"
+#include "UObject/NoExportTypes.h"
+#include "Components/ActorComponent.h"
+#include "Components/SceneComponent.h"
 void FASEditorBind_10Module::Bind_EditorActorSubsystem()
 {
 			FAngelscriptBinds::AddFunctionEntry(UEditorActorSubsystem::StaticClass(), "ClearActorSelectionSet", { ERASE_METHOD_PTR(UEditorActorSubsystem, ClearActorSelectionSet, (), ERASE_ARGUMENT_PACK( void )) } );

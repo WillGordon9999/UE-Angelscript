@@ -1,6 +1,8 @@
 #include "ASEditorBind_0Module.h"
 #include "AngelscriptBinds.h"
 #include "Teleporter/VREditorTeleporter.h"
+#include "VREditorMode.h"
+#include "UObject/NoExportTypes.h"
 void FASEditorBind_0Module::Bind_VREditorTeleporter()
 {
 			FAngelscriptBinds::AddFunctionEntry(AVREditorTeleporter::StaticClass(), "GetVRMode", { ERASE_METHOD_PTR(AVREditorTeleporter, GetVRMode, () const, ERASE_ARGUMENT_PACK(class UVREditorMode* )) } );

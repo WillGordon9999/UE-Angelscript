@@ -1,6 +1,16 @@
 #include "ASEditorBind_30Module.h"
 #include "AngelscriptBinds.h"
 #include "StaticMeshEditorSubsystem.h"
+#include "Engine/StaticMesh.h"
+#include "StaticMeshEditorSubsystemHelpers.h"
+#include "Engine/StaticMeshActor.h"
+#include "UObject/NoExportTypes.h"
+#include "Engine/EngineTypes.h"
+#include "Engine/MeshMerging.h"
+#include "Components/StaticMeshComponent.h"
+#include "GameFramework/Actor.h"
+#include "Components/MeshComponent.h"
+#include "Materials/MaterialInterface.h"
 void FASEditorBind_30Module::Bind_StaticMeshEditorSubsystem()
 {
 			FAngelscriptBinds::AddFunctionEntry(UStaticMeshEditorSubsystem::StaticClass(), "AddSimpleCollisions", { ERASE_METHOD_PTR(UStaticMeshEditorSubsystem, AddSimpleCollisions, (UStaticMesh*,  const EScriptCollisionShapeType), ERASE_ARGUMENT_PACK(int32 )) } );

@@ -1,6 +1,17 @@
 #include "ASEditorBind_30Module.h"
 #include "AngelscriptBinds.h"
 #include "LevelSequenceEditorSubsystem.h"
+#include "MovieSceneBindingProxy.h"
+#include "GameFramework/Actor.h"
+#include "UObject/NoExportTypes.h"
+#include "BakingAnimationKeySettings.h"
+#include "MovieSceneFolder.h"
+#include "MovieSceneSection.h"
+#include "MovieSceneTrack.h"
+#include "CineCameraActor.h"
+#include "SequencerCurveEditorObject.h"
+#include "Scripting/SequencerModuleScriptingLayer.h"
+#include "SequencerUtilities.h"
 void FASEditorBind_30Module::Bind_LevelSequenceEditorSubsystem()
 {
 			FAngelscriptBinds::AddFunctionEntry(ULevelSequenceEditorSubsystem::StaticClass(), "AddActors", { ERASE_METHOD_PTR(ULevelSequenceEditorSubsystem, AddActors, (const TArray<AActor*>&), ERASE_ARGUMENT_PACK(TArray<FMovieSceneBindingProxy> )) } );

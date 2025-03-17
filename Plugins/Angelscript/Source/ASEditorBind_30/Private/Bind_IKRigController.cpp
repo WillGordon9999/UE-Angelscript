@@ -1,6 +1,10 @@
 #include "ASEditorBind_30Module.h"
 #include "AngelscriptBinds.h"
 #include "RigEditor/IKRigController.h"
+#include "Rig/Solvers/IKRigSolver.h"
+#include "Rig/IKRigDefinition.h"
+#include "UObject/NoExportTypes.h"
+#include "Engine/SkeletalMesh.h"
 void FASEditorBind_30Module::Bind_IKRigController()
 {
 			FAngelscriptBinds::AddFunctionEntry(UIKRigController::StaticClass(), "AddBoneSetting", { ERASE_METHOD_PTR(UIKRigController, AddBoneSetting, (const FName,  int32) const, ERASE_ARGUMENT_PACK(bool )) } );

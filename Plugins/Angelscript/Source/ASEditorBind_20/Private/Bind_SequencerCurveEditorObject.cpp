@@ -1,6 +1,7 @@
 #include "ASEditorBind_20Module.h"
 #include "AngelscriptBinds.h"
 #include "SequencerCurveEditorObject.h"
+#include "UObject/NoExportTypes.h"
 void FASEditorBind_20Module::Bind_SequencerCurveEditorObject()
 {
 			FAngelscriptBinds::AddFunctionEntry(USequencerCurveEditorObject::StaticClass(), "CloseCurveEditor", { ERASE_METHOD_PTR(USequencerCurveEditorObject, CloseCurveEditor, (), ERASE_ARGUMENT_PACK(

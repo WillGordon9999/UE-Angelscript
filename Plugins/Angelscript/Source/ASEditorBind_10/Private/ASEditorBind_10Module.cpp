@@ -24,7 +24,6 @@ void FASEditorBind_10Module::StartupModule()
 			Bind_AssetImportTask();
 			Bind_EditorActorSubsystem();
 			Bind_EditorAssetSubsystem();
-			Bind_FbxImportUI();
 			Bind_LayersSubsystem();
 			Bind_ReimportFbxSceneFactory();
 			Bind_UnrealEditorSubsystem();

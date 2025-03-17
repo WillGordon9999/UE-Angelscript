@@ -1,6 +1,11 @@
 #include "ASEditorBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "PersonaToolMenuContext.h"
+#include "Animation/AnimationAsset.h"
+#include "Animation/AnimBlueprint.h"
+#include "Engine/SkeletalMesh.h"
+#include "Animation/DebugSkelMeshComponent.h"
+#include "Animation/Skeleton.h"
 void FASEditorBind_10Module::Bind_PersonaToolMenuContext()
 {
 			FAngelscriptBinds::AddFunctionEntry(UPersonaToolMenuContext::StaticClass(), "GetAnimationAsset", { ERASE_METHOD_PTR(UPersonaToolMenuContext, GetAnimationAsset, () const, ERASE_ARGUMENT_PACK(UAnimationAsset* )) } );

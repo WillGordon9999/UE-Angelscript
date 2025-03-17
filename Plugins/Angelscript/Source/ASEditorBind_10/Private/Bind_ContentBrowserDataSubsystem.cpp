@@ -1,6 +1,8 @@
 #include "ASEditorBind_10Module.h"
 #include "AngelscriptBinds.h"
 #include "ContentBrowserDataSubsystem.h"
+#include "ContentBrowserItem.h"
+#include "ContentBrowserDataFilter.h"
 void FASEditorBind_10Module::Bind_ContentBrowserDataSubsystem()
 {
 			FAngelscriptBinds::AddFunctionEntry(UContentBrowserDataSubsystem::StaticClass(), "ActivateAllDataSources", { ERASE_METHOD_PTR(UContentBrowserDataSubsystem, ActivateAllDataSources, (), ERASE_ARGUMENT_PACK(void )) } );

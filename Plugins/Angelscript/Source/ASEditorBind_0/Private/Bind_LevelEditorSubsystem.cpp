@@ -1,6 +1,9 @@
 #include "ASEditorBind_0Module.h"
 #include "AngelscriptBinds.h"
 #include "LevelEditorSubsystem.h"
+#include "Engine/Level.h"
+#include "GameFramework/Actor.h"
+#include "Elements/Framework/TypedElementSelectionSet.h"
 void FASEditorBind_0Module::Bind_LevelEditorSubsystem()
 {
 			FAngelscriptBinds::AddFunctionEntry(ULevelEditorSubsystem::StaticClass(), "BuildLightMaps", { ERASE_METHOD_PTR(ULevelEditorSubsystem, BuildLightMaps, (ELightingBuildQuality,  bool), ERASE_ARGUMENT_PACK(bool )) } );

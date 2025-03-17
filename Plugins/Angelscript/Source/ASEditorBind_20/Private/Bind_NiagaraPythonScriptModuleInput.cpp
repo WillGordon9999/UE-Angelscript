@@ -1,6 +1,7 @@
 #include "ASEditorBind_20Module.h"
 #include "AngelscriptBinds.h"
 #include "UpgradeNiagaraScriptResults.h"
+#include "UObject/NoExportTypes.h"
 void FASEditorBind_20Module::Bind_NiagaraPythonScriptModuleInput()
 {
 			FAngelscriptBinds::AddFunctionEntry(UNiagaraPythonScriptModuleInput::StaticClass(), "AsBool", { ERASE_METHOD_PTR(UNiagaraPythonScriptModuleInput, AsBool, () const, ERASE_ARGUMENT_PACK(bool )) } );

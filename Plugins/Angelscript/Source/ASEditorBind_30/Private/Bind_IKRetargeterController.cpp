@@ -1,6 +1,13 @@
 #include "ASEditorBind_30Module.h"
 #include "AngelscriptBinds.h"
 #include "RetargetEditor/IKRetargeterController.h"
+#include "Retargeter/IKRetargetOps.h"
+#include "Retargeter/IKRetargeter.h"
+#include "RetargetEditor/IKRetargeterPoseGenerator.h"
+#include "Retargeter/IKRetargetSettings.h"
+#include "Rig/IKRigDefinition.h"
+#include "Engine/SkeletalMesh.h"
+#include "UObject/NoExportTypes.h"
 void FASEditorBind_30Module::Bind_IKRetargeterController()
 {
 			FAngelscriptBinds::AddFunctionEntry(UIKRetargeterController::StaticClass(), "AddRetargetOp", { ERASE_METHOD_PTR(UIKRetargeterController, AddRetargetOp, (TSubclassOf<URetargetOpBase>) const, ERASE_ARGUMENT_PACK(int32 )) } );

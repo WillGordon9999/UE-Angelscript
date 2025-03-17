@@ -1,6 +1,10 @@
 #include "ASEditorBind_0Module.h"
 #include "AngelscriptBinds.h"
 #include "ViewportWorldInteraction.h"
+#include "GameFramework/Actor.h"
+#include "ViewportInteractor.h"
+#include "UObject/NoExportTypes.h"
+#include "VIBaseTransformGizmo.h"
 void FASEditorBind_0Module::Bind_ViewportWorldInteraction()
 {
 			FAngelscriptBinds::AddFunctionEntry(UViewportWorldInteraction::StaticClass(), "AddActorToExcludeFromHitTests", { ERASE_METHOD_PTR(UViewportWorldInteraction, AddActorToExcludeFromHitTests, ( AActor*), ERASE_ARGUMENT_PACK(void )) } );

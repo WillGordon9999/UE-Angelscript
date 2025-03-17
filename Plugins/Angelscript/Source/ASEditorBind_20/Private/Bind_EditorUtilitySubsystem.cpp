@@ -1,6 +1,11 @@
 #include "ASEditorBind_20Module.h"
 #include "AngelscriptBinds.h"
 #include "EditorUtilitySubsystem.h"
+#include "UObject/NoExportTypes.h"
+#include "EditorUtilityWidget.h"
+#include "EditorUtilityWidgetBlueprint.h"
+#include "EditorUtilityTask.h"
+#include "Blueprint/WidgetBlueprintGeneratedClass.h"
 void FASEditorBind_20Module::Bind_EditorUtilitySubsystem()
 {
 			FAngelscriptBinds::AddFunctionEntry(UEditorUtilitySubsystem::StaticClass(), "CanRun", { ERASE_METHOD_PTR(UEditorUtilitySubsystem, CanRun, (UObject*) const, ERASE_ARGUMENT_PACK(bool )) } );

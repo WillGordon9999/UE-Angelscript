@@ -1,6 +1,7 @@
 #include "ASEditorBind_20Module.h"
 #include "AngelscriptBinds.h"
 #include "UpgradeNiagaraScriptResults.h"
+#include "UObject/NoExportTypes.h"
 void FASEditorBind_20Module::Bind_UpgradeNiagaraScriptResults()
 {
 			FAngelscriptBinds::AddFunctionEntry(UUpgradeNiagaraScriptResults::StaticClass(), "GetOldInput", { ERASE_METHOD_PTR(UUpgradeNiagaraScriptResults, GetOldInput, (const FString&), ERASE_ARGUMENT_PACK( UNiagaraPythonScriptModuleInput* )) } );

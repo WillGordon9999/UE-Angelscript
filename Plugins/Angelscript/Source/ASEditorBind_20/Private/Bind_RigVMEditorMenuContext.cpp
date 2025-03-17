@@ -1,6 +1,8 @@
 #include "ASEditorBind_20Module.h"
 #include "AngelscriptBinds.h"
 #include "Editor/RigVMEditorMenuContext.h"
+#include "RigVMBlueprint.h"
+#include "RigVMHost.h"
 void FASEditorBind_20Module::Bind_RigVMEditorMenuContext()
 {
 			FAngelscriptBinds::AddFunctionEntry(URigVMEditorMenuContext::StaticClass(), "GetGraphMenuContext", { ERASE_METHOD_PTR(URigVMEditorMenuContext, GetGraphMenuContext, (), ERASE_ARGUMENT_PACK(FRigVMEditorGraphMenuContext )) } );

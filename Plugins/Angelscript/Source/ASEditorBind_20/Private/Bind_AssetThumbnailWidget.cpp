@@ -1,6 +1,7 @@
 #include "ASEditorBind_20Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/AssetThumbnailWidget.h"
+#include "UObject/NoExportTypes.h"
 void FASEditorBind_20Module::Bind_AssetThumbnailWidget()
 {
 			FAngelscriptBinds::AddFunctionEntry(UAssetThumbnailWidget::StaticClass(), "GetResolution", { ERASE_METHOD_PTR(UAssetThumbnailWidget, GetResolution, () const, ERASE_ARGUMENT_PACK(FIntPoint )) } );

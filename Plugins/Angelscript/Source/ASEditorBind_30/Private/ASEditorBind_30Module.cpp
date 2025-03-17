@@ -10,6 +10,7 @@ void FASEditorBind_30Module::StartupModule()
 		(int32)FAngelscriptBinds::EOrder::Late,
 		[]()
 		{
+			Bind_SkeletalMeshEditorSubsystem();
 			Bind_StaticMeshEditorSubsystem();
 			Bind_LevelSequenceEditorSubsystem();
 			Bind_IKRetargeterController();

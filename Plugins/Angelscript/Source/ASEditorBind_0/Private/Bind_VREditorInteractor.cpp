@@ -1,6 +1,11 @@
 #include "ASEditorBind_0Module.h"
 #include "AngelscriptBinds.h"
 #include "VREditorInteractor.h"
+#include "InputCoreTypes.h"
+#include "UObject/NoExportTypes.h"
+#include "MotionControllerComponent.h"
+#include "Teleporter/VREditorTeleporter.h"
+#include "Engine/StaticMesh.h"
 void FASEditorBind_0Module::Bind_VREditorInteractor()
 {
 			FAngelscriptBinds::AddFunctionEntry(UVREditorInteractor::StaticClass(), "GetControllerHandSide", { ERASE_METHOD_PTR(UVREditorInteractor, GetControllerHandSide, () const, ERASE_ARGUMENT_PACK(FName )) } );
