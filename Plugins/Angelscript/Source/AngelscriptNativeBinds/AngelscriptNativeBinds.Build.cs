@@ -34,6 +34,7 @@ namespace UnrealBuildTool.Rules
                     "ASRuntimeBind_70",
                     "ASRuntimeBind_80",
                     "ASRuntimeBind_90",
+					"ASRuntimeBind_100",
                 }
 			);
 		}
