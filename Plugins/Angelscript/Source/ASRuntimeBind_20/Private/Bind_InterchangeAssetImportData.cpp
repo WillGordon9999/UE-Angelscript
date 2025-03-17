@@ -1,6 +1,11 @@
 #include "ASRuntimeBind_20Module.h"
 #include "AngelscriptBinds.h"
 #include "InterchangeAssetImportData.h"
+#include "Nodes/InterchangeBaseNodeContainer.h"
+#include "UObject/NoExportTypes.h"
+#include "Nodes/InterchangeFactoryBaseNode.h"
+#include "Nodes/InterchangeBaseNode.h"
+#include "InterchangeTranslatorBase.h"
 void FASRuntimeBind_20Module::Bind_InterchangeAssetImportData()
 {
 			FAngelscriptBinds::AddFunctionEntry(UInterchangeAssetImportData::StaticClass(), "GetNodeContainer", { ERASE_METHOD_PTR(UInterchangeAssetImportData, GetNodeContainer, () const, ERASE_ARGUMENT_PACK( UInterchangeBaseNodeContainer* )) } );

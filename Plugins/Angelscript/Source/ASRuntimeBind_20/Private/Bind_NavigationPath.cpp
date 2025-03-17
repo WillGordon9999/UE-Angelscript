@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_20Module.h"
 #include "AngelscriptBinds.h"
 #include "NavigationPath.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_20Module::Bind_NavigationPath()
 {
 			FAngelscriptBinds::AddFunctionEntry(UNavigationPath::StaticClass(), "EnableDebugDrawing", { ERASE_METHOD_PTR(UNavigationPath, EnableDebugDrawing, (bool,  FLinearColor), ERASE_ARGUMENT_PACK( void )) } );

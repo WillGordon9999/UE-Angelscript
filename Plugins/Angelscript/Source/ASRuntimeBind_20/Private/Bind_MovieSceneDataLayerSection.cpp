@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_20Module.h"
 #include "AngelscriptBinds.h"
 #include "Sections/MovieSceneDataLayerSection.h"
+#include "WorldPartition/DataLayer/DataLayerAsset.h"
+#include "WorldPartition/DataLayer/DataLayerInstance.h"
 void FASRuntimeBind_20Module::Bind_MovieSceneDataLayerSection()
 {
 			FAngelscriptBinds::AddFunctionEntry(UMovieSceneDataLayerSection::StaticClass(), "GetDataLayerAssets", { ERASE_METHOD_PTR(UMovieSceneDataLayerSection, GetDataLayerAssets, () const, ERASE_ARGUMENT_PACK(const TArray<UDataLayerAsset*>& )) } );

@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_20Module.h"
 #include "AngelscriptBinds.h"
 #include "MovieSceneMetaData.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_20Module::Bind_MovieSceneMetaData()
 {
 			FAngelscriptBinds::AddFunctionEntry(UMovieSceneMetaData::StaticClass(), "GetAuthor", { ERASE_METHOD_PTR(UMovieSceneMetaData, GetAuthor, () const, ERASE_ARGUMENT_PACK( FString )) } );

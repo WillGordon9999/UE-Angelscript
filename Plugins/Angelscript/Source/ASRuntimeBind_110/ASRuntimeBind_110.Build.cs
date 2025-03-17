@@ -25,7 +25,6 @@ namespace UnrealBuildTool.Rules
 				new string[]
 				{
 					"LocalizableMessageBlueprint",
-					"AngelscriptCode",
 				}
 			);
 		}

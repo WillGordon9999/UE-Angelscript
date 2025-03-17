@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_20Module.h"
 #include "AngelscriptBinds.h"
 #include "Sections/MovieSceneComponentMaterialParameterSection.h"
+#include "MaterialTypes.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_20Module::Bind_MovieSceneComponentMaterialParameterSection()
 {
 			FAngelscriptBinds::AddFunctionEntry(UMovieSceneComponentMaterialParameterSection::StaticClass(), "AddColorParameterKey", { ERASE_METHOD_PTR(UMovieSceneComponentMaterialParameterSection, AddColorParameterKey, (const FMaterialParameterInfo&,  FFrameNumber,  FLinearColor,  const FString&,  const FString&), ERASE_ARGUMENT_PACK( void )) } );

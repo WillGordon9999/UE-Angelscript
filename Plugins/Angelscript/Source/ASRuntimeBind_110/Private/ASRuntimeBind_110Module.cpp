@@ -10,7 +10,6 @@ void FASRuntimeBind_110Module::StartupModule()
 		(int32)FAngelscriptBinds::EOrder::Late,
 		[]()
 		{
-			Bind_ASClass();
 		}
 	);
 

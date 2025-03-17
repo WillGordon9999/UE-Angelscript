@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_20Module.h"
 #include "AngelscriptBinds.h"
 #include "InterchangeManager.h"
+#include "UObject/NoExportTypes.h"
+#include "InterchangeSourceData.h"
 void FASRuntimeBind_20Module::Bind_InterchangeManager()
 {
 			FAngelscriptBinds::AddFunctionEntry(UInterchangeManager::StaticClass(), "ExportAsset", { ERASE_METHOD_PTR(UInterchangeManager, ExportAsset, (const UObject*,  bool), ERASE_ARGUMENT_PACK( bool )) } );

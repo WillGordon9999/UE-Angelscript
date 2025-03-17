@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_20Module.h"
 #include "AngelscriptBinds.h"
 #include "Sections/MovieSceneParameterSection.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_20Module::Bind_MovieSceneParameterSection()
 {
 			FAngelscriptBinds::AddFunctionEntry(UMovieSceneParameterSection::StaticClass(), "AddBoolParameterKey", { ERASE_METHOD_PTR(UMovieSceneParameterSection, AddBoolParameterKey, (FName,  FFrameNumber,  bool), ERASE_ARGUMENT_PACK( void )) } );

@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_100Module.h"
 #include "AngelscriptBinds.h"
 #include "SkeletonModifier.h"
+#include "UObject/NoExportTypes.h"
+#include "Engine/SkeletalMesh.h"
 void FASRuntimeBind_100Module::Bind_SkeletonModifier()
 {
 			FAngelscriptBinds::AddFunctionEntry(USkeletonModifier::StaticClass(), "AddBone", { ERASE_METHOD_PTR(USkeletonModifier, AddBone, (const FName,  const FName,  const FTransform&), ERASE_ARGUMENT_PACK(bool )) } );

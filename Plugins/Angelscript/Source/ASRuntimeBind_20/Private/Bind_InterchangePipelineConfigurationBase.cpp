@@ -1,6 +1,11 @@
 #include "ASRuntimeBind_20Module.h"
 #include "AngelscriptBinds.h"
 #include "InterchangePipelineConfigurationBase.h"
+#include "InterchangePipelineBase.h"
+#include "InterchangeSourceData.h"
+#include "InterchangeTranslatorBase.h"
+#include "Nodes/InterchangeBaseNodeContainer.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_20Module::Bind_InterchangePipelineConfigurationBase()
 {
 			FAngelscriptBinds::AddFunctionEntry(UInterchangePipelineConfigurationBase::StaticClass(), "ScriptedShowPipelineConfigurationDialog", { ERASE_METHOD_PTR(UInterchangePipelineConfigurationBase, ScriptedShowPipelineConfigurationDialog, (TArray<FInterchangeStackInfo>&,  TArray<UInterchangePipelineBase*>&,  UInterchangeSourceData*,  UInterchangeTranslatorBase*,  UInterchangeBaseNodeContainer*), ERASE_ARGUMENT_PACK( EInterchangePipelineConfigurationDialogResult )) } );

@@ -1,6 +1,9 @@
 #include "ASRuntimeBind_100Module.h"
 #include "AngelscriptBinds.h"
 #include "MediaPlateComponent.h"
+#include "MediaPlayer.h"
+#include "MediaTexture.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_100Module::Bind_MediaPlateComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(UMediaPlateComponent::StaticClass(), "Close", { ERASE_METHOD_PTR(UMediaPlateComponent, Close, (), ERASE_ARGUMENT_PACK(void )) } );

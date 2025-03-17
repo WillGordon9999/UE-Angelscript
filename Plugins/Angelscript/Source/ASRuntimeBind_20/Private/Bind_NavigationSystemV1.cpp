@@ -1,6 +1,11 @@
 #include "ASRuntimeBind_20Module.h"
 #include "AngelscriptBinds.h"
 #include "NavigationSystem.h"
+#include "UObject/NoExportTypes.h"
+#include "NavAreas/NavArea.h"
+#include "NavMesh/NavMeshBoundsVolume.h"
+#include "GameFramework/Actor.h"
+#include "AI/Navigation/NavigationTypes.h"
 void FASRuntimeBind_20Module::Bind_NavigationSystemV1()
 {
 			FAngelscriptBinds::AddFunctionEntry(UNavigationSystemV1::StaticClass(), "K2_ReplaceAreaInOctreeData", { ERASE_METHOD_PTR(UNavigationSystemV1, K2_ReplaceAreaInOctreeData, (const UObject*,  TSubclassOf<UNavArea>,  TSubclassOf<UNavArea>), ERASE_ARGUMENT_PACK( bool )) } );

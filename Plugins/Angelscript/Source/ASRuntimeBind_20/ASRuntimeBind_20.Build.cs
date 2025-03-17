@@ -34,6 +34,10 @@ namespace UnrealBuildTool.Rules
 					"MovieSceneTracks",
 					"MovieScene",
 					"TimeManagement",
+					"CoreUObject",
+					"Engine",
+					"SlateCore",
+					"InterchangeCore",
 				}
 			);
 		}

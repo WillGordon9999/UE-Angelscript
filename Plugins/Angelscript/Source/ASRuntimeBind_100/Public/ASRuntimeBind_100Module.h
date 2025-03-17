@@ -8,8 +8,8 @@ class FASRuntimeBind_100Module : public FDefaultModuleImpl
 public:
 	virtual void StartupModule() override;
 	virtual void ShutdownModule() override;
+	static void Bind_AssetTagsSubsystem();
 	static void Bind_AudioCapture();
-	static void Bind_OctreeDynamicMeshComponent();
 	static void Bind_SkeletonModifier();
 	static void Bind_SkinWeightModifier();
 	static void Bind_ImgMediaSource();

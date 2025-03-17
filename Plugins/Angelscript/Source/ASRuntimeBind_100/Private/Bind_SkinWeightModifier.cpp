@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_100Module.h"
 #include "AngelscriptBinds.h"
 #include "SkinWeightModifier.h"
+#include "Engine/SkeletalMesh.h"
 void FASRuntimeBind_100Module::Bind_SkinWeightModifier()
 {
 			FAngelscriptBinds::AddFunctionEntry(USkinWeightModifier::StaticClass(), "CommitWeightsToSkeletalMesh", { ERASE_METHOD_PTR(USkinWeightModifier, CommitWeightsToSkeletalMesh, (), ERASE_ARGUMENT_PACK(bool )) } );

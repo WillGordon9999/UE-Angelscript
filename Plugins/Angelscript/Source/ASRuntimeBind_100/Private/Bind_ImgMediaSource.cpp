@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_100Module.h"
 #include "AngelscriptBinds.h"
 #include "ImgMediaSource.h"
+#include "GameFramework/Actor.h"
 void FASRuntimeBind_100Module::Bind_ImgMediaSource()
 {
 			FAngelscriptBinds::AddFunctionEntry(UImgMediaSource::StaticClass(), "AddTargetObject", { ERASE_METHOD_PTR(UImgMediaSource, AddTargetObject, (AActor*), ERASE_ARGUMENT_PACK(void )) } );

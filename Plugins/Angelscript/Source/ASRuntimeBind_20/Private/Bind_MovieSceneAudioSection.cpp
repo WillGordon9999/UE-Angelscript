@@ -1,6 +1,9 @@
 #include "ASRuntimeBind_20Module.h"
 #include "AngelscriptBinds.h"
 #include "Sections/MovieSceneAudioSection.h"
+#include "Sound/SoundAttenuation.h"
+#include "Sound/SoundBase.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_20Module::Bind_MovieSceneAudioSection()
 {
 			FAngelscriptBinds::AddFunctionEntry(UMovieSceneAudioSection::StaticClass(), "GetAttenuationSettings", { ERASE_METHOD_PTR(UMovieSceneAudioSection, GetAttenuationSettings, () const, ERASE_ARGUMENT_PACK(USoundAttenuation* )) } );

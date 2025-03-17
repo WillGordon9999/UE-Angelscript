@@ -10,8 +10,8 @@ void FASRuntimeBind_100Module::StartupModule()
 		(int32)FAngelscriptBinds::EOrder::Late,
 		[]()
 		{
+			Bind_AssetTagsSubsystem();
 			Bind_AudioCapture();
-			Bind_OctreeDynamicMeshComponent();
 			Bind_SkeletonModifier();
 			Bind_SkinWeightModifier();
 			Bind_ImgMediaSource();

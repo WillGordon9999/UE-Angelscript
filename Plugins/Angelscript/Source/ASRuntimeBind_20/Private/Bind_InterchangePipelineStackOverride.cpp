@@ -1,6 +1,9 @@
 #include "ASRuntimeBind_20Module.h"
 #include "AngelscriptBinds.h"
 #include "InterchangeManager.h"
+#include "InterchangeBlueprintPipelineBase.h"
+#include "InterchangePipelineBase.h"
+#include "InterchangePythonPipelineBase.h"
 void FASRuntimeBind_20Module::Bind_InterchangePipelineStackOverride()
 {
 			FAngelscriptBinds::AddFunctionEntry(UInterchangePipelineStackOverride::StaticClass(), "AddBlueprintPipeline", { ERASE_METHOD_PTR(UInterchangePipelineStackOverride, AddBlueprintPipeline, (UInterchangeBlueprintPipelineBase*), ERASE_ARGUMENT_PACK( void )) } );

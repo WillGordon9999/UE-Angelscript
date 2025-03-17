@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_100Module.h"
 #include "AngelscriptBinds.h"
 #include "AssetTagsSubsystem.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_100Module::Bind_AssetTagsSubsystem()
 {
 			FAngelscriptBinds::AddFunctionEntry(UAssetTagsSubsystem::StaticClass(), "AddAssetDatasToCollection", { ERASE_METHOD_PTR(UAssetTagsSubsystem, AddAssetDatasToCollection, (const FName,  const TArray<FAssetData>&), ERASE_ARGUMENT_PACK(bool )) } );

@@ -24,9 +24,9 @@ namespace UnrealBuildTool.Rules
 			(
 				new string[]
 				{
+					"AssetTags",
 					"AudioCapture",
 					"GooglePAD",
-					"ModelingComponents",
 					"SkeletalMeshModifiers",
 					"ImgMedia",
 					"MediaPlate",
@@ -34,6 +34,9 @@ namespace UnrealBuildTool.Rules
 					"AnimNextUncookedOnly",
 					"AutomationUtils",
 					"TargetingSystem",
+					"CoreUObject",
+					"Engine",
+					"MediaAssets",
 				}
 			);
 		}

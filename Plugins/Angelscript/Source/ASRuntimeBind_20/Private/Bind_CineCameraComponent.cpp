@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_20Module.h"
 #include "AngelscriptBinds.h"
 #include "CineCameraComponent.h"
+#include "CineCameraSettings.h"
 void FASRuntimeBind_20Module::Bind_CineCameraComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(UCineCameraComponent::StaticClass(), "GetCropPresetName", { ERASE_METHOD_PTR(UCineCameraComponent, GetCropPresetName, () const, ERASE_ARGUMENT_PACK( FString )) } );
