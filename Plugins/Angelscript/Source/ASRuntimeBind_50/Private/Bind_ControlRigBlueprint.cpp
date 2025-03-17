@@ -1,6 +1,15 @@
 #include "ASRuntimeBind_50Module.h"
 #include "AngelscriptBinds.h"
 #include "ControlRigBlueprint.h"
+#include "RigVMModel/RigVMNode.h"
+#include "Rigs/RigHierarchy.h"
+#include "Rigs/RigHierarchyDefines.h"
+#include "ControlRig.h"
+#include "UObject/NoExportTypes.h"
+#include "Rigs/RigHierarchyController.h"
+#include "ModularRigController.h"
+#include "Engine/SkeletalMesh.h"
+#include "Engine/Texture2D.h"
 void FASRuntimeBind_50Module::Bind_ControlRigBlueprint()
 {
 			FAngelscriptBinds::AddFunctionEntry(UControlRigBlueprint::StaticClass(), "CanTurnIntoStandaloneRig_Blueprint", { ERASE_METHOD_PTR(UControlRigBlueprint, CanTurnIntoStandaloneRig_Blueprint, () const, ERASE_ARGUMENT_PACK(bool )) } );

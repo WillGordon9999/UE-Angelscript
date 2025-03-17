@@ -1,6 +1,13 @@
 #include "ASRuntimeBind_50Module.h"
 #include "AngelscriptBinds.h"
 #include "Rigs/RigHierarchy.h"
+#include "Rigs/RigHierarchyDefines.h"
+#include "Rigs/RigHierarchyElements.h"
+#include "Rigs/RigHierarchyController.h"
+#include "UObject/NoExportTypes.h"
+#include "EulerTransform.h"
+#include "Rigs/RigHierarchyPose.h"
+#include "ModularRigRuleManager.h"
 void FASRuntimeBind_50Module::Bind_RigHierarchy()
 {
 			FAngelscriptBinds::AddFunctionEntry(URigHierarchy::StaticClass(), "Contains_ForBlueprint", { ERASE_METHOD_PTR(URigHierarchy, Contains_ForBlueprint, (FRigElementKey) const, ERASE_ARGUMENT_PACK(bool )) } );

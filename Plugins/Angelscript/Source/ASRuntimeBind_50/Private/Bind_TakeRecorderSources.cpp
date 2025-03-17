@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_50Module.h"
 #include "AngelscriptBinds.h"
 #include "TakeRecorderSources.h"
+#include "TakeRecorderSource.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_50Module::Bind_TakeRecorderSources()
 {
 			FAngelscriptBinds::AddFunctionEntry(UTakeRecorderSources::StaticClass(), "AddSource", { ERASE_METHOD_PTR(UTakeRecorderSources, AddSource, (TSubclassOf<UTakeRecorderSource>), ERASE_ARGUMENT_PACK(UTakeRecorderSource* )) } );

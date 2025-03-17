@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_50Module.h"
 #include "AngelscriptBinds.h"
 #include "ControlRigTestData.h"
+#include "UObject/NoExportTypes.h"
+#include "ControlRig.h"
 void FASRuntimeBind_50Module::Bind_ControlRigTestData()
 {
 			FAngelscriptBinds::AddFunctionEntry(UControlRigTestData::StaticClass(), "GetFrameIndexForTime", { ERASE_METHOD_PTR(UControlRigTestData, GetFrameIndexForTime, (double,  bool) const, ERASE_ARGUMENT_PACK(int32 )) } );

@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_50Module.h"
 #include "AngelscriptBinds.h"
 #include "ControlRigGizmoActor.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_50Module::Bind_ControlRigShapeActor()
 {
 			FAngelscriptBinds::AddFunctionEntry(AControlRigShapeActor::StaticClass(), "GetGlobalTransform", { ERASE_METHOD_PTR(AControlRigShapeActor, GetGlobalTransform, () const, ERASE_ARGUMENT_PACK(FTransform )) } );

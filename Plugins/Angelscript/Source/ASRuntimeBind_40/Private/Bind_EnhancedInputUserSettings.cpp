@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_40Module.h"
 #include "AngelscriptBinds.h"
 #include "UserSettings/EnhancedInputUserSettings.h"
+#include "GameplayTagContainer.h"
+#include "InputMappingContext.h"
 void FASRuntimeBind_40Module::Bind_EnhancedInputUserSettings()
 {
 			FAngelscriptBinds::AddFunctionEntry(UEnhancedInputUserSettings::StaticClass(), "ApplySettings", { ERASE_METHOD_PTR(UEnhancedInputUserSettings, ApplySettings, (), ERASE_ARGUMENT_PACK( void )) } );

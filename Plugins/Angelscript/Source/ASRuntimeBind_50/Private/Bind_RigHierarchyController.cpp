@@ -1,6 +1,12 @@
 #include "ASRuntimeBind_50Module.h"
 #include "AngelscriptBinds.h"
 #include "Rigs/RigHierarchyController.h"
+#include "Rigs/RigHierarchyDefines.h"
+#include "Rigs/RigHierarchyElements.h"
+#include "UObject/NoExportTypes.h"
+#include "Rigs/RigHierarchy.h"
+#include "Animation/Skeleton.h"
+#include "RigVMFunctions/Math/RigVMMathLibrary.h"
 void FASRuntimeBind_50Module::Bind_RigHierarchyController()
 {
 			FAngelscriptBinds::AddFunctionEntry(URigHierarchyController::StaticClass(), "AddAnimationChannel_ForBlueprint", { ERASE_METHOD_PTR(URigHierarchyController, AddAnimationChannel_ForBlueprint, (
@@ -73,7 +79,7 @@ void FASRuntimeBind_50Module::Bind_RigHierarchyController()
 		bool, 
 		bool, 
 		bool), ERASE_ARGUMENT_PACK(TArray<FRigElementKey> )) } );
-			//FAngelscriptBinds::AddFunctionEntry(URigHierarchyController::StaticClass(), "MirrorElements", { ERASE_METHOD_PTR(URigHierarchyController, MirrorElements, (TArray<FRigElementKey>,  FRigVMMirrorSettings,  bool,  bool,  bool), ERASE_ARGUMENT_PACK(TArray<FRigElementKey> )) } );
+			FAngelscriptBinds::AddFunctionEntry(URigHierarchyController::StaticClass(), "MirrorElements", { ERASE_METHOD_PTR(URigHierarchyController, MirrorElements, (TArray<FRigElementKey>,  FRigVMMirrorSettings,  bool,  bool,  bool), ERASE_ARGUMENT_PACK(TArray<FRigElementKey> )) } );
 			FAngelscriptBinds::AddFunctionEntry(URigHierarchyController::StaticClass(), "RemoveAllParents", { ERASE_METHOD_PTR(URigHierarchyController, RemoveAllParents, (FRigElementKey,  bool,  bool,  bool), ERASE_ARGUMENT_PACK(bool )) } );
 			FAngelscriptBinds::AddFunctionEntry(URigHierarchyController::StaticClass(), "RemoveElement", { ERASE_METHOD_PTR(URigHierarchyController, RemoveElement, (FRigElementKey,  bool,  bool), ERASE_ARGUMENT_PACK(bool )) } );
 			FAngelscriptBinds::AddFunctionEntry(URigHierarchyController::StaticClass(), "RemoveParent", { ERASE_METHOD_PTR(URigHierarchyController, RemoveParent, (FRigElementKey,  FRigElementKey,  bool,  bool,  bool), ERASE_ARGUMENT_PACK(bool )) } );

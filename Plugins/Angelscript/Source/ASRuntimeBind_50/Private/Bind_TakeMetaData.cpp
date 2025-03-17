@@ -1,6 +1,9 @@
 #include "ASRuntimeBind_50Module.h"
 #include "AngelscriptBinds.h"
 #include "TakeMetaData.h"
+#include "UObject/NoExportTypes.h"
+#include "Engine/Level.h"
+#include "TakePreset.h"
 void FASRuntimeBind_50Module::Bind_TakeMetaData()
 {
 			FAngelscriptBinds::AddFunctionEntry(UTakeMetaData::StaticClass(), "GenerateAssetPath", { ERASE_METHOD_PTR(UTakeMetaData, GenerateAssetPath, (const FString&) const, ERASE_ARGUMENT_PACK(FString )) } );

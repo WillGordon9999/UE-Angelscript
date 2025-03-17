@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_30Module.h"
 #include "AngelscriptBinds.h"
 #include "Quartz/AudioMixerClockHandle.h"
+#include "Sound/QuartzQuantizationUtilities.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_30Module::Bind_QuartzClockHandle()
 {
 			FAngelscriptBinds::AddFunctionEntry(UQuartzClockHandle::StaticClass(), "GetBeatProgressPercent", { ERASE_METHOD_PTR(UQuartzClockHandle, GetBeatProgressPercent, (EQuartzCommandQuantization,  float,  float), ERASE_ARGUMENT_PACK( float )) } );

@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_50Module.h"
 #include "AngelscriptBinds.h"
 #include "RigVMModel/Nodes/RigVMEnumNode.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_50Module::Bind_RigVMEnumNode()
 {
 			FAngelscriptBinds::AddFunctionEntry(URigVMEnumNode::StaticClass(), "GetCPPType", { ERASE_METHOD_PTR(URigVMEnumNode, GetCPPType, () const, ERASE_ARGUMENT_PACK(FString )) } );

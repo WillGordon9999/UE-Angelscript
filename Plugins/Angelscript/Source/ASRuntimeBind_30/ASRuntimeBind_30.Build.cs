@@ -33,7 +33,11 @@ namespace UnrealBuildTool.Rules
 					"ChaosCaching",
 					"ChaosCloth",
 					"ACLPlugin",
-					"VariantManagerContent",
+					"OnlineSubsystemUtils",
+					"Engine",
+					"CoreUObject",
+					"MediaUtils",
+					"MovieScene",
 				}
 			);
 		}

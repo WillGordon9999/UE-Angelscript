@@ -10,10 +10,15 @@ void FASRuntimeBind_40Module::StartupModule()
 		(int32)FAngelscriptBinds::EOrder::Late,
 		[]()
 		{
+			Bind_LevelVariantSets();
+			Bind_LevelVariantSetsActor();
+			Bind_PropertyValue();
+			Bind_SwitchActor();
+			Bind_Variant();
+			Bind_VariantSet();
 			Bind_GLTFExportOptions();
 			Bind_GLTFProxyOptions();
 			Bind_DatasmithImportedSequencesActor();
-			Bind_VoipListenerSynthComponent();
 			Bind_MockDataMeshTrackerComponent();
 			Bind_MRMeshComponent();
 			Bind_MeshReconstructorBase();

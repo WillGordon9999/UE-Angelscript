@@ -1,6 +1,11 @@
 #include "ASRuntimeBind_50Module.h"
 #include "AngelscriptBinds.h"
 #include "RigVMModel/RigVMPin.h"
+#include "RigVMModel/RigVMLink.h"
+#include "UObject/NoExportTypes.h"
+#include "RigVMCore/RigVMFunction.h"
+#include "RigVMModel/RigVMGraph.h"
+#include "RigVMModel/RigVMNode.h"
 void FASRuntimeBind_50Module::Bind_RigVMPin()
 {
 			FAngelscriptBinds::AddFunctionEntry(URigVMPin::StaticClass(), "ContainsWildCardSubPin", { ERASE_METHOD_PTR(URigVMPin, ContainsWildCardSubPin, () const, ERASE_ARGUMENT_PACK(bool )) } );

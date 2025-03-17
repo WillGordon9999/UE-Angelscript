@@ -1,6 +1,11 @@
 #include "ASRuntimeBind_50Module.h"
 #include "AngelscriptBinds.h"
 #include "ControlRigComponent.h"
+#include "Components/SkeletalMeshComponent.h"
+#include "Rigs/RigHierarchyDefines.h"
+#include "UObject/NoExportTypes.h"
+#include "ControlRig.h"
+#include "Engine/SkeletalMesh.h"
 void FASRuntimeBind_50Module::Bind_ControlRigComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(UControlRigComponent::StaticClass(), "AddMappedCompleteSkeletalMesh", { ERASE_METHOD_PTR(UControlRigComponent, AddMappedCompleteSkeletalMesh, (USkeletalMeshComponent*,  const EControlRigComponentMapDirection), ERASE_ARGUMENT_PACK(void )) } );

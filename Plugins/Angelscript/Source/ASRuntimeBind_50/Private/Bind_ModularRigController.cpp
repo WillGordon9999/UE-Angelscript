@@ -1,6 +1,9 @@
 #include "ASRuntimeBind_50Module.h"
 #include "AngelscriptBinds.h"
 #include "ModularRigController.h"
+#include "ControlRig.h"
+#include "Rigs/RigHierarchyDefines.h"
+#include "RigVMFunctions/Math/RigVMMathLibrary.h"
 void FASRuntimeBind_50Module::Bind_ModularRigController()
 {
 			FAngelscriptBinds::AddFunctionEntry(UModularRigController::StaticClass(), "AddModule", { ERASE_METHOD_PTR(UModularRigController, AddModule, (const FName&,  TSubclassOf<UControlRig>,  const FString&,  bool), ERASE_ARGUMENT_PACK(FString )) } );

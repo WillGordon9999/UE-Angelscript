@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_50Module.h"
 #include "AngelscriptBinds.h"
 #include "ActorComponents/IKRigComponent.h"
+#include "Rig/IKRigDataTypes.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_50Module::Bind_IKRigComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(UIKRigComponent::StaticClass(), "ClearAllGoals", { ERASE_METHOD_PTR(UIKRigComponent, ClearAllGoals, (), ERASE_ARGUMENT_PACK(void )) } );

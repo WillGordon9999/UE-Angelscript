@@ -1,6 +1,9 @@
 #include "ASRuntimeBind_50Module.h"
 #include "AngelscriptBinds.h"
 #include "NiagaraDataChannelAccessor.h"
+#include "NiagaraDataChannelPublic.h"
+#include "NiagaraTypes.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_50Module::Bind_NiagaraDataChannelWriter()
 {
 			FAngelscriptBinds::AddFunctionEntry(UNiagaraDataChannelWriter::StaticClass(), "InitWrite", { ERASE_METHOD_PTR(UNiagaraDataChannelWriter, InitWrite, (FNiagaraDataChannelSearchParameters,  int32,  bool,  bool,  bool,  const FString&), ERASE_ARGUMENT_PACK( bool )) } );

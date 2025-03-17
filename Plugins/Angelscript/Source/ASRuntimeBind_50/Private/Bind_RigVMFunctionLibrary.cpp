@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_50Module.h"
 #include "AngelscriptBinds.h"
 #include "RigVMModel/RigVMFunctionLibrary.h"
+#include "RigVMModel/Nodes/RigVMLibraryNode.h"
+#include "RigVMModel/RigVMNode.h"
 void FASRuntimeBind_50Module::Bind_RigVMFunctionLibrary()
 {
 			FAngelscriptBinds::AddFunctionEntry(URigVMFunctionLibrary::StaticClass(), "FindFunction", { ERASE_METHOD_PTR(URigVMFunctionLibrary, FindFunction, (const FName&) const, ERASE_ARGUMENT_PACK(URigVMLibraryNode* )) } );

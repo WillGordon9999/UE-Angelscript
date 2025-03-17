@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_30Module.h"
 #include "AngelscriptBinds.h"
 #include "SequenceMediaController.h"
+#include "MediaComponent.h"
+#include "LevelSequenceActor.h"
 void FASRuntimeBind_30Module::Bind_LevelSequenceMediaController()
 {
 			FAngelscriptBinds::AddFunctionEntry(ALevelSequenceMediaController::StaticClass(), "GetMediaComponent", { ERASE_METHOD_PTR(ALevelSequenceMediaController, GetMediaComponent, () const, ERASE_ARGUMENT_PACK(UMediaComponent* )) } );

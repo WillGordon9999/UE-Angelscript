@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_50Module.h"
 #include "AngelscriptBinds.h"
 #include "NiagaraPreviewGrid.h"
+#include "NiagaraCommon.h"
+#include "NiagaraComponent.h"
 void FASRuntimeBind_50Module::Bind_NiagaraPreviewGrid()
 {
 			//FAngelscriptBinds::AddFunctionEntry(ANiagaraPreviewGrid::StaticClass(), "ActivatePreviews", { ERASE_METHOD_PTR(ANiagaraPreviewGrid, ActivatePreviews, (bool), ERASE_ARGUMENT_PACK(void )) } );

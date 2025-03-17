@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_50Module.h"
 #include "AngelscriptBinds.h"
 #include "NiagaraSimCache.h"
+#include "UObject/NoExportTypes.h"
+#include "NiagaraTypes.h"
 void FASRuntimeBind_50Module::Bind_NiagaraSimCache()
 {
 			FAngelscriptBinds::AddFunctionEntry(UNiagaraSimCache::StaticClass(), "GetAttributeCaptureMode", { ERASE_METHOD_PTR(UNiagaraSimCache, GetAttributeCaptureMode, () const, ERASE_ARGUMENT_PACK(ENiagaraSimCacheAttributeCaptureMode )) } );

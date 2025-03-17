@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_30Module.h"
 #include "AngelscriptBinds.h"
 #include "LevelSequence.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_30Module::Bind_LevelSequence()
 {
 			FAngelscriptBinds::AddFunctionEntry(ULevelSequence::StaticClass(), "CopyMetaData", { ERASE_METHOD_PTR(ULevelSequence, CopyMetaData, (UObject*), ERASE_ARGUMENT_PACK(UObject* )) } );

@@ -31,15 +31,9 @@ void FASRuntimeBind_30Module::StartupModule()
 			Bind_Landscape();
 			Bind_LandscapeComponent();
 			Bind_LandscapeHeightfieldCollisionComponent();
-			Bind_LandscapeSplinesComponent();
 			Bind_ChaosCacheManager();
 			Bind_ChaosClothingInteractor();
-			Bind_LevelVariantSets();
-			Bind_LevelVariantSetsActor();
-			Bind_PropertyValue();
-			Bind_SwitchActor();
-			Bind_Variant();
-			Bind_VariantSet();
+			Bind_VoipListenerSynthComponent();
 		}
 	);
 

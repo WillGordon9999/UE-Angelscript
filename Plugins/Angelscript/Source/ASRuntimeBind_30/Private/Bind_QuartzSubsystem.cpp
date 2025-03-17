@@ -1,6 +1,9 @@
 #include "ASRuntimeBind_30Module.h"
 #include "AngelscriptBinds.h"
 #include "Quartz/QuartzSubsystem.h"
+#include "Quartz/AudioMixerClockHandle.h"
+#include "UObject/NoExportTypes.h"
+#include "Sound/QuartzQuantizationUtilities.h"
 void FASRuntimeBind_30Module::Bind_QuartzSubsystem()
 {
 			FAngelscriptBinds::AddFunctionEntry(UQuartzSubsystem::StaticClass(), "CreateNewClock", { ERASE_METHOD_PTR(UQuartzSubsystem, CreateNewClock, (const UObject*,  FName,  FQuartzClockSettings,  bool,  bool), ERASE_ARGUMENT_PACK( UQuartzClockHandle* )) } );

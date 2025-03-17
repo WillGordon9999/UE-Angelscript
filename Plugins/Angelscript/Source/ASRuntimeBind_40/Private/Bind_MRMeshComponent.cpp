@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_40Module.h"
 #include "AngelscriptBinds.h"
 #include "MRMeshComponent.h"
+#include "UObject/NoExportTypes.h"
+#include "Materials/MaterialInterface.h"
 void FASRuntimeBind_40Module::Bind_MRMeshComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(UMRMeshComponent::StaticClass(), "Clear", { ERASE_METHOD_PTR(UMRMeshComponent, Clear, (), ERASE_ARGUMENT_PACK( void )) } );

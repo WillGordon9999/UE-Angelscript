@@ -1,6 +1,9 @@
 #include "ASRuntimeBind_40Module.h"
 #include "AngelscriptBinds.h"
 #include "FunctionalTest.h"
+#include "UObject/NoExportTypes.h"
+#include "TraceQueryTestResults.h"
+#include "GameFramework/Actor.h"
 void FASRuntimeBind_40Module::Bind_FunctionalTest()
 {
 			FAngelscriptBinds::AddFunctionEntry(AFunctionalTest::StaticClass(), "AddError", { ERASE_METHOD_PTR(AFunctionalTest, AddError, (const FString&), ERASE_ARGUMENT_PACK( void )) } );

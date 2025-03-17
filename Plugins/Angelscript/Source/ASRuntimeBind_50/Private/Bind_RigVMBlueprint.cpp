@@ -1,6 +1,13 @@
 #include "ASRuntimeBind_50Module.h"
 #include "AngelscriptBinds.h"
 #include "RigVMBlueprint.h"
+#include "RigVMModel/RigVMGraph.h"
+#include "RigVMHost.h"
+#include "RigVMModel/RigVMController.h"
+#include "RigVMModel/RigVMFunctionLibrary.h"
+#include "RigVMModel/RigVMVariableDescription.h"
+#include "EdGraph/EdGraph.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_50Module::Bind_RigVMBlueprint()
 {
 			FAngelscriptBinds::AddFunctionEntry(URigVMBlueprint::StaticClass(), "AddMemberVariable", { ERASE_METHOD_PTR(URigVMBlueprint, AddMemberVariable, (const FName&,  const FString&,  bool,  bool,  FString), ERASE_ARGUMENT_PACK(FName )) } );

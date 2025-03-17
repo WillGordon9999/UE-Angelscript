@@ -1,6 +1,13 @@
 #include "ASRuntimeBind_50Module.h"
 #include "AngelscriptBinds.h"
 #include "RigVMModel/RigVMNode.h"
+#include "RigVMModel/Nodes/RigVMLibraryNode.h"
+#include "RigVMModel/RigVMPin.h"
+#include "RigVMModel/RigVMGraph.h"
+#include "RigVMModel/RigVMLink.h"
+#include "UObject/NoExportTypes.h"
+#include "RigVMCore/RigVMUserWorkflow.h"
+#include "RigVMCore/RigVMFunction.h"
 void FASRuntimeBind_50Module::Bind_RigVMNode()
 {
 			FAngelscriptBinds::AddFunctionEntry(URigVMNode::StaticClass(), "CanBeUpgraded", { ERASE_METHOD_PTR(URigVMNode, CanBeUpgraded, () const, ERASE_ARGUMENT_PACK( bool )) } );

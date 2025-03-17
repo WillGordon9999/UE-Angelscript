@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_50Module.h"
 #include "AngelscriptBinds.h"
 #include "Tools/ControlRigPose.h"
+#include "ControlRig.h"
 void FASRuntimeBind_50Module::Bind_ControlRigPoseAsset()
 {
 			FAngelscriptBinds::AddFunctionEntry(UControlRigPoseAsset::StaticClass(), "DoesMirrorMatch", { ERASE_METHOD_PTR(UControlRigPoseAsset, DoesMirrorMatch, (UControlRig*,  const FName&) const, ERASE_ARGUMENT_PACK(bool )) } );

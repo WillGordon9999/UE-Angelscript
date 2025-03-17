@@ -27,13 +27,17 @@ namespace UnrealBuildTool.Rules
 					"RigVM",
 					"RigVMDeveloper",
 					"ControlRig",
-					"AnimationLocomotionLibraryRuntime",
 					"AnimationWarpingRuntime",
-					"IKRig",
 					"ControlRigDeveloper",
+					"IKRig",
 					"Niagara",
+					"NiagaraAnimNotifies",
 					"TakesCore",
 					"TakeRecorder",
+					"CoreUObject",
+					"Engine",
+					"AnimationCore",
+					"LevelSequence",
 				}
 			);
 		}

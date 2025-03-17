@@ -24,15 +24,21 @@ namespace UnrealBuildTool.Rules
 			(
 				new string[]
 				{
+					"VariantManagerContent",
 					"GLTFExporter",
 					"DatasmithContent",
-					"OnlineSubsystemUtils",
 					"MRMesh",
 					"FunctionalTesting",
 					"ClothingSystemRuntimeNv",
-					"AndroidFileServer",					
+					"AndroidFileServer",
 					"EnhancedInput",
+					"AnimationLocomotionLibraryRuntime",
 					"StructUtilsEngine",
+					"Engine",
+					"CoreUObject",
+					"LevelSequence",
+					"InputCore",
+					"GameplayTags",
 				}
 			);
 		}

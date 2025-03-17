@@ -1,6 +1,17 @@
 #include "ASRuntimeBind_50Module.h"
 #include "AngelscriptBinds.h"
 #include "NiagaraComponent.h"
+#include "NiagaraCommon.h"
+#include "NiagaraSystem.h"
+#include "NiagaraDataInterface.h"
+#include "UObject/NoExportTypes.h"
+#include "NiagaraSimCache.h"
+#include "NiagaraTickBehaviorEnum.h"
+#include "GameFramework/Actor.h"
+#include "Materials/MaterialInterface.h"
+#include "Engine/StaticMesh.h"
+#include "Engine/Texture.h"
+#include "Engine/TextureRenderTarget.h"
 void FASRuntimeBind_50Module::Bind_NiagaraComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(UNiagaraComponent::StaticClass(), "AdvanceSimulation", { ERASE_METHOD_PTR(UNiagaraComponent, AdvanceSimulation, (int32,  float), ERASE_ARGUMENT_PACK( void )) } );

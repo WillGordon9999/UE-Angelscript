@@ -1,6 +1,11 @@
 #include "ASRuntimeBind_50Module.h"
 #include "AngelscriptBinds.h"
 #include "Recorder/TakeRecorderPanel.h"
+#include "UObject/NoExportTypes.h"
+#include "LevelSequence.h"
+#include "TakeRecorderSources.h"
+#include "TakeMetaData.h"
+#include "TakePreset.h"
 void FASRuntimeBind_50Module::Bind_TakeRecorderPanel()
 {
 			FAngelscriptBinds::AddFunctionEntry(UTakeRecorderPanel::StaticClass(), "CanStartRecording", { ERASE_METHOD_PTR(UTakeRecorderPanel, CanStartRecording, (FText&) const, ERASE_ARGUMENT_PACK(bool )) } );

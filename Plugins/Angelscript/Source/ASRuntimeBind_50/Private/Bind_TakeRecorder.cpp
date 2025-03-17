@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_50Module.h"
 #include "AngelscriptBinds.h"
 #include "Recorder/TakeRecorder.h"
+#include "LevelSequence.h"
 void FASRuntimeBind_50Module::Bind_TakeRecorder()
 {
 			FAngelscriptBinds::AddFunctionEntry(UTakeRecorder::StaticClass(), "GetCountdownSeconds", { ERASE_METHOD_PTR(UTakeRecorder, GetCountdownSeconds, () const, ERASE_ARGUMENT_PACK(float )) } );

@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_30Module.h"
 #include "AngelscriptBinds.h"
 #include "MediaPlaylist.h"
+#include "MediaSource.h"
 void FASRuntimeBind_30Module::Bind_MediaPlaylist()
 {
 			FAngelscriptBinds::AddFunctionEntry(UMediaPlaylist::StaticClass(), "Add", { ERASE_METHOD_PTR(UMediaPlaylist, Add, (UMediaSource*), ERASE_ARGUMENT_PACK( bool )) } );

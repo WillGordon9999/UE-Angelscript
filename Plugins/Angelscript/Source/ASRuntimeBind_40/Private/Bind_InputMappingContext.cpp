@@ -1,6 +1,9 @@
 #include "ASRuntimeBind_40Module.h"
 #include "AngelscriptBinds.h"
 #include "InputMappingContext.h"
+#include "EnhancedActionKeyMapping.h"
+#include "InputAction.h"
+#include "InputCoreTypes.h"
 void FASRuntimeBind_40Module::Bind_InputMappingContext()
 {
 			FAngelscriptBinds::AddFunctionEntry(UInputMappingContext::StaticClass(), "MapKey", { ERASE_METHOD_PTR(UInputMappingContext, MapKey, (const UInputAction*,  FKey), ERASE_ARGUMENT_PACK(FEnhancedActionKeyMapping& )) } );

@@ -8,10 +8,15 @@ class FASRuntimeBind_40Module : public FDefaultModuleImpl
 public:
 	virtual void StartupModule() override;
 	virtual void ShutdownModule() override;
+	static void Bind_LevelVariantSets();
+	static void Bind_LevelVariantSetsActor();
+	static void Bind_PropertyValue();
+	static void Bind_SwitchActor();
+	static void Bind_Variant();
+	static void Bind_VariantSet();
 	static void Bind_GLTFExportOptions();
 	static void Bind_GLTFProxyOptions();
 	static void Bind_DatasmithImportedSequencesActor();
-	static void Bind_VoipListenerSynthComponent();
 	static void Bind_MockDataMeshTrackerComponent();
 	static void Bind_MRMeshComponent();
 	static void Bind_MeshReconstructorBase();

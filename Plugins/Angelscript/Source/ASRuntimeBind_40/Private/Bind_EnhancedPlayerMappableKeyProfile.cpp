@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_40Module.h"
 #include "AngelscriptBinds.h"
 #include "UserSettings/EnhancedInputUserSettings.h"
+#include "InputCoreTypes.h"
+#include "GameplayTagContainer.h"
 void FASRuntimeBind_40Module::Bind_EnhancedPlayerMappableKeyProfile()
 {
 			FAngelscriptBinds::AddFunctionEntry(UEnhancedPlayerMappableKeyProfile::StaticClass(), "DoesMappingPassQueryOptions", { ERASE_METHOD_PTR(UEnhancedPlayerMappableKeyProfile, DoesMappingPassQueryOptions, (const FPlayerKeyMapping&,  const FPlayerMappableKeyQueryOptions&) const, ERASE_ARGUMENT_PACK( bool )) } );

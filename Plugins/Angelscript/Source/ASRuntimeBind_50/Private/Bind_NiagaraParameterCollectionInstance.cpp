@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_50Module.h"
 #include "AngelscriptBinds.h"
 #include "NiagaraParameterCollection.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_50Module::Bind_NiagaraParameterCollectionInstance()
 {
 			FAngelscriptBinds::AddFunctionEntry(UNiagaraParameterCollectionInstance::StaticClass(), "GetBoolParameter", { ERASE_METHOD_PTR(UNiagaraParameterCollectionInstance, GetBoolParameter, (const FString&), ERASE_ARGUMENT_PACK( bool )) } );

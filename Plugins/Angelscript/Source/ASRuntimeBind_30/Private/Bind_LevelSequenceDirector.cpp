@@ -1,6 +1,10 @@
 #include "ASRuntimeBind_30Module.h"
 #include "AngelscriptBinds.h"
 #include "LevelSequenceDirector.h"
+#include "GameFramework/Actor.h"
+#include "MovieSceneObjectBindingID.h"
+#include "UObject/NoExportTypes.h"
+#include "MovieSceneSequence.h"
 void FASRuntimeBind_30Module::Bind_LevelSequenceDirector()
 {
 			FAngelscriptBinds::AddFunctionEntry(ULevelSequenceDirector::StaticClass(), "GetBoundActor", { ERASE_METHOD_PTR(ULevelSequenceDirector, GetBoundActor, (FMovieSceneObjectBindingID), ERASE_ARGUMENT_PACK( AActor* )) } );

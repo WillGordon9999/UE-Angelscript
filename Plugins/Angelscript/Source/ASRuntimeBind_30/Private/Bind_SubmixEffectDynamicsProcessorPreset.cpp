@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_30Module.h"
 #include "AngelscriptBinds.h"
 #include "SubmixEffects/AudioMixerSubmixEffectDynamicsProcessor.h"
+#include "Sound/AudioBus.h"
+#include "Sound/SoundSubmix.h"
 void FASRuntimeBind_30Module::Bind_SubmixEffectDynamicsProcessorPreset()
 {
 			FAngelscriptBinds::AddFunctionEntry(USubmixEffectDynamicsProcessorPreset::StaticClass(), "ResetKey", { ERASE_METHOD_PTR(USubmixEffectDynamicsProcessorPreset, ResetKey, (), ERASE_ARGUMENT_PACK( void )) } );

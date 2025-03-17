@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_30Module.h"
 #include "AngelscriptBinds.h"
 #include "ChaosCloth/ChaosClothingSimulationInteractor.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_30Module::Bind_ChaosClothingInteractor()
 {
 			FAngelscriptBinds::AddFunctionEntry(UChaosClothingInteractor::StaticClass(), "ResetAndTeleport", { ERASE_METHOD_PTR(UChaosClothingInteractor, ResetAndTeleport, (bool,  bool), ERASE_ARGUMENT_PACK( void )) } );

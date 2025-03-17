@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_50Module.h"
 #include "AngelscriptBinds.h"
 #include "RigVMModel/Nodes/RigVMVariableNode.h"
+#include "UObject/NoExportTypes.h"
+#include "RigVMModel/RigVMVariableDescription.h"
 void FASRuntimeBind_50Module::Bind_RigVMVariableNode()
 {
 			FAngelscriptBinds::AddFunctionEntry(URigVMVariableNode::StaticClass(), "GetCPPType", { ERASE_METHOD_PTR(URigVMVariableNode, GetCPPType, () const, ERASE_ARGUMENT_PACK(FString )) } );

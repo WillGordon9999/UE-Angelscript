@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_30Module.h"
 #include "AngelscriptBinds.h"
 #include "MediaSoundComponent.h"
+#include "Sound/SoundAttenuation.h"
+#include "MediaPlayer.h"
 void FASRuntimeBind_30Module::Bind_MediaSoundComponent()
 {
 			FAngelscriptBinds::AddFunctionEntry(UMediaSoundComponent::StaticClass(), "BP_GetAttenuationSettingsToApply", { ERASE_METHOD_PTR(UMediaSoundComponent, BP_GetAttenuationSettingsToApply, (FSoundAttenuationSettings&), ERASE_ARGUMENT_PACK( bool )) } );

@@ -1,6 +1,11 @@
 #include "ASRuntimeBind_30Module.h"
 #include "AngelscriptBinds.h"
 #include "MediaPlayer.h"
+#include "MediaSource.h"
+#include "UObject/NoExportTypes.h"
+#include "MediaPlaylist.h"
+#include "Engine/LatentActionManager.h"
+#include "MediaPlayerOptions.h"
 void FASRuntimeBind_30Module::Bind_MediaPlayer()
 {
 			FAngelscriptBinds::AddFunctionEntry(UMediaPlayer::StaticClass(), "CanPause", { ERASE_METHOD_PTR(UMediaPlayer, CanPause, () const, ERASE_ARGUMENT_PACK( bool )) } );

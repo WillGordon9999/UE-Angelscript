@@ -1,6 +1,9 @@
 #include "ASRuntimeBind_50Module.h"
 #include "AngelscriptBinds.h"
 #include "RigVMModel/RigVMLink.h"
+#include "RigVMModel/RigVMGraph.h"
+#include "RigVMModel/RigVMPin.h"
+#include "RigVMModel/RigVMNode.h"
 void FASRuntimeBind_50Module::Bind_RigVMLink()
 {
 			FAngelscriptBinds::AddFunctionEntry(URigVMLink::StaticClass(), "GetGraph", { ERASE_METHOD_PTR(URigVMLink, GetGraph, () const, ERASE_ARGUMENT_PACK(URigVMGraph* )) } );

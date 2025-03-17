@@ -29,13 +29,7 @@ public:
 	static void Bind_Landscape();
 	static void Bind_LandscapeComponent();
 	static void Bind_LandscapeHeightfieldCollisionComponent();
-	static void Bind_LandscapeSplinesComponent();
 	static void Bind_ChaosCacheManager();
 	static void Bind_ChaosClothingInteractor();
-	static void Bind_LevelVariantSets();
-	static void Bind_LevelVariantSetsActor();
-	static void Bind_PropertyValue();
-	static void Bind_SwitchActor();
-	static void Bind_Variant();
-	static void Bind_VariantSet();
+	static void Bind_VoipListenerSynthComponent();
 };

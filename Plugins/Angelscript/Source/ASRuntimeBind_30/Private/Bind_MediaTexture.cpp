@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_30Module.h"
 #include "AngelscriptBinds.h"
 #include "MediaTexture.h"
+#include "MediaPlayer.h"
 void FASRuntimeBind_30Module::Bind_MediaTexture()
 {
 			FAngelscriptBinds::AddFunctionEntry(UMediaTexture::StaticClass(), "GetAspectRatio", { ERASE_METHOD_PTR(UMediaTexture, GetAspectRatio, () const, ERASE_ARGUMENT_PACK( float )) } );

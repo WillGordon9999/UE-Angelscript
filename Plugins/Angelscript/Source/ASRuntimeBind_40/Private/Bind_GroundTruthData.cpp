@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_40Module.h"
 #include "AngelscriptBinds.h"
 #include "GroundTruthData.h"
+#include "UObject/NoExportTypes.h"
 void FASRuntimeBind_40Module::Bind_GroundTruthData()
 {
 			FAngelscriptBinds::AddFunctionEntry(UGroundTruthData::StaticClass(), "CanModify", { ERASE_METHOD_PTR(UGroundTruthData, CanModify, () const, ERASE_ARGUMENT_PACK(bool )) } );
