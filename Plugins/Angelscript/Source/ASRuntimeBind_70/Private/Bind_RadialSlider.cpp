@@ -1,6 +1,8 @@
 #include "ASRuntimeBind_70Module.h"
 #include "AngelscriptBinds.h"
 #include "Components/RadialSlider.h"
+#include "UObject/NoExportTypes.h"
+#include "Curves/CurveFloat.h"
 void FASRuntimeBind_70Module::Bind_RadialSlider()
 {
 			FAngelscriptBinds::AddFunctionEntry(URadialSlider::StaticClass(), "GetCustomDefaultValue", { ERASE_METHOD_PTR(URadialSlider, GetCustomDefaultValue, () const, ERASE_ARGUMENT_PACK( float )) } );

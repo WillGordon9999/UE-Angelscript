@@ -10,19 +10,11 @@ void FASRuntimeBind_70Module::StartupModule()
 		(int32)FAngelscriptBinds::EOrder::Late,
 		[]()
 		{
-			Bind_CableComponent();
-			Bind_GameFrameworkComponentManager();
-			Bind_CustomMeshComponent();
-			Bind_GameplayCueNotify_Static();
-			Bind_GameplayAbility();
-			Bind_GameplayAbilityWorldReticle();
-			Bind_AbilityTask_ApplyRootMotionJumpForce();
-			Bind_AbilityTask_SpawnActor();
-			Bind_AbilityTask_VisualizeTargeting();
-			Bind_AbilityTask_WaitTargetData();
-			Bind_AbilitySystemComponent();
-			Bind_GameplayCueNotify_Actor();
-			Bind_StateTreeComponent();
+			Bind_DynamicMeshComponent();
+			Bind_DynamicMeshActor();
+			Bind_DynamicMesh();
+			Bind_DynamicMeshPool();
+			Bind_OctreeDynamicMeshComponent();
 			Bind_MetasoundParameterPack();
 			Bind_MetasoundGeneratorHandle();
 			Bind_MetaSoundCacheSubsystem();
@@ -32,6 +24,12 @@ void FASRuntimeBind_70Module::StartupModule()
 			Bind_MetaSoundSourceBuilder();
 			Bind_MetaSoundBuilderSubsystem();
 			Bind_RadialSlider();
+			Bind_AudioMeter();
+			Bind_AudioOscilloscope();
+			Bind_AudioRadialSlider();
+			Bind_AudioVectorscope();
+			Bind_ProceduralMeshComponent();
+			Bind_ResonanceAudioSpatializationSourceSettings();
 		}
 	);
 

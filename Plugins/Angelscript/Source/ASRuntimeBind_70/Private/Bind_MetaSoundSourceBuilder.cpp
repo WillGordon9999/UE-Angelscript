@@ -1,6 +1,9 @@
 #include "ASRuntimeBind_70Module.h"
 #include "AngelscriptBinds.h"
 #include "MetasoundBuilderSubsystem.h"
+#include "UObject/NoExportTypes.h"
+#include "Components/AudioComponent.h"
+#include "Interfaces/MetasoundOutputFormatInterfaces.h"
 void FASRuntimeBind_70Module::Bind_MetaSoundSourceBuilder()
 {
 			FAngelscriptBinds::AddFunctionEntry(UMetaSoundSourceBuilder::StaticClass(), "Audition", { ERASE_METHOD_PTR(UMetaSoundSourceBuilder, Audition, (UObject*,  UAudioComponent*,  FOnCreateAuditionGeneratorHandleDelegate,  bool), ERASE_ARGUMENT_PACK(void )) } );

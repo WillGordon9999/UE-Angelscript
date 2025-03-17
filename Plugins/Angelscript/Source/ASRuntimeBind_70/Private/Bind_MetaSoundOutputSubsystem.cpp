@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_70Module.h"
 #include "AngelscriptBinds.h"
 #include "MetasoundOutputSubsystem.h"
+#include "Components/AudioComponent.h"
 void FASRuntimeBind_70Module::Bind_MetaSoundOutputSubsystem()
 {
 			FAngelscriptBinds::AddFunctionEntry(UMetaSoundOutputSubsystem::StaticClass(), "WatchOutput", { ERASE_METHOD_PTR(UMetaSoundOutputSubsystem, WatchOutput, (

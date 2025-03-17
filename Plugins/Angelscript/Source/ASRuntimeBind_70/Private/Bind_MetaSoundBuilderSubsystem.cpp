@@ -1,6 +1,10 @@
 #include "ASRuntimeBind_70Module.h"
 #include "AngelscriptBinds.h"
 #include "MetasoundBuilderSubsystem.h"
+#include "MetasoundFrontendLiteral.h"
+#include "AudioParameter.h"
+#include "UObject/NoExportTypes.h"
+#include "Interfaces/MetasoundOutputFormatInterfaces.h"
 void FASRuntimeBind_70Module::Bind_MetaSoundBuilderSubsystem()
 {
 			FAngelscriptBinds::AddFunctionEntry(UMetaSoundBuilderSubsystem::StaticClass(), "CreateBoolArrayMetaSoundLiteral", { ERASE_METHOD_PTR(UMetaSoundBuilderSubsystem, CreateBoolArrayMetaSoundLiteral, (const TArray<bool>&,  FName&), ERASE_ARGUMENT_PACK( FMetasoundFrontendLiteral )) } );

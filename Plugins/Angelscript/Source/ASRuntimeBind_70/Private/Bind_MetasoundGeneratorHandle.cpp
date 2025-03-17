@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_70Module.h"
 #include "AngelscriptBinds.h"
 #include "MetasoundGeneratorHandle.h"
+#include "MetasoundParameterPack.h"
 void FASRuntimeBind_70Module::Bind_MetasoundGeneratorHandle()
 {
 			FAngelscriptBinds::AddFunctionEntry(UMetasoundGeneratorHandle::StaticClass(), "ApplyParameterPack", { ERASE_METHOD_PTR(UMetasoundGeneratorHandle, ApplyParameterPack, (UMetasoundParameterPack*), ERASE_ARGUMENT_PACK(bool )) } );

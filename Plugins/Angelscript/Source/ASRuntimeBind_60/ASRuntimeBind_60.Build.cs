@@ -25,15 +25,20 @@ namespace UnrealBuildTool.Rules
 				new string[]
 				{
 					"CacheTrackRecorder",
-					"NiagaraAnimNotifies",
-					"AnimationSharing",
-					"InterchangeNodes",
-					"InterchangeFactoryNodes",
-					"VariantManager",
-					"InterchangePipelines",
 					"ActorSequence",
 					"AudioSynesthesia",
+					"CableComponent",
+					"CustomMeshComponent",
 					"DataRegistry",
+					"ModularGameplay",
+					"GameFeatures",
+					"GameplayStateTreeModule",
+					"GameplayAbilities",
+					"LevelSequence",
+					"Engine",
+					"CoreUObject",
+					"GameplayTags",
+					"StateTreeModule",
 				}
 			);
 		}

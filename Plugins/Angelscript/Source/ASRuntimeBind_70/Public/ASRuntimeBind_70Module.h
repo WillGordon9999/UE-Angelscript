@@ -8,19 +8,11 @@ class FASRuntimeBind_70Module : public FDefaultModuleImpl
 public:
 	virtual void StartupModule() override;
 	virtual void ShutdownModule() override;
-	static void Bind_CableComponent();
-	static void Bind_GameFrameworkComponentManager();
-	static void Bind_CustomMeshComponent();
-	static void Bind_GameplayCueNotify_Static();
-	static void Bind_GameplayAbility();
-	static void Bind_GameplayAbilityWorldReticle();
-	static void Bind_AbilityTask_ApplyRootMotionJumpForce();
-	static void Bind_AbilityTask_SpawnActor();
-	static void Bind_AbilityTask_VisualizeTargeting();
-	static void Bind_AbilityTask_WaitTargetData();
-	static void Bind_AbilitySystemComponent();
-	static void Bind_GameplayCueNotify_Actor();
-	static void Bind_StateTreeComponent();
+	static void Bind_DynamicMeshComponent();
+	static void Bind_DynamicMeshActor();
+	static void Bind_DynamicMesh();
+	static void Bind_DynamicMeshPool();
+	static void Bind_OctreeDynamicMeshComponent();
 	static void Bind_MetasoundParameterPack();
 	static void Bind_MetasoundGeneratorHandle();
 	static void Bind_MetaSoundCacheSubsystem();
@@ -30,4 +22,10 @@ public:
 	static void Bind_MetaSoundSourceBuilder();
 	static void Bind_MetaSoundBuilderSubsystem();
 	static void Bind_RadialSlider();
+	static void Bind_AudioMeter();
+	static void Bind_AudioOscilloscope();
+	static void Bind_AudioRadialSlider();
+	static void Bind_AudioVectorscope();
+	static void Bind_ProceduralMeshComponent();
+	static void Bind_ResonanceAudioSpatializationSourceSettings();
 };

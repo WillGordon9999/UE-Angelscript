@@ -1,6 +1,7 @@
 #include "ASRuntimeBind_70Module.h"
 #include "AngelscriptBinds.h"
 #include "MetasoundOperatorCacheSubsystem.h"
+#include "MetasoundSource.h"
 void FASRuntimeBind_70Module::Bind_MetaSoundCacheSubsystem()
 {
 			FAngelscriptBinds::AddFunctionEntry(UMetaSoundCacheSubsystem::StaticClass(), "PrecacheMetaSound", { ERASE_METHOD_PTR(UMetaSoundCacheSubsystem, PrecacheMetaSound, ( UMetaSoundSource*,  int32), ERASE_ARGUMENT_PACK(void )) } );
